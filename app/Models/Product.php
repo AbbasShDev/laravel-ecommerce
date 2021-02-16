@@ -9,13 +9,22 @@ use Spatie\Sluggable\HasTranslatableSlug;
 use Spatie\Sluggable\SlugOptions;
 use Spatie\Translatable\HasTranslations;
 
-class Product extends Model
-{
+class Product extends Model {
+
     use HasFactory, HasTranslations, HasTranslatableSlug;
 
     protected $guarded = [];
 
-    public $translatable = ['name', 'details','slug', 'description'];
+    public function getSlugAttribute(){
+        return $this->getTranslations('slug')['en'];
+    }
+
+    public function presentPrice()
+    {
+        return '$' . $this->price / 100;
+    }
+
+    public $translatable = ['name', 'details', 'slug', 'description'];
 
     public function asJson($value)
     {
@@ -25,7 +34,7 @@ class Product extends Model
     /**
      * Get the options for generating the slug.
      */
-    public function getSlugOptions() : SlugOptions
+    public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
             ->generateSlugsFrom('name')
@@ -45,6 +54,6 @@ class Product extends Model
 
     public function getRouteKeyName()
     {
-        return 'slug';
+        return 'slug->en';
     }
 }
