@@ -5,7 +5,8 @@ use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::prefix(app()->getLocale())->group(function (){
+
+Route::group(['prefix' => app()->getLocale()], function (){
 
     Route::get('/',[LandingPageController::class, 'index'])->name('landing-page');
 
