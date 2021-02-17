@@ -19,6 +19,7 @@
     </div> <!-- end breadcrumbs -->
 
     <div class="product-section container">
+
         <div class="product-section-image">
             <img src="{{ asset('img/macbook-pro.png') }}" alt="product">
         </div>
@@ -28,7 +29,11 @@
             <div class="product-section-price">{{ $product->presentPrice() }}</div>
             <p>{{ $product->description }}</p>
 
-            <a href="#" class="button">Add to Cart</a>
+{{--            <a href="#" class="button">Add to Cart</a>--}}
+            <form action="{{ route('cart.store', $product->slug) }}" method="post">
+                @csrf
+                <button type="submit" class="button button-plain">Add to Cart</button>
+            </form>
         </div>
     </div> <!-- end product-section -->
 

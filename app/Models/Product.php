@@ -15,13 +15,15 @@ class Product extends Model {
 
     protected $guarded = [];
 
-    public function getSlugAttribute(){
+
+    public function getSlugAttribute()
+    {
         return $this->getTranslations('slug')['en'];
     }
 
     public function presentPrice()
     {
-        return '$' . $this->price / 100;
+        return '$' . round($this->price / 100, 2);
     }
 
     public $translatable = ['name', 'details', 'slug', 'description'];
