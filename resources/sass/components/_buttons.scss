@@ -16,6 +16,10 @@
         color: $text-color !important;
         background: $white;
     }
+    &:hover {
+        color: $text-color !important;
+        background: $white;
+    }
 }
 
 .button-primary {
@@ -25,6 +29,11 @@
 
     &:hover {
         background: darken($primary, 7%);
+    }
+
+    &:disabled {
+        background: lighten($primary, 10%);
+        cursor: not-allowed;
     }
 }
 

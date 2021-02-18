@@ -17,7 +17,7 @@
             <span>Macbook Pro</span>
         </div>
     </div> <!-- end breadcrumbs -->
-
+    
     <div class="product-section container">
 
         <div class="product-section-image">

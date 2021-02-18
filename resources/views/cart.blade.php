@@ -116,7 +116,7 @@
 
             <div class="cart-buttons">
                 <a href="#" class="button">Continue Shopping</a>
-                <a href="#" class="button-primary">Proceed to Checkout</a>
+                <a href="{{ route('checkout.index') }}" class="button-primary">Proceed to Checkout</a>
             </div>
 
         @if(Cart::instance('saveForLater')->count() > 0)
@@ -144,7 +144,7 @@
                                     @csrf
                                     <button type="submit" class="cart-options">Move to cart</button>
                                 </form>
-
+                                s
                             </div>
                             {{-- <div>
                                 <select class="quantity">

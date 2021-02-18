@@ -183,6 +183,10 @@ h2 {
   color: #212121 !important;
   background: #e9e9e9;
 }
+.button-white:hover {
+  color: #212121 !important;
+  background: #e9e9e9;
+}
 
 .button-primary {
   background: #3EBFA4;
@@ -191,6 +195,10 @@ h2 {
 }
 .button-primary:hover {
   background: #35a48d;
+}
+.button-primary:disabled {
+  background: #63cdb7;
+  cursor: not-allowed;
 }
 
 .button-plain {
@@ -263,6 +271,10 @@ form button[type=submit] {
   width: 100%;
   padding: 12px;
   font-size: 16px;
+}
+
+.border-error {
+  border: 3px solid #a94442 !important;
 }
 
 .alert {
@@ -648,6 +660,24 @@ h1.checkout-heading {
   font-weight: bold;
   font-size: 22px;
   line-height: 2.2;
+}
+
+.StripeElement {
+  padding: 16px 16px;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+#card-errors {
+  color: #fa755a;
 }
 
 .thank-you-section {

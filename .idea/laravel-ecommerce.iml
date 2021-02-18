@@ -9,6 +9,8 @@
       <sourceFolder url="file://$MODULE_DIR$/app" isTestSource="false" packagePrefix="App\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/asm89/stack-cors" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/brick/math" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/cartalyst/stripe" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/cartalyst/stripe-laravel" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dnoegel/php-xdg-base-dir" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/inflector" />
