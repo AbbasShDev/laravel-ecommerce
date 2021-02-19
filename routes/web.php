@@ -19,6 +19,7 @@ Route::group(['prefix' => app()->getLocale()], function (){
 
     Route::get('/cart',[CartController::class, 'index'])->name('cart.index');
     Route::post('/cart/{product}',[CartController::class, 'store'])->name('cart.store');
+    Route::patch('/cart/{product}',[CartController::class, 'update'])->name('cart.update');
     Route::delete('/cart/{product}',[CartController::class, 'destroy'])->name('cart.destroy');
     Route::post('/cart/switchToSaveForLater/{product}',[CartController::class, 'switchToSaveForLater'])->name('cart.switchToSaveForLater');
 

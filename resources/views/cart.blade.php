@@ -33,16 +33,19 @@
                     </ul>
                 </div>
             @endif
-
-        @if(Cart::count() > 0)
-            <h2>{{ Cart::count() }} item(s) in Shopping Cart</h2>
+            @if(Cart::count() > 0)
+                <h2>{{ Cart::count() }} item(s) in Shopping Cart</h2>
                 <div class="cart-table">
                     @foreach(Cart::content() as $item)
                         <div class="cart-table-row">
                             <div class="cart-table-row-left">
-                                <a href="{{ route('shop.show', $item->model->slug) }}"><img src="{{ asset('img/products/'.$item->model->slug.'.png') }}" alt="item" class="cart-table-img"></a>
+                                <a href="{{ route('shop.show', $item->model->slug) }}"><img
+                                        src="{{ asset('img/products/'.$item->model->slug.'.png') }}" alt="item"
+                                        class="cart-table-img"></a>
                                 <div class="cart-item-details">
-                                    <div class="cart-table-item"><a href="{{ route('shop.show', $item->model->slug) }}">{{ $item->model->name }}</a></div>
+                                    <div class="cart-table-item"><a
+                                            href="{{ route('shop.show', $item->model->slug) }}">{{ $item->model->name }}</a>
+                                    </div>
                                     <div class="cart-table-description">{{ $item->model->details }}</div>
                                 </div>
                             </div>
@@ -61,12 +64,10 @@
                                     </form>
                                 </div>
                                 <div>
-                                    <select class="quantity">
-                                        <option selected="">1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                    <select class="quantity" data-itemid="{{ $item->rowId }}">
+                                        @for($i =1; $i <= 10; $i++)
+                                        <option {{  $item->qty == $i ? 'selected': '' }}>{{ $i }}</option>
+                                        @endfor
                                     </select>
                                 </div>
                                 <div>{{ $item->model->presentPrice() }}</div>
@@ -77,14 +78,14 @@
 
                 </div> <!-- end cart-table -->
 
-        @else
-                    <div class="have-code-container">
-                        <h3>No items in cart!</h3>
-                        <div class="spacer"></div>
-                        <a href="{{ route('shop.index') }}" class="button">Continue shopping</a>
-                        <div class="spacer"></div>
-                    </div>
-        @endif
+            @else
+                <div class="have-code-container">
+                    <h3>No items in cart!</h3>
+                    <div class="spacer"></div>
+                    <a href="{{ route('shop.index') }}" class="button">Continue shopping</a>
+                    <div class="spacer"></div>
+                </div>
+            @endif
 
             <a href="#" class="have-code">Have a Code?</a>
 
@@ -97,7 +98,8 @@
 
             <div class="cart-totals">
                 <div class="cart-totals-left">
-                    Shipping is free because we’re awesome like that. Also because that’s additional stuff I don’t feel like figuring out :).
+                    Shipping is free because we’re awesome like that. Also because that’s additional stuff I don’t feel
+                    like figuring out :).
                 </div>
 
                 <div class="cart-totals-right">
@@ -119,50 +121,54 @@
                 <a href="{{ route('checkout.index') }}" class="button-primary">Proceed to Checkout</a>
             </div>
 
-        @if(Cart::instance('saveForLater')->count() > 0)
-            <h2>{{ Cart::instance('saveForLater')->count() }} item(s) Saved For Later</h2>
+            @if(Cart::instance('saveForLater')->count() > 0)
+                <h2>{{ Cart::instance('saveForLater')->count() }} item(s) Saved For Later</h2>
 
-            <div class="saved-for-later cart-table">
-                @foreach(Cart::instance('saveForLater')->content() as $item)
-                    <div class="cart-table-row">
-                        <div class="cart-table-row-left">
-                            <a href="{{ route('shop.show', $item->model->slug) }}"><img src="{{ asset('img/products/'.$item->model->slug.'.png') }}" alt="item" class="cart-table-img"></a>
-                            <div class="cart-item-details">
-                                <div class="cart-table-item"><a href="{{ route('shop.show', $item->model->slug) }}">{{ $item->model->name }}</a></div>
-                                <div class="cart-table-description">{{ $item->model->details }}</div>
+                <div class="saved-for-later cart-table">
+                    @foreach(Cart::instance('saveForLater')->content() as $item)
+                        <div class="cart-table-row">
+                            <div class="cart-table-row-left">
+                                <a href="{{ route('shop.show', $item->model->slug) }}"><img
+                                        src="{{ asset('img/products/'.$item->model->slug.'.png') }}" alt="item"
+                                        class="cart-table-img"></a>
+                                <div class="cart-item-details">
+                                    <div class="cart-table-item"><a
+                                            href="{{ route('shop.show', $item->model->slug) }}">{{ $item->model->name }}</a>
+                                    </div>
+                                    <div class="cart-table-description">{{ $item->model->details }}</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="cart-table-row-right">
-                            <div class="cart-table-actions">
-                                <form action="{{ route('saveForLater.destroy', $item->rowId) }}" method="post">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="cart-options">Remove</button>
-                                </form>
+                            <div class="cart-table-row-right">
+                                <div class="cart-table-actions">
+                                    <form action="{{ route('saveForLater.destroy', $item->rowId) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="cart-options">Remove</button>
+                                    </form>
 
-                                <form action="{{ route('saveForLater.switchToCart', $item->rowId) }}" method="post">
-                                    @csrf
-                                    <button type="submit" class="cart-options">Move to cart</button>
-                                </form>
-                                s
+                                    <form action="{{ route('saveForLater.switchToCart', $item->rowId) }}" method="post">
+                                        @csrf
+                                        <button type="submit" class="cart-options">Move to cart</button>
+                                    </form>
+                                    s
+                                </div>
+                                {{-- <div>
+                                    <select class="quantity">
+                                        <option selected="">1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div> --}}
+                                <div>{{ $item->model->presentPrice() }}</div>
                             </div>
-                            {{-- <div>
-                                <select class="quantity">
-                                    <option selected="">1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div> --}}
-                            <div>{{ $item->model->presentPrice() }}</div>
-                        </div>
-                    </div> <!-- end cart-table-row -->
-                @endforeach
+                        </div> <!-- end cart-table-row -->
+                    @endforeach
 
-            </div> <!-- end saved-for-later -->
+                </div> <!-- end saved-for-later -->
 
-        @endif
+            @endif
 
         </div>
 
@@ -170,5 +176,29 @@
 
     @include('partials.might-like')
 
+@endsection
 
+@section('extra-js')
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        (function () {
+            let cartItemQuantity = document.querySelectorAll('.quantity');
+
+            cartItemQuantity.forEach((el)=>{
+
+                el.addEventListener('change', () => {
+
+                    axios.patch(`/{{app()->getLocale()}}/cart/${el.dataset.itemid}`,{
+                        quantity: el.value
+                    }).then(function (response){
+                        window.location.href = '';
+                    }).catch(function (error){
+                        window.location.href = '';
+                    })
+
+
+                });
+            })
+        }())
+    </script>
 @endsection

@@ -23,19 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7974f52-85f3-409d-8ba1-9706aab0ceb6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/laravel-ecommerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel-ecommerce.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_buttons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/_form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_form.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/pages/checkout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/checkout.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/checkout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -178,7 +168,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -210,7 +200,12 @@
       <workItem from="1613595184941" duration="301000" />
       <workItem from="1613595599383" duration="1821000" />
       <workItem from="1613598051723" duration="397000" />
-      <workItem from="1613598508985" duration="6131000" />
+      <workItem from="1613598508985" duration="6243000" />
+      <workItem from="1613682493829" duration="101000" />
+      <workItem from="1613682635894" duration="123000" />
+      <workItem from="1613687709780" duration="92000" />
+      <workItem from="1613687840736" duration="271000" />
+      <workItem from="1613688146804" duration="11418000" />
     </task>
     <servers />
   </component>
@@ -230,17 +225,21 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="274" y="71" key="#Inspections" timestamp="1613698747059">
+      <screen x="0" y="25" width="1280" height="723" />
+    </state>
+    <state x="274" y="71" key="#Inspections/0.25.1280.723@0.25.1280.723" timestamp="1613698747059" />
     <state x="379" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1613530930345">
       <screen x="0" y="25" width="1280" height="723" />
     </state>
     <state x="379" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1280.723@0.25.1280.723" timestamp="1613530930345" />
-    <state x="171" y="36" key="SettingsEditor" timestamp="1613598448251">
+    <state x="171" y="36" key="SettingsEditor" timestamp="1613689281291">
       <screen x="0" y="25" width="1280" height="723" />
     </state>
-    <state x="171" y="36" key="SettingsEditor/0.25.1280.723@0.25.1280.723" timestamp="1613598448251" />
-    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup" timestamp="1613605530052">
+    <state x="171" y="36" key="SettingsEditor/0.25.1280.723@0.25.1280.723" timestamp="1613689281291" />
+    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup" timestamp="1613690635997">
       <screen x="0" y="25" width="1280" height="723" />
     </state>
-    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1613605530052" />
+    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1613690635997" />
   </component>
 </project>
