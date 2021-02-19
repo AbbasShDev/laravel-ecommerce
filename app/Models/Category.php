@@ -9,8 +9,8 @@ use Spatie\Sluggable\HasTranslatableSlug;
 use Spatie\Sluggable\SlugOptions;
 use Spatie\Translatable\HasTranslations;
 
-class Product extends Model {
-
+class Category extends Model
+{
     use HasFactory, HasTranslations, HasTranslatableSlug;
 
     protected $guarded = [];
@@ -21,12 +21,7 @@ class Product extends Model {
         return $this->getTranslations('slug')['en'];
     }
 
-    public function presentPrice()
-    {
-        return '$' . round($this->price / 100, 2);
-    }
-
-    public $translatable = ['name', 'details', 'slug', 'description'];
+    public $translatable = ['name', 'slug'];
 
     public function asJson($value)
     {
@@ -54,13 +49,8 @@ class Product extends Model {
         return MySlugHelper::slug($this->getSlugSourceString());
     }
 
-    public function getRouteKeyName()
+    public function products()
     {
-        return 'slug->en';
-    }
-
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
+        return $this->hasMany(Product::class);
     }
 }

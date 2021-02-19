@@ -24,9 +24,24 @@
   <component name="ChangeListManager">
     <list default="true" id="c7974f52-85f3-409d-8ba1-9706aab0ceb6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_16_003117_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_16_003117_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/ProductsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/ProductsTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +220,8 @@
       <workItem from="1613682635894" duration="123000" />
       <workItem from="1613687709780" duration="92000" />
       <workItem from="1613687840736" duration="271000" />
-      <workItem from="1613688146804" duration="11418000" />
+      <workItem from="1613688146804" duration="11582000" />
+      <workItem from="1613765980597" duration="4952000" />
     </task>
     <servers />
   </component>
@@ -229,17 +245,17 @@
       <screen x="0" y="25" width="1280" height="723" />
     </state>
     <state x="274" y="71" key="#Inspections/0.25.1280.723@0.25.1280.723" timestamp="1613698747059" />
-    <state x="379" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1613530930345">
+    <state x="379" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1613766561536">
       <screen x="0" y="25" width="1280" height="723" />
     </state>
-    <state x="379" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1280.723@0.25.1280.723" timestamp="1613530930345" />
+    <state x="379" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1280.723@0.25.1280.723" timestamp="1613766561536" />
     <state x="171" y="36" key="SettingsEditor" timestamp="1613689281291">
       <screen x="0" y="25" width="1280" height="723" />
     </state>
     <state x="171" y="36" key="SettingsEditor/0.25.1280.723@0.25.1280.723" timestamp="1613689281291" />
-    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup" timestamp="1613690635997">
+    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup" timestamp="1613766295820">
       <screen x="0" y="25" width="1280" height="723" />
     </state>
-    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1613690635997" />
+    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1613766295820" />
   </component>
 </project>
