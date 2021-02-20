@@ -23,24 +23,79 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7974f52-85f3-409d-8ba1-9706aab0ceb6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/sass/components/_pagination.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LandingPageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LandingPageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_16_003117_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_16_003117_create_products_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeders/ProductsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/ProductsTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/products/macbook-pro-9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/appliances-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/appliances-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/appliances-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/appliances-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/appliances-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/appliances-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/appliances-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/appliances-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/appliances-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/desktops-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/desktops-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/desktops-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/desktops-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/desktops-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/desktops-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/desktops-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/desktops-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/desktops-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/digital-cameras-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/digital-cameras-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/digital-cameras-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/digital-cameras-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/digital-cameras-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/digital-cameras-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/digital-cameras-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/digital-cameras-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/digital-cameras-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/laptops-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/laptops-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/laptops-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/laptops-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/laptops-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/laptops-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/laptops-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/laptops-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/laptops-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/phones-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/phones-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/phones-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/phones-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/phones-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/phones-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/phones-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/phones-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/phones-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/tablets-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/tablets-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/tablets-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/tablets-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/tablets-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/tablets-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/tablets-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/tablets-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/tablets-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/tvs-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/tvs-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/tvs-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/tvs-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/tvs-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/tvs-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/tvs-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/tvs-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/products/tvs-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/pages/shop.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/shop.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/landing-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/landing-page.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -221,7 +276,8 @@
       <workItem from="1613687709780" duration="92000" />
       <workItem from="1613687840736" duration="271000" />
       <workItem from="1613688146804" duration="11582000" />
-      <workItem from="1613765980597" duration="4952000" />
+      <workItem from="1613765980597" duration="5151000" />
+      <workItem from="1613775139989" duration="5658000" />
     </task>
     <servers />
   </component>
@@ -253,9 +309,9 @@
       <screen x="0" y="25" width="1280" height="723" />
     </state>
     <state x="171" y="36" key="SettingsEditor/0.25.1280.723@0.25.1280.723" timestamp="1613689281291" />
-    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup" timestamp="1613766295820">
+    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup" timestamp="1613781272629">
       <screen x="0" y="25" width="1280" height="723" />
     </state>
-    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1613766295820" />
+    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1613781272629" />
   </component>
 </project>
