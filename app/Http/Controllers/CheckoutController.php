@@ -8,12 +8,17 @@ use Cartalyst\Stripe\Laravel\Facades\Stripe;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
-class CheckoutController extends Controller
-{
+class CheckoutController extends Controller {
 
     public function index()
     {
-        return view('checkout');
+
+        return view('checkout', [
+            'discount'    => $this->getCheckoutNumbers()->get('discount'),
+            'newSubtotal' => $this->getCheckoutNumbers()->get('newSubtotal'),
+            'newTax'      => $this->getCheckoutNumbers()->get('newTax'),
+            'newTotal'    => $this->getCheckoutNumbers()->get('newTotal'),
+        ]);
     }
 
 
@@ -25,75 +30,49 @@ class CheckoutController extends Controller
 
     public function store(CheckoutRequest $request)
     {
-        $contents = Cart::content()->map(function ($item){
-            return $item->model->slug.','.$item->qty;
+        $contents = Cart::content()->map(function ($item) {
+            return $item->model->slug . ',' . $item->qty;
         })->values()->toJson();
 
         try {
             $charge = Stripe::charges()->create([
-                'amount' => Cart::total() / 100,
-                'currency' => 'USD',
-                'source' => $request->stripeToken,
-                'description' => 'Order',
-                'receipt_email' =>$request->email,
-                'metadata' => [
+                'amount'        => $this->getCheckoutNumbers()->get('newTotal') / 100,
+                'currency'      => 'USD',
+                'source'        => $request->stripeToken,
+                'description'   => 'Order',
+                'receipt_email' => $request->email,
+                'metadata'      => [
 //                    to be changed
-                    'content' => $contents,
+                    'content'  => $contents,
                     'quantity' => Cart::instance('default')->count(),
+                    'discount' => collect(session()->get('coupon'))->toJson()
                 ]
             ]);
 
             Cart::instance('default')->destroy();
+            session()->forget('coupon');
 
             return redirect()->route('confirmation.index')->with('success_message', 'Thank you! your payment has been successfully accepted.');
 
-        }catch (CardErrorException $e){
-            return redirect()->back()->withErrors('Error! '.$e->getMessage());
+        } catch (CardErrorException $e) {
+            return redirect()->back()->withErrors('Error! ' . $e->getMessage());
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    private function getCheckoutNumbers()
     {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+        $tax = config('cart.tax') / 100;
+        $discount = session()->get('coupon')['discount'] ?? 0;
+        $newSubtotal = (Cart::subtotal() - $discount);
+        $newTax = $newSubtotal * $tax;
+        $newTotal = $newSubtotal * (1 + $tax);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return collect([
+            'discount'    => $discount,
+            'newSubtotal' => $newSubtotal,
+            'newTax'      => $newTax,
+            'newTotal'    => $newTotal,
+        ]);
     }
 }

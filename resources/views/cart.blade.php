@@ -40,7 +40,7 @@
                         <div class="cart-table-row">
                             <div class="cart-table-row-left">
                                 <a href="{{ route('shop.show', $item->model->slug) }}"><img
-                                        src="{{ asset('img/products/'.$item->model->slug.'.png') }}" alt="item"
+                                        src="{{ asset('img/products/'.$item->model->slug.'.jpg') }}" alt="item"
                                         class="cart-table-img"></a>
                                 <div class="cart-item-details">
                                     <div class="cart-table-item"><a
@@ -86,15 +86,6 @@
                     <div class="spacer"></div>
                 </div>
             @endif
-
-            <a href="#" class="have-code">Have a Code?</a>
-
-            <div class="have-code-container">
-                <form action="#">
-                    <input type="text">
-                    <button type="submit" class="button button-plain">Apply</button>
-                </form>
-            </div> <!-- end have-code-container -->
 
             <div class="cart-totals">
                 <div class="cart-totals-left">

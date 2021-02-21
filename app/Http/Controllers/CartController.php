@@ -9,8 +9,10 @@ use Illuminate\Support\Facades\Validator;
 
 class CartController extends Controller {
 
+
     public function index()
     {
+
         $mightAlsoLike = Product::inRandomOrder()->take(4)->get();
 
         return view('cart', compact('mightAlsoLike'));
