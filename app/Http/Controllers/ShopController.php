@@ -16,10 +16,10 @@ class ShopController extends Controller
 
         if (request()->category){
             $products = Product::with('category')->whereHas('category', function ($query){
-                $query->where('slug->en', request()->category);
+                $query->where('slug', request()->category);
             });
 
-            $categoryName = optional(Category::where('slug->en', request()->category)->first())->name;
+            $categoryName = optional(Category::where('slug', request()->category)->first())->name;
         }else{
             $products = Product::where('featured', true);
             $categoryName = 'Featured';

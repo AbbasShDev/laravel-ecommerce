@@ -16,53 +16,33 @@ class CategoriesTableSeeder extends Seeder
     {
 
         Category::create([
-            'name' => [
-                'en' => 'Laptops',
-                'ar'=> 'لابتوبات',
-            ],
+            'name' => 'Laptops',
         ]);
 
         Category::create([
-            'name' => [
-                'en' => 'Desktops',
-                'ar'=> 'كمبيوترات مكتبية',
-            ],
+            'name' => 'Desktops'
         ]);
 
         Category::create([
-            'name' => [
-                'en' => 'Phones',
-                'ar'=> 'جوالات',
-            ],
+            'name' => 'Phones'
         ]);
 
         Category::create([
-            'name' => [
-                'en' => 'Tablets',
-                'ar'=> 'تابلت',
-            ],
+            'name' => 'Tablets'
         ]);
 
         Category::create([
-            'name' => [
-                'en' => 'TVs',
-                'ar'=> 'تلفزيونات',
-            ],
+            'name' => 'TVs'
         ]);
 
         Category::create([
-            'name' => [
-                'en' => 'Digital cameras',
-                'ar'=> 'كاميرات',
-            ],
+            'name' => 'Digital cameras'
         ]);
 
         Category::create([
-            'name' => [
-                'en' => 'Appliances',
-                'ar'=> 'الاجهزة المنزلية',
-            ],
+            'name' => 'Appliances'
         ]);
+
 
 
     }

@@ -26,7 +26,7 @@
             @foreach($categories as $category)
                     <li class="{{ request()->category ==  $category->slug ? 'active' : ''}}">
                         <a href="{{ route('shop.index', ['category' =>$category->slug]) }}">
-                            {{ $category->name }}
+                            {{ $category->getTranslatedAttribute('name') }}
                         </a>
                     </li>
                 @endforeach

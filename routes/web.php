@@ -10,9 +10,12 @@ use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
 
 
-
 Route::group(['prefix' => app()->getLocale()], function (){
 
+    Route::group(['prefix' => 'admin'], function () {
+        Voyager::routes();
+    });
+    
     Route::get('/',[LandingPageController::class, 'index'])->name('landing-page');
 
     Route::get('/shop',[ShopController::class, 'index'])->name('shop.index');
@@ -38,3 +41,4 @@ Route::group(['prefix' => app()->getLocale()], function (){
 
 //    Route::view('/thankyou', 'thankyou');
 });
+
