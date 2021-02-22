@@ -18,6 +18,10 @@ Route::group(['prefix' => app()->getLocale()], function (){
 
     Auth::routes();
 
+    Route::get('/home',function (){
+        return view('home');
+    });
+
     Route::get('/',[LandingPageController::class, 'index'])->name('landing-page');
 
     Route::get('/shop',[ShopController::class, 'index'])->name('shop.index');

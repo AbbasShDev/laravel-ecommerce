@@ -1,17 +1,6 @@
 
 <ul>
-    @foreach($items as $menu_item)
-        <li>
-            <a href="{{ $menu_item->link() }}">
-                {{ $menu_item->title }}
-                @if($menu_item->title === 'cart')
-                    @if(Cart::count() > 0)
-                        <span class="cart-count">
-                        <span>{{ Cart::count() }}</span>
-                    </span>
-                    @endif
-                @endif
-            </a>
-        </li>
-    @endforeach
+    <li><a href="{{ route('shop.index') }}">shop</a></li>
+    <li><a href="#">about</a></li>
+    <li><a href="#">blog</a></li>
 </ul>
