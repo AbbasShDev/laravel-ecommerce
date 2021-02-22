@@ -16,7 +16,7 @@
         </div>
     </div> <!-- end breadcrumbs -->
 
-    <div class="cart-section container">
+    <div class="cart-section main-container">
         <div>
             @if (session()->has('success_message'))
                 <div class="alert alert-success">

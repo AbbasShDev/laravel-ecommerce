@@ -15,7 +15,9 @@ Route::group(['prefix' => app()->getLocale()], function (){
     Route::group(['prefix' => 'admin'], function () {
         Voyager::routes();
     });
-    
+
+    Auth::routes();
+
     Route::get('/',[LandingPageController::class, 'index'])->name('landing-page');
 
     Route::get('/shop',[ShopController::class, 'index'])->name('shop.index');

@@ -142,6 +142,10 @@ h2 {
   text-align: center;
 }
 
+.main-container {
+  padding: 0px 30px !important;
+}
+
 .spacer {
   margin-bottom: 30px;
 }
@@ -225,7 +229,7 @@ h2 {
 }
 
 .might-like-section {
-  padding: 40px 0 70px;
+  padding: 40px 30px 70px 30px;
   background: #F5F5F5;
 }
 .might-like-section h2 {
@@ -515,7 +519,7 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 120px;
-  padding: 100px 0 120px;
+  padding: 100px 30px 120px 30px;
 }
 .product-section .selected {
   border: 1px solid #979797;

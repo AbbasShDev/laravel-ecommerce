@@ -16,7 +16,7 @@
         </div>
     </div> <!-- end breadcrumbs -->
 
-    <div class="products-section container">
+    <div class="products-section container main-container">
         <div class="sidebar">
             <h3>By Category</h3>
             <ul>

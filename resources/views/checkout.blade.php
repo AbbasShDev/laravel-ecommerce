@@ -8,7 +8,7 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="container main-container">
         <div class="spacer"></div>
         @if (session()->has('success_message'))
             <div class="alert alert-success">
