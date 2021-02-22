@@ -104,11 +104,11 @@
                     @foreach(Cart::content() as $item)
                         <div class="checkout-table-row">
                             <div class="checkout-table-row-left">
-                                <img src="{{ asset('img/products/'.$item->model->slug.'.jpg') }}" alt="item"
+                                <img src="{{ presentImage($item->model->image) }}" alt="item"
                                      class="checkout-table-img">
                                 <div class="checkout-item-details">
-                                    <div class="checkout-table-item">{{ $item->model->name }}</div>
-                                    <div class="checkout-table-description">{{ $item->model->details }}</div>
+                                    <div class="checkout-table-item">{{ $item->model->getTranslatedAttribute('name') }}</div>
+                                    <div class="checkout-table-description">{{ $item->model->getTranslatedAttribute('details') }}</div>
                                     <div class="checkout-table-price">{{ $item->model->presentPrice() }}</div>
                                 </div>
                             </div> <!-- end checkout-table -->

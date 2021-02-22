@@ -22,14 +22,23 @@
 
     <div class="product-section container">
 
-        <div class="product-section-image">
-            <img src="{{ asset('img/products/'.$product->slug.'.jpg') }}" alt="product">
+        <div>
+            <div class="product-section-image">
+                <img src="{{presentImage($product->image) }}" alt="product">
+            </div>
+            <div>
+                @if($product->images)
+                    @foreach(json_decode($product->images, true) as $image)
+                        <img src="{{presentImage($image) }}" alt="product">
+                    @endforeach
+                @endif
+            </div>
         </div>
         <div class="product-section-information">
-            <h1 class="product-section-title">{{ $product->name }}</h1>
-            <div class="product-section-subtitle">{{ $product->details }}</div>
+            <h1 class="product-section-title">{{ $product->getTranslatedAttribute('name') }}</h1>
+            <div class="product-section-subtitle">{{ $product->getTranslatedAttribute('details') }}</div>
             <div class="product-section-price">{{ $product->presentPrice() }}</div>
-            <p>{{ $product->description }}</p>
+            <p>{{ $product->getTranslatedAttribute('details') }}</p>
 
 {{--            <a href="#" class="button">Add to Cart</a>--}}
             <form action="{{ route('cart.store', $product->slug) }}" method="post">

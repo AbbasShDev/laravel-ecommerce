@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
-use Illuminate\Http\Request;
 
 class ShopController extends Controller
 {
@@ -19,7 +18,7 @@ class ShopController extends Controller
                 $query->where('slug', request()->category);
             });
 
-            $categoryName = optional(Category::where('slug', request()->category)->first())->name;
+            $categoryName = optional(Category::where('slug', request()->category)->first())->getTranslatedAttribute('name');
         }else{
             $products = Product::where('featured', true);
             $categoryName = 'Featured';
