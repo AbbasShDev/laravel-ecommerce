@@ -39,7 +39,7 @@ Route::group(['prefix' => app()->getLocale()], function (){
     Route::post('/coupon', [CouponController::class,'store'])->name('coupon.store');
     Route::delete('/coupon', [CouponController::class,'destroy'])->name('coupon.destroy');
 
-    Route::get('/checkout',[CheckoutController::class, 'index'])->name('checkout.index');
+    Route::get('/checkout',[CheckoutController::class, 'index'])->name('checkout.index')->middleware('auth');
     Route::post('/checkout',[CheckoutController::class, 'store'])->name('checkout.store');
 
     Route::get('/thankyou',[ConfirmationController::class, 'index'])->name('confirmation.index');

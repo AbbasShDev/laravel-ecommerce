@@ -17,7 +17,7 @@ class SetLocale
     public function handle(Request $request, Closure $next)
     {
 
-        if ( is_null($request->segment(1)) || !array_key_exists($request->segment(1) , config('locales.languages'))) {
+        if ( is_null($request->segment(1)) || ! array_key_exists($request->segment(1) , config('locales.languages'))) {
 
             return redirect()->to(config('locales.fallback_locale'));
         }

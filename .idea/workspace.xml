@@ -23,22 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7974f52-85f3-409d-8ba1-9706aab0ceb6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/partials/menus/main-right.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Middleware/SetLocale.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/SetLocale.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/layout/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/layout/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/pages/landing-page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/landing-page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/landing-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/landing-page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/menus/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/menus/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/checkout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -244,7 +233,8 @@
       <workItem from="1613861605393" duration="5857000" />
       <workItem from="1613901575615" duration="41000" />
       <workItem from="1613901940612" duration="4490000" />
-      <workItem from="1613948164729" duration="17101000" />
+      <workItem from="1613948164729" duration="17219000" />
+      <workItem from="1614038382018" duration="2092000" />
     </task>
     <servers />
   </component>
@@ -280,9 +270,9 @@
       <screen x="0" y="25" width="1280" height="723" />
     </state>
     <state x="171" y="36" key="SettingsEditor/0.25.1280.723@0.25.1280.723" timestamp="1613689281291" />
-    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup" timestamp="1613987767249">
+    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup" timestamp="1614040621405">
       <screen x="0" y="25" width="1280" height="723" />
     </state>
-    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1613987767249" />
+    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1614040621405" />
   </component>
 </project>
