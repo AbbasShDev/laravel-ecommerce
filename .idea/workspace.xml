@@ -23,10 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7974f52-85f3-409d-8ba1-9706aab0ceb6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Voyager/ProductsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/vendor/voyager/products/browse.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/vendor/voyager/products/edit-add.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,9 +179,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/partials/menus" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -235,7 +234,16 @@
       <workItem from="1613901940612" duration="4490000" />
       <workItem from="1613948164729" duration="17219000" />
       <workItem from="1614038382018" duration="4267000" />
-      <workItem from="1614056783893" duration="2863000" />
+      <workItem from="1614056783893" duration="3145000" />
+      <workItem from="1614069081200" duration="37000" />
+      <workItem from="1614069225075" duration="114000" />
+      <workItem from="1614069941889" duration="8000" />
+      <workItem from="1614070033773" duration="14000" />
+      <workItem from="1614070052111" duration="379000" />
+      <workItem from="1614070480522" duration="44000" />
+      <workItem from="1614070561811" duration="24000" />
+      <workItem from="1614070588787" duration="116000" />
+      <workItem from="1614070729850" duration="3263000" />
     </task>
     <servers />
   </component>
@@ -267,13 +275,17 @@
       <screen x="0" y="25" width="1280" height="723" />
     </state>
     <state x="379" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1280.723@0.25.1280.723" timestamp="1613951007049" />
-    <state x="171" y="36" key="SettingsEditor" timestamp="1613689281291">
+    <state x="124" y="75" width="1032" height="672" key="Registry" timestamp="1614070583812">
       <screen x="0" y="25" width="1280" height="723" />
     </state>
-    <state x="171" y="36" key="SettingsEditor/0.25.1280.723@0.25.1280.723" timestamp="1613689281291" />
-    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup" timestamp="1614040621405">
+    <state x="124" y="75" width="1032" height="672" key="Registry/0.25.1280.723@0.25.1280.723" timestamp="1614070583812" />
+    <state x="171" y="25" width="937" height="723" key="SettingsEditor" timestamp="1614070706213">
       <screen x="0" y="25" width="1280" height="723" />
     </state>
-    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1614040621405" />
+    <state x="171" y="25" width="937" height="723" key="SettingsEditor/0.25.1280.723@0.25.1280.723" timestamp="1614070706213" />
+    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup" timestamp="1614073110773">
+      <screen x="0" y="25" width="1280" height="723" />
+    </state>
+    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1614073110773" />
   </component>
 </project>
