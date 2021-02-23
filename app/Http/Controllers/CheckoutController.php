@@ -13,6 +13,14 @@ class CheckoutController extends Controller {
     public function index()
     {
 
+        if (Cart::instance('default')->count() == 0){
+            return redirect()->route('shop.index');
+        }
+
+        if (auth()->user() && request()->is(app()->getLocale().'/guest-checkout')){
+            return redirect()->route('checkout.index');
+        }
+
         return view('checkout', [
             'discount'    => $this->getCheckoutNumbers()->get('discount'),
             'newSubtotal' => $this->getCheckoutNumbers()->get('newSubtotal'),

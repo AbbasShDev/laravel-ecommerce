@@ -42,6 +42,8 @@ Route::group(['prefix' => app()->getLocale()], function (){
     Route::get('/checkout',[CheckoutController::class, 'index'])->name('checkout.index')->middleware('auth');
     Route::post('/checkout',[CheckoutController::class, 'store'])->name('checkout.store');
 
+    Route::get('/guest-checkout',[CheckoutController::class, 'index'])->name('questCheckout.index');
+
     Route::get('/thankyou',[ConfirmationController::class, 'index'])->name('confirmation.index');
 
 

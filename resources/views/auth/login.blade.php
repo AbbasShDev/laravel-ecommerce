@@ -60,6 +60,7 @@
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
+                                        <a href="{{ route('questCheckout.index') }}">Checkout as quest</a>
                                     </a>
                                 @endif
                             </div>

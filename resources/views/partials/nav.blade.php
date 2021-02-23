@@ -1,6 +1,6 @@
 <header>
     <div class="top-nav container">
-        @if (! request()->is('checkout'))
+        @if (!  ( request()->is(app()->getLocale().'/checkout')|| request()->is(app()->getLocale().'/guest-checkout')) )
             <div class="top-nav-left">
                 <div class="logo">Ecommerce</div>
                 @include('partials.menus.main')
