@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CheckoutRequest;
+use App\Mail\OrderPlaced;
 use App\Models\Order;
-use App\Models\OrderProduct;
 use Cartalyst\Stripe\Exception\CardErrorException;
 use Cartalyst\Stripe\Laravel\Facades\Stripe;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class CheckoutController extends Controller {
 
@@ -60,9 +61,12 @@ class CheckoutController extends Controller {
             ]);
 
 
-            $this->addToOrdersTable($request);
+            $order = $this->addToOrdersTable($request);
             Cart::instance('default')->destroy();
             session()->forget('coupon');
+
+
+            Mail::send(new OrderPlaced($order));
 
             return redirect()->route('confirmation.index')->with('success_message', 'Thank you! your payment has been successfully accepted.');
 
@@ -117,12 +121,9 @@ class CheckoutController extends Controller {
 
         //insert into pivot table
         foreach (Cart::content() as $item) {
-            OrderProduct::create([
-                'order_id'   => $order->id,
-                'product_id' => $item->model->id,
-                'quantity'   => $item->qty,
-            ]);
+            $order->products()->attach($item->model->id, ['quantity' => $item->qty] );
         }
 
+        return $order;
     }
 }

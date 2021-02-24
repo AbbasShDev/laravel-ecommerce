@@ -23,9 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7974f52-85f3-409d-8ba1-9706aab0ceb6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/email/orders/placed.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Voyager/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Voyager/OrdersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/voyager/orders/browse.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/voyager/orders/browse.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/voyager/orders/read.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/voyager/orders/read.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,24 +184,24 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/Voyager" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Voyager" />
+      <recent name="$PROJECT_DIR$/resources/views/partials/menus" />
+      <recent name="$PROJECT_DIR$/app/Admin/Widgets" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/resources/views" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Voyager" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers" />
       <recent name="$PROJECT_DIR$/database/seeders" />
       <recent name="$PROJECT_DIR$/database/seeds" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/partials/menus" />
-      <recent name="$PROJECT_DIR$/app/Admin/Widgets" />
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/resources/views" />
-      <recent name="$PROJECT_DIR$/resources" />
     </key>
   </component>
   <component name="RunManager">
@@ -243,7 +248,8 @@
       <workItem from="1614070480522" duration="44000" />
       <workItem from="1614070561811" duration="24000" />
       <workItem from="1614070588787" duration="116000" />
-      <workItem from="1614070729850" duration="3263000" />
+      <workItem from="1614070729850" duration="3307000" />
+      <workItem from="1614127662588" duration="8143000" />
     </task>
     <servers />
   </component>
@@ -279,13 +285,13 @@
       <screen x="0" y="25" width="1280" height="723" />
     </state>
     <state x="124" y="75" width="1032" height="672" key="Registry/0.25.1280.723@0.25.1280.723" timestamp="1614070583812" />
-    <state x="171" y="25" width="937" height="723" key="SettingsEditor" timestamp="1614070706213">
+    <state x="112" y="25" width="937" height="723" key="SettingsEditor" timestamp="1614143431954">
       <screen x="0" y="25" width="1280" height="723" />
     </state>
-    <state x="171" y="25" width="937" height="723" key="SettingsEditor/0.25.1280.723@0.25.1280.723" timestamp="1614070706213" />
-    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup" timestamp="1614073110773">
+    <state x="112" y="25" width="937" height="723" key="SettingsEditor/0.25.1280.723@0.25.1280.723" timestamp="1614143431954" />
+    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup" timestamp="1614145299251">
       <screen x="0" y="25" width="1280" height="723" />
     </state>
-    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1614073110773" />
+    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1614145299251" />
   </component>
 </project>
