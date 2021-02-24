@@ -12,6 +12,11 @@ header.with-background {
         .logo {
             font-weight: bold;
             font-size: 28px;
+
+            img {
+                display: flex;
+                width: 220px;
+            }
         }
 
         ul {
@@ -123,10 +128,21 @@ header {
 
     .top-nav-right{
         display: flex;
+        align-items: center;
     }
 
     .top-nav-left{
         display: flex;
         align-items: center;
+
+        .logo {
+            font-weight: bold;
+            font-size: 28px;
+
+            img {
+                display: flex;
+                width: 220px;
+            }
+        }
     }
 }

@@ -359,6 +359,10 @@ header.with-background .top-nav .logo {
   font-weight: bold;
   font-size: 28px;
 }
+header.with-background .top-nav .logo img {
+  display: flex;
+  width: 220px;
+}
 header.with-background .top-nav ul a {
   color: #e9e9e9;
 }
@@ -436,10 +440,19 @@ header .top-nav ul .cart-count span {
 }
 header .top-nav-right {
   display: flex;
+  align-items: center;
 }
 header .top-nav-left {
   display: flex;
   align-items: center;
+}
+header .top-nav-left .logo {
+  font-weight: bold;
+  font-size: 28px;
+}
+header .top-nav-left .logo img {
+  display: flex;
+  width: 220px;
 }
 
 footer {

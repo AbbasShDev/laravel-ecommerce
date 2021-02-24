@@ -2,7 +2,7 @@
     <div class="top-nav container">
         @if (!  ( request()->is(app()->getLocale().'/checkout')|| request()->is(app()->getLocale().'/guest-checkout')) )
             <div class="top-nav-left">
-                <div class="logo">Ecommerce</div>
+                <div class="logo"><a href="{{ route('landing-page') }}"><img src="{{ asset('img/logo-white.png') }}" alt=""></a></div>
                 @include('partials.menus.main')
             </div>
             <div class="top-nav-right">

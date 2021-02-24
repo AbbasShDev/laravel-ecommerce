@@ -289,8 +289,11 @@
                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                         <tr style="border-collapse:collapse">
                                                             <td class="es-m-txt-c" align="left"
-                                                                style="padding:0;Margin:0"><h1
-                                                                    style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;font-size:36px;font-style:normal;font-weight:bold;color:#E9E9E9">{{ config('app.name') }}</h1>
+                                                                style="padding:0;Margin:0"><a
+                                                                    href="{{ route('landing-page') }}"
+                                                                    style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;font-size:36px;font-style:normal;font-weight:bold;color:#E9E9E9; width: 250px !important;">
+                                                                    <img src="{{ asset('img/logo-white.png') }}" alt="logo" width="250" style="width: 250px !important;">
+                                                                </a>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -638,8 +641,8 @@
                                                             <td align="center"
                                                                 style="padding:0;Margin:0;padding-bottom:15px;font-size:0">
                                                                 <img
-                                                                    src="https://ndkhee.stripocdn.email/content/guids/CABINET_75694a6fc3c4633b3ee8e3c750851c02/images/12331522050090454.png"
-                                                                    alt="Beretun logo"
+                                                                    src="{{ asset('img/square-logo.png') }}"
+                                                                    alt=" logo"
                                                                     style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
                                                                     title="Beretun logo" width="37"></td>
                                                         </tr>

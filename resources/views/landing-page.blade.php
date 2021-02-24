@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel Ecommerce Example</title>
+        <title>{{ config('app.name') }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat%7CRoboto:300,400,700" rel="stylesheet">
@@ -20,7 +20,7 @@
         <header class="with-background">
             <div class="top-nav container">
                 <div class="top-nav-left">
-                    <div class="logo">Ecommerce</div>
+                    <div class="logo"><a href="{{ route('landing-page') }}"><img src="{{ asset('img/logo-white.png') }}" alt="logo"></a></div>
                     @include('partials.menus.main')
                 </div>
                 <div class="top-nav-right">
