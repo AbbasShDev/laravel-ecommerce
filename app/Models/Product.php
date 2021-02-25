@@ -4,35 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Nicolaslopezj\Searchable\SearchableTrait;
+use Laravel\Scout\Searchable;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 use TCG\Voyager\Traits\Translatable;
 
 class Product extends Model {
 
-    use HasFactory, Translatable, HasSlug, SearchableTrait;
+    use HasFactory, Translatable, HasSlug, Searchable;
 
-
-    /**
-     * Searchable rules.
-     *
-     * @var array
-     */
-    protected $searchable = [
-        /**
-         * Columns and their priority in search results.
-         * Columns with higher values are more important.
-         * Columns with equal values have equal importance.
-         *
-         * @var array
-         */
-        'columns' => [
-            'products.name' => 10,
-            'products.details' => 10,
-            'products.description' => 2,
-        ],
-    ];
 
     protected $guarded = [];
     protected $translatable = ['name', 'details', 'description'];
@@ -65,5 +45,41 @@ class Product extends Model {
     public function order()
     {
         return $this->belongsToMany(Order::class);
+    }
+
+    /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+    public function toSearchableArray()
+    {
+
+        $collection = collect([
+            'slug' => $this->slug,
+            'image' => $this->image,
+            'price' => $this->price,
+            'en'    => [
+                'name'        => $this->name,
+                'details'     => $this->details,
+                'description' => $this->description,
+            ]
+        ]);
+
+        $trans = $this->translate('ar');
+
+        $collection->put(
+            'ar', [
+            'name'        => $trans->name,
+            'details'     => $trans->details,
+            'description' => $trans->description,
+
+        ]);
+
+
+        $array = $collection->toArray();
+
+        return $array;
+
     }
 }
