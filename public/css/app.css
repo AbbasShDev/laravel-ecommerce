@@ -169,6 +169,11 @@ h2 {
   font-size: 14px;
   color: #545454;
 }
+.breadcrumbs .breadcrumbs-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .button {
   border: 1px solid #212121;
@@ -342,6 +347,24 @@ form button[type=submit] {
   color: #23527c;
   background-color: #eee;
   border-color: #ddd;
+}
+
+.search-form {
+  position: relative;
+}
+
+.search-icon {
+  color: gray;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.search-box {
+  padding: 10px 12px 10px 34px;
+  width: 400px;
+  max-width: 100%;
+  font-size: 14px;
 }
 
 header.with-background {
@@ -801,4 +824,36 @@ h1.checkout-heading {
 }
 .thank-you-section h1 {
   margin-bottom: 10px;
+}
+
+.search-header {
+  padding: 20px 0px;
+}
+
+.products-search {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 60px 30px;
+}
+.products-search .product {
+  display: flex;
+}
+.products-search .product img {
+  border: 1px solid lightgray;
+}
+.products-search .product .product-info {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  text-align: initial;
+  padding-left: 20px;
+}
+.products-search .product-price {
+  color: #919191;
+}
+
+.products-header {
+  display: flex;
+  justify-content: space-between;
 }

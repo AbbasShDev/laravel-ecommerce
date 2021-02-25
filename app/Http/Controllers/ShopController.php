@@ -42,4 +42,14 @@ class ShopController extends Controller
         return view('product', compact('product', 'mightAlsoLike'));
     }
 
+    public function search()
+    {
+
+        $query = request()->input('query');
+
+        $products = Product::search($query)->paginate(10);
+
+        return view('search-result', compact('products'));
+    }
+
 }

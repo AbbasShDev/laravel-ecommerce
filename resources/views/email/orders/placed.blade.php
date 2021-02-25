@@ -8,7 +8,7 @@
     <meta name="x-apple-disable-message-reformatting">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="telephone=no" name="format-detection">
-    <title>New email template 2021-02-24</title>
+    <title>Order Confirmation #{{ $order->id }}</title>
     <!--[if (mso 16)]>
     <style type="text/css">
         a {
@@ -274,7 +274,7 @@
                                    cellspacing="0" cellpadding="0" bgcolor="#044767" align="center">
                                 <tr style="border-collapse:collapse">
                                     <td align="left"
-                                        style="Margin:0;padding-top:35px;padding-bottom:35px;padding-left:35px;padding-right:35px">
+                                        style="Margin:0;padding-top:35px;padding-bottom:35px;padding-left:35px;padding-right:35px;display:flex;justify-content:center;">
                                         <!--[if mso]>
                                         <table style="width:530px" cellpadding="0" cellspacing="0">
                                             <tr>
@@ -288,7 +288,7 @@
                                                            role="presentation"
                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                         <tr style="border-collapse:collapse">
-                                                            <td class="es-m-txt-c" align="left"
+                                                            <td class="es-m-txt-c" align="center"
                                                                 style="padding:0;Margin:0"><a
                                                                     href="{{ route('landing-page') }}"
                                                                     style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;font-size:36px;font-style:normal;font-weight:bold;color:#E9E9E9; width: 250px !important;">
@@ -301,62 +301,7 @@
                                             </tr>
                                         </table>
                                         <!--[if mso]></td>
-                                        <td style="width:20px"></td>
-                                        <td style="width:170px" valign="top"><![endif]-->
-                                        <table cellspacing="0" cellpadding="0" align="right"
-                                               style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                            <tr class="es-hidden" style="border-collapse:collapse">
-                                                <td class="es-m-p20b" align="left"
-                                                    style="padding:0;Margin:0;width:170px">
-                                                    <table width="100%" cellspacing="0" cellpadding="0"
-                                                           role="presentation"
-                                                           style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                        <tr style="border-collapse:collapse">
-                                                            <td align="center"
-                                                                style="padding:0;Margin:0;padding-bottom:5px;font-size:0">
-                                                            </td>
-                                                        </tr>
-                                                        <tr style="border-collapse:collapse">
-                                                            <td style="padding:0;Margin:0">
-                                                                <table cellspacing="0" cellpadding="0" align="right"
-                                                                       role="presentation"
-                                                                       style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                                    <tr style="border-collapse:collapse">
-                                                                        <td align="left" style="padding:0;Margin:0">
-                                                                            <table width="100%" cellspacing="0"
-                                                                                   cellpadding="0" role="presentation"
-                                                                                   style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                                                <tr style="border-collapse:collapse">
-                                                                                    <td align="right"
-                                                                                        style="padding:0;Margin:0"><p
-                                                                                            style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:21px;color:#FFFFFF">
-                                                                                            <a target="_blank"
-                                                                                               style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;font-size:18px;text-decoration:none;color:#FFFFFF;line-height:22px"
-                                                                                               href="{{ route('shop.index') }}">Shop</a>
-                                                                                        </p></td>
-                                                                                </tr>
-                                                                            </table>
-                                                                        </td>
-                                                                        <td valign="top" align="left"
-                                                                            style="padding:0;Margin:0;padding-left:10px;font-size:0">
-                                                                            <a href=" {{ route('shop.index') }}"
-                                                                               target="_blank"
-                                                                               style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;font-size:14px;text-decoration:none;color:#FFFFFF"><img
-                                                                                    src="data:image/png;base64,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"
-                                                                                    alt
-                                                                                    style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
-                                                                                    width="35"
-                                                                                >
-                                                                            </a></td>
-                                                                    </tr>
-                                                                </table>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        <!--[if mso]></td></tr></table><![endif]--></td>
+                                        </tr></table><![endif]--></td>
                                 </tr>
                             </table>
                         </td>
@@ -439,8 +384,7 @@
                                                                     cellpadding="1" border="0" align="left"
                                                                     role="presentation">
                                                                     <tr style="border-collapse:collapse">
-                                                                        <td width="80%" style="padding:0;Margin:0"><h4 style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif">Order Confirmation #</h4></td>
-                                                                        <td width="20%" style="padding:0;Margin:0"><h4 style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif">{{ $order->id }}</h4></td>
+                                                                        <td width="80%" style="padding:0;Margin:0"><h4 style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif">Order Confirmation #{{ $order->id }}</h4></td>
                                                                     </tr>
                                                                 </table>
                                                             </td>
@@ -472,7 +416,10 @@
                                                                         <tr style="border-collapse:collapse">
                                                                             <td style="padding:5px 10px 5px 0;Margin:0"
                                                                                 width="80%" align="left"><p
-                                                                                    style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333">{{ $product->name }} ( X{{$product->pivot->quantity}})</p></td>
+                                                                                    style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333">{{ $product->name }}</p></td>
+                                                                            <td style="padding:5px 10px 5px 0;Margin:0"
+                                                                                width="80%" align="left"><p
+                                                                                    style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333">X {{$product->pivot->quantity}}</p></td>
                                                                             <td style="padding:5px 0;Margin:0"
                                                                                 width="20%" align="left"><p
                                                                                     style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333">{{ presentPrice($product->price * $product->pivot->quantity) }}</p>
@@ -606,11 +553,13 @@
                                                             <td align="left"
                                                                 style="padding:0;Margin:0;padding-bottom:15px"><h4
                                                                     style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif">
-                                                                    Estimated Delivery Date<br></h4></td>
+                                                                    Delivery status<br></h4></td>
                                                         </tr>
-                                                        {{--                                                        <tr style="border-collapse:collapse">--}}
-                                                        {{--                                                            <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333">January 1st, 2016</p></td>--}}
-                                                        {{--                                                        </tr>--}}
+                                                        <tr style="border-collapse:collapse">
+                                                            <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#447C46">
+                                                                    In progress...
+                                                                </p></td>
+                                                        </tr>
                                                     </table>
                                                 </td>
                                             </tr>
