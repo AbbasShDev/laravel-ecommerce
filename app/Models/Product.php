@@ -54,32 +54,10 @@ class Product extends Model {
      */
     public function toSearchableArray()
     {
+        $array = $this->toArray();
 
-        $collection = collect([
-            'slug' => $this->slug,
-            'image' => $this->image,
-            'price' => $this->price,
-            'en'    => [
-                'name'        => $this->name,
-                'details'     => $this->details,
-                'description' => $this->description,
-            ]
-        ]);
+        $transilation = $this->translations;
 
-        $trans = $this->translate('ar');
-
-        $collection->put(
-            'ar', [
-            'name'        => $trans->name,
-            'details'     => $trans->details,
-            'description' => $trans->description,
-
-        ]);
-
-
-        $array = $collection->toArray();
-
-        return $array;
-
+        return array_merge($array, $transilation->toArray());
     }
 }
