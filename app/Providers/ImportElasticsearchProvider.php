@@ -2,13 +2,13 @@
 
 namespace App\Providers;
 
-use App\Search\ProductTrans;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Scout\Console\ImportCommand;
 
-class AppServiceProvider extends ServiceProvider {
-
+class ImportElasticsearchProvider extends ServiceProvider
+{
     /**
-     * Register any application services.
+     * Register services.
      *
      * @return void
      */
@@ -18,12 +18,14 @@ class AppServiceProvider extends ServiceProvider {
     }
 
     /**
-     * Bootstrap any application services.
+     * Bootstrap services.
      *
      * @return void
      */
     public function boot()
     {
-        app()->setLocale(request()->segment(1));
+        $this->commands([
+            ImportCommand::class,
+        ]);
     }
 }

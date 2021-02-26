@@ -36,7 +36,6 @@ class ShopController extends Controller {
 
     public function show(Product $product)
     {
-
         $mightAlsoLike = Product::where('id', '!=', $product->id)->inRandomOrder()->take(4)->get();
 
         return view('product', compact('product', 'mightAlsoLike'));

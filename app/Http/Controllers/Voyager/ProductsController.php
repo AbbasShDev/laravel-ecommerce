@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Voyager;
 use Exception;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use TCG\Voyager\Database\Schema\SchemaManager;
@@ -82,6 +83,7 @@ class ProductsController extends VoyagerBaseController {
         $data = $this->insertUpdateData($request, $slug, $dataType->addRows, new $dataType->model_name());
 
         event(new BreadDataAdded($dataType, $data));
+        Artisan::call('scout:import', ["model" => "\App\\Models\\Product"]);
 
         if ( ! $request->has('_tagging')) {
             if (auth()->user()->can('browse', $data)) {

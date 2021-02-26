@@ -25,7 +25,7 @@ class Product extends Model {
     /**
      * Get the options for generating the slug.
      */
-    public function getSlugOptions() : SlugOptions
+    public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
             ->generateSlugsFrom('name')
@@ -48,16 +48,40 @@ class Product extends Model {
     }
 
     /**
+     * Load translations relation.
+     *
+     * @return mixed
+     */
+    public function translations()
+    {
+        return $this->hasMany(Translation::class, 'foreign_key', $this->getKeyName())
+            ->where('table_name', $this->getTable())
+            ->whereIn('locale', config('voyager.multilingual.locales', []));
+    }
+
+    /**
      * Get the indexable data array for the model.
      *
      * @return array
      */
     public function toSearchableArray()
     {
-        $array = $this->toArray();
 
-        $transilation = $this->translations;
-
-        return array_merge($array, $transilation->toArray());
+        return [
+            'slug'  => $this->slug,
+            'image' => $this->image,
+            'price' => $this->price,
+            'en'    => [
+                'name'        => $this->name,
+                'details'     => $this->details,
+                'description' => $this->description,
+            ],
+            'ar'    => [
+                'name'        => $this->translate('ar')->name,
+                'details'     => $this->translate('ar')->details,
+                'description' => $this->translate('ar')->description,
+            ],
+        ];
     }
+
 }

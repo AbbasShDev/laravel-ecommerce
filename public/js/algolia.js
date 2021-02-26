@@ -14,26 +14,25 @@
         },
         {
             source: autocomplete.sources.hits(products, {hitsPerPage: 10}),
-            displayKey: `name`,
+            displayKey: `${locale}.name`,
             name: 'product',
             templates: {
                 suggestion(suggestion) {
 
-                    console.log(suggestion);
-                    // return `
-                    //         <div class="algolia-result">
-                    //         <img src="${window.location.origin}/${suggestion.image}" alt="" class="algolia-thumb">
-                    //         <div class="algolia-info">
-                    //             <span>
-                    //                 ${locale === 'ar' ? suggestion._highlightResult.ar.name.value : suggestion._highlightResult.en.name.value}
-                    //             </span>
-                    //             <span class="algolia-details">
-                    //                 ${locale === 'ar' ? suggestion._highlightResult.ar.details.value : suggestion._highlightResult.en.details.value}
-                    //             </span>
-                    //         </div>
-                    //         <span>$${(suggestion.price / 100 ).toFixed(2)}</span>
-                    //         </div>
-                    //             `;
+                    return `
+                            <div class="algolia-result">
+                            <img src="${window.location.origin}/${suggestion.image}" alt="" class="algolia-thumb">
+                            <div class="algolia-info">
+                                <span>
+                                    ${locale === 'ar' ? suggestion._highlightResult.ar.name.value : suggestion._highlightResult.en.name.value}
+                                </span>
+                                <span class="algolia-details">
+                                    ${locale === 'ar' ? suggestion._highlightResult.ar.details.value : suggestion._highlightResult.en.details.value}
+                                </span>
+                            </div>
+                            <span>$${(suggestion.price / 100 ).toFixed(2)}</span>
+                            </div>
+                                `;
                 },
                 empty: '<div class="aa-empty">No matching products</div>',
             },
