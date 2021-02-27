@@ -25,10 +25,10 @@ class CheckoutController extends Controller {
         }
 
         return view('checkout', [
-            'discount'    => $this->getCheckoutNumbers()->get('discount'),
-            'newSubtotal' => $this->getCheckoutNumbers()->get('newSubtotal'),
-            'newTax'      => $this->getCheckoutNumbers()->get('newTax'),
-            'newTotal'    => $this->getCheckoutNumbers()->get('newTotal'),
+            'discount'    => getCheckoutNumbers()->get('discount'),
+            'newSubtotal' => getCheckoutNumbers()->get('newSubtotal'),
+            'newTax'      => getCheckoutNumbers()->get('newTax'),
+            'newTotal'    => getCheckoutNumbers()->get('newTotal'),
         ]);
     }
 
@@ -72,27 +72,6 @@ class CheckoutController extends Controller {
         }
     }
 
-    private function getCheckoutNumbers()
-    {
-
-        $tax = config('cart.tax') / 100;
-        $discount = session()->get('coupon')['discount'] ?? 0;
-        $discountCode = session()->get('coupon')['name'] ?? 0;
-        $newSubtotal = (Cart::subtotal() - $discount);
-        if ($newSubtotal < 0 ){
-            $newSubtotal = 0;
-        }
-        $newTax = $newSubtotal * $tax;
-        $newTotal = $newSubtotal * (1 + $tax);
-
-        return collect([
-            'discount'     => $discount,
-            'discountCode' => $discountCode,
-            'newSubtotal'  => $newSubtotal,
-            'newTax'       => $newTax,
-            'newTotal'     => $newTotal,
-        ]);
-    }
 
     protected function addToOrdersTable($request, $error = null)
     {
@@ -108,11 +87,11 @@ class CheckoutController extends Controller {
             'billing_postalcode'    => $request->postalcode,
             'billing_phone'         => $request->phone,
             'billing_name_on_card'  => $request->name_on_card,
-            'billing_discount'      => $this->getCheckoutNumbers()->get('discount'),
-            'billing_discount_code' => $this->getCheckoutNumbers()->get('discountCode'),
-            'billing_subtotal'      => $this->getCheckoutNumbers()->get('newSubtotal'),
-            'billing_tax'           => $this->getCheckoutNumbers()->get('newTax'),
-            'billing_total'         => $this->getCheckoutNumbers()->get('newTotal'),
+            'billing_discount'      => getCheckoutNumbers()->get('discount'),
+            'billing_discount_code' => getCheckoutNumbers()->get('discountCode'),
+            'billing_subtotal'      => getCheckoutNumbers()->get('newSubtotal'),
+            'billing_tax'           => getCheckoutNumbers()->get('newTax'),
+            'billing_total'         => getCheckoutNumbers()->get('newTotal'),
             'error'                 => $error,
         ]);
 

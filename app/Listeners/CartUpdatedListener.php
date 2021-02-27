@@ -4,7 +4,6 @@ namespace App\Listeners;
 
 use App\Jobs\UpdateCoupon;
 use App\Models\Coupon;
-use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CartUpdatedListener
 {
@@ -27,9 +26,11 @@ class CartUpdatedListener
     public function handle($event)
     {
 
-        $couponName = session()->get('coupon')['name'];
 
-        if ($couponName){
+
+        if (session()->has('coupon')){
+
+            $couponName = session()->get('coupon')['name'];
             $coupon = Coupon::where('code', $couponName)->first();
 
             dispatch_now(new UpdateCoupon($coupon));

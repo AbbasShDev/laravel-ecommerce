@@ -15,7 +15,13 @@ class CartController extends Controller {
 
         $mightAlsoLike = Product::inRandomOrder()->take(4)->get();
 
-        return view('cart', compact('mightAlsoLike'));
+        return view('cart', [
+            'mightAlsoLike' => $mightAlsoLike,
+            'discount'      => getCheckoutNumbers()->get('discount'),
+            'newSubtotal'   => getCheckoutNumbers()->get('newSubtotal'),
+            'newTax'        => getCheckoutNumbers()->get('newTax'),
+            'newTotal'      => getCheckoutNumbers()->get('newTotal'),
+        ]);
     }
 
 
@@ -23,10 +29,10 @@ class CartController extends Controller {
     {
 
         $maxInCart = Cart::search(function ($cartItem, $rowId) use ($product) {
-            return  $cartItem->id === $product->id && $cartItem->qty == 10;
+            return $cartItem->id === $product->id && $cartItem->qty == 10;
         });
 
-        if ($maxInCart->isNotEmpty()){
+        if ($maxInCart->isNotEmpty()) {
             return redirect()
                 ->route('cart.index')
                 ->with('errors', collect(["Quantity can't be greater than 10"]));
@@ -34,14 +40,15 @@ class CartController extends Controller {
 
         $isExist = Cart::search(function ($cartItem, $rowId) use ($product) {
 
-            if ($cartItem->id === $product->id && $cartItem->qty < 10){
-                Cart::update($cartItem->rowId, $cartItem->qty +1);
+            if ($cartItem->id === $product->id && $cartItem->qty < 10) {
+                Cart::update($cartItem->rowId, $cartItem->qty + 1);
             }
+
             return $cartItem->id === $product->id && $cartItem->qty <= 10;
         });
 
 
-        if ($isExist->isNotEmpty()){
+        if ($isExist->isNotEmpty()) {
             return redirect()
                 ->route('cart.index')
                 ->with('success_message', $product->name . ' added to cart successfully');
@@ -66,6 +73,7 @@ class CartController extends Controller {
         if ($validator->fails()) {
 
             session()->flash('errors', collect(['Quantity must be between 1 and 10']));
+
             return response()->json(['success' => false], 400);
         }
 
@@ -96,7 +104,6 @@ class CartController extends Controller {
         if ($duplicates->isNotEmpty()) {
             return redirect()->route('cart.index')->with('success_message', 'Item is already saved for later!');
         }
-
         Cart::instance('saveForLater')->add($item->id, $item->name, 1, $item->price)
             ->associate('App\Models\Product');
 

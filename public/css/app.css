@@ -680,7 +680,7 @@ footer {
 .cart-section .cart-totals .cart-totals-right {
   display: flex;
   justify-content: space-between;
-  width: 25%;
+  width: 35%;
   text-align: right;
 }
 .cart-section .cart-totals .cart-totals-total {
@@ -692,6 +692,35 @@ footer {
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
+}
+.cart-section .have-code {
+  display: block;
+  margin: 14px 0;
+  text-align: right;
+}
+.cart-section .have-code-container {
+  border: 1px solid #919191;
+  padding: 16px;
+  width: 50%;
+  margin-left: auto;
+}
+.cart-section .have-code-container form {
+  display: flex;
+  justify-content: space-between;
+}
+.cart-section .have-code-container input[type=text] {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+}
+.cart-section .have-code-container input[type=submit] {
+  background: white;
+  border: 1px solid #919191;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.cart-section .have-code-container input[type=submit]:hover {
+  background: #212121;
 }
 
 h1.checkout-heading {
@@ -774,35 +803,6 @@ h1.checkout-heading {
 
 #card-errors {
   color: #fa755a;
-}
-
-.have-code {
-  display: block;
-  margin: 14px 0;
-}
-
-.have-code-container {
-  border: 1px solid #919191;
-  padding: 16px;
-  width: 100%;
-}
-.have-code-container form {
-  display: flex;
-  justify-content: space-between;
-}
-.have-code-container input[type=text] {
-  width: 70%;
-  padding: 10px;
-  font-size: 16px;
-}
-.have-code-container input[type=submit] {
-  background: white;
-  border: 1px solid #919191;
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-.have-code-container input[type=submit]:hover {
-  background: #212121;
 }
 
 .remove-coupon {

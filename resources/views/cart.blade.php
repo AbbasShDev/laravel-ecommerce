@@ -46,7 +46,8 @@
                                     <div class="cart-table-item"><a
                                             href="{{ route('shop.show', $item->model->slug) }}">{{ $item->model->getTranslatedAttribute('name') }}</a>
                                     </div>
-                                    <div class="cart-table-description">{{ $item->model->getTranslatedAttribute('details') }}</div>
+                                    <div
+                                        class="cart-table-description">{{ $item->model->getTranslatedAttribute('details') }}</div>
                                 </div>
                             </div>
                             <div class="cart-table-row-right">
@@ -66,7 +67,7 @@
                                 <div>
                                     <select class="quantity" data-itemid="{{ $item->rowId }}">
                                         @for($i =1; $i <= 10; $i++)
-                                        <option {{  $item->qty == $i ? 'selected': '' }}>{{ $i }}</option>
+                                            <option {{  $item->qty == $i ? 'selected': '' }}>{{ $i }}</option>
                                         @endfor
                                     </select>
                                 </div>
@@ -87,6 +88,19 @@
                 </div>
             @endif
 
+            @if (! session()->has('coupon'))
+
+                <a href="#" class="have-code">Have a Code?</a>
+
+                <div class="have-code-container">
+                    <form action="{{ route('coupon.store') }}" method="POST">
+                        {{ csrf_field() }}
+                        <input type="text" name="coupon_code" id="coupon_code">
+                        <button type="submit" class="button button-plain">Apply</button>
+                    </form>
+                </div> <!-- end have-code-container -->
+            @endif
+
             <div class="cart-totals">
                 <div class="cart-totals-left">
                     Shipping is free because we’re awesome like that. Also because that’s additional stuff I don’t feel
@@ -96,13 +110,28 @@
                 <div class="cart-totals-right">
                     <div>
                         Subtotal <br>
-                        Tax <br>
+                        @if (session()->has('coupon'))
+                            Code ({{ session()->get('coupon')['name'] }})
+                            <form action="{{ route('coupon.destroy') }}" method="post" style="display: inline-block">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="remove-coupon"><i class="fa fa-times-circle"></i></button>
+                            </form>
+                            <hr>
+                            New Subtotal <br>
+                        @endif
+                        Tax ({{config('cart.tax')}}%)<br>
                         <span class="cart-totals-total">Total</span>
                     </div>
                     <div class="cart-totals-subtotal">
                         {{ presentPrice(Cart::subtotal()) }} <br>
-                        {{ presentPrice(Cart::tax()) }} <br>
-                        <span class="cart-totals-total">{{ presentPrice(Cart::total()) }}</span>
+                        @if (session()->has('coupon'))
+                            -{{ presentPrice($discount) }} <br>
+                            <hr>
+                            {{ presentPrice($newSubtotal) }} <br>
+                        @endif
+                        {{ presentPrice($newTax) }} <br>
+                        <span class="cart-totals-total">{{ presentPrice($newTotal) }}</span>
                     </div>
                 </div>
             </div> <!-- end cart-totals -->
@@ -175,15 +204,15 @@
         (function () {
             let cartItemQuantity = document.querySelectorAll('.quantity');
 
-            cartItemQuantity.forEach((el)=>{
+            cartItemQuantity.forEach((el) => {
 
                 el.addEventListener('change', () => {
 
-                    axios.patch(`/{{app()->getLocale()}}/cart/${el.dataset.itemid}`,{
+                    axios.patch(`/{{app()->getLocale()}}/cart/${el.dataset.itemid}`, {
                         quantity: el.value
-                    }).then(function (response){
+                    }).then(function (response) {
                         window.location.href = '';
-                    }).catch(function (error){
+                    }).catch(function (error) {
                         window.location.href = '';
                     })
 
