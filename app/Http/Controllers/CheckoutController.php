@@ -33,12 +33,6 @@ class CheckoutController extends Controller {
     }
 
 
-    public function create()
-    {
-        //
-    }
-
-
     public function store(CheckoutRequest $request)
     {
         $contents = Cart::content()->map(function ($item) {
