@@ -23,15 +23,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7974f52-85f3-409d-8ba1-9706aab0ceb6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/js/algolia-instant-search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/pages/auth.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/algolia.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/algolia.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/algolia.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/algolia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/pages/search.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/search.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/search-result.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/search-result.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/responsive.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/responsive.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/responsive.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -259,7 +260,8 @@
       <workItem from="1614262535553" duration="1894000" />
       <workItem from="1614322548380" duration="9322000" />
       <workItem from="1614335810661" duration="3306000" />
-      <workItem from="1614410899840" duration="5795000" />
+      <workItem from="1614410899840" duration="5925000" />
+      <workItem from="1614432944702" duration="790000" />
     </task>
     <servers />
   </component>
@@ -303,9 +305,9 @@
       <screen x="0" y="25" width="1280" height="723" />
     </state>
     <state x="112" y="25" width="937" height="723" key="SettingsEditor/0.25.1280.723@0.25.1280.723" timestamp="1614143431954" />
-    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup" timestamp="1614411602358">
+    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup" timestamp="1614433075154">
       <screen x="0" y="25" width="1280" height="723" />
     </state>
-    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1614411602358" />
+    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1614433075154" />
   </component>
 </project>

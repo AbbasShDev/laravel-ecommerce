@@ -18,16 +18,21 @@
 
             ul {
                 margin: 20px auto 0;
-                width: 80%;
+                // width: 80%;
             }
         }
+
+        .top-nav-left {
+            flex-direction: column;
+        }
+
         .hero {
             grid-template-columns: 1fr;
             text-align: center;
 
             .hero-image {
-              padding-left: 0;
-              margin-top: 40px;
+                padding-left: 0;
+                margin-top: 40px;
             }
         }
     }
@@ -35,25 +40,30 @@
     .featured-section {
         padding: 50px 0;
 
-    .products {
-        grid-template-columns: 1fr;
+        .products {
+            grid-template-columns: 1fr;
         }
     }
 
+    .products-header {
+        flex-direction: column;
+        margin-bottom: 48px;
+    }
+
     .blog-section {
-      .blog-posts {
-        grid-template-columns: 1fr;
-        text-align: center;
-        grid-template-areas:
+        .blog-posts {
+            grid-template-columns: 1fr;
+            text-align: center;
+            grid-template-areas:
             "blog3"
             "blog2"
             "blog1";
 
-        .blog-post {
-            margin-top: 30px;
-        }
+            .blog-post {
+                margin-top: 30px;
+            }
 
-      }
+        }
     }
 
     .footer-content {
@@ -71,6 +81,15 @@
 
     .breadcrumbs {
         text-align: center;
+
+        .breadcrumbs-container {
+            flex-direction: column;
+        }
+    }
+
+    .search-form {
+        margin: 14px auto;
+        width: 80%;
     }
 
     .products-section {
@@ -144,6 +163,39 @@
         .checkout-table-container {
             margin-left: 10px;
         }
+    }
+
+    .search-results-container-algolia {
+        grid-template-columns: 1fr;
+    }
+
+    .ais-refinement-list--count {
+        margin-left: auto;
+        margin-right: 10px;
+    }
+
+    .auth-pages {
+        margin: 50px auto;
+        grid-template-columns: 1fr;
+        grid-gap: 40px;
+
+        .auth-right {
+            border-left: none;
+            padding-left: 0px;
+        }
+    }
+
+    .my-profile input {
+        width: 100%;
+    }
+
+    .my-orders .order-header-items {
+        display: block;
+    }
+
+
+    .my-orders .order-header-items > div {
+        margin-bottom: 14px;
     }
 }
 
