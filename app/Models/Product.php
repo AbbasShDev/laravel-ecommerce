@@ -81,6 +81,7 @@ class Product extends Model {
                 'details'     => $this->translate('ar')->details,
                 'description' => $this->translate('ar')->description,
             ],
+            'category' => $this->category->name
         ];
     }
 

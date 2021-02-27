@@ -43,12 +43,7 @@ class ShopController extends Controller {
 
     public function search()
     {
-
-        $query = request()->input('query');
-
-        $products = Product::search($query)->paginate(10);
-
-        return view('search-result', compact('products'));
+        return view('search-result');
     }
 
 }

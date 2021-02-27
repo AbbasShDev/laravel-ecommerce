@@ -46,7 +46,7 @@ Route::group(['prefix' => app()->getLocale()], function (){
 
     Route::get('/thankyou',[ConfirmationController::class, 'index'])->name('confirmation.index');
 
-    Route::get('/search-result',[ShopController::class, 'search'])->name('search');
+    Route::get('/search',[ShopController::class, 'search'])->name('search');
 
 
 });

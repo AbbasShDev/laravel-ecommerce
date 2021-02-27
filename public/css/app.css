@@ -857,3 +857,50 @@ h1.checkout-heading {
   display: flex;
   justify-content: space-between;
 }
+
+.search-results-container-algolia {
+  min-height: 400px;
+  margin: 40px 0;
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  grid-gap: 20px;
+}
+
+.ais-Hits-item .instantsearch-result {
+  display: flex;
+  align-items: center;
+}
+.ais-Hits-item .instantsearch-result img {
+  margin-right: 40px;
+}
+.ais-Hits-item .result-details {
+  color: #919191;
+}
+.ais-Hits-item .result-price {
+  margin-top: 6px;
+  font-weight: 500;
+}
+.ais-Hits-item .algolia-thumb-result {
+  max-height: 50px;
+}
+.ais-Hits-item hr {
+  border: 0.5px solid #CDCDCD;
+}
+
+.ais-refinement-list--label {
+  color: #212121 !important;
+  font-size: 18px !important;
+  display: flex;
+  align-items: center;
+}
+
+.ais-refinement-list--item {
+  margin-bottom: 12px;
+}
+
+.ais-refinement-list--count {
+  color: #212121 !important;
+  background: rgba(39, 81, 108, 0.2) !important;
+  margin-left: auto;
+  margin-right: 57px;
+}

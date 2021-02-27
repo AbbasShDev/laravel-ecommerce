@@ -2,6 +2,7 @@
     const client = algoliasearch('NN4LX8BBKT', 'b8423c983e0b50a1df0fceabfd060ce3');
     const products = client.initIndex('products');
     var locale = document.getElementsByTagName("html")[0].getAttribute("lang");
+    let enterKeyClicked = false;
 
     autocomplete(
         '#aa-search-input',
@@ -39,6 +40,11 @@
         },
     ).on('autocomplete:selected', function (event, suggestion, dataset) {
         window.location.href = window.location.origin + `/${locale}/shop/${suggestion.slug}`
+        enterKeyClicked = true;
+    }).on('keyup', function (e) {
+        if (e.keyCode == 13 && !enterKeyClicked){
+            window.location.href = window.location.origin + `/${locale}/` + 'search?products%5Bquery%5D=' + document.getElementById('aa-search-input').value;
+        }
     });
 
 })();
