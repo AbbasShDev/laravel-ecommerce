@@ -39,7 +39,9 @@ class ShopController extends Controller {
     {
         $mightAlsoLike = Product::where('id', '!=', $product->id)->inRandomOrder()->take(4)->get();
 
-        return view('product', compact('product', 'mightAlsoLike'));
+        $stockLevel = getStockLevel($product->quantity);
+
+        return view('product', compact('product', 'mightAlsoLike', 'stockLevel'));
     }
 
     public function search()

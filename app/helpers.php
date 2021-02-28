@@ -9,7 +9,7 @@ function presentPrice($price)
 
 function presentImage($path)
 {
-    return $path ? asset('storage/'.$path): asset('img/not-found-product.png');
+    return $path ? asset('storage/' . $path) : asset('img/not-found-product.png');
 }
 
 function getCheckoutNumbers()
@@ -19,7 +19,7 @@ function getCheckoutNumbers()
     $discount = session()->get('coupon')['discount'] ?? 0;
     $discountCode = session()->get('coupon')['name'] ?? 0;
     $newSubtotal = (Cart::subtotal() - $discount);
-    if ($newSubtotal < 0 ){
+    if ($newSubtotal < 0) {
         $newSubtotal = 0;
     }
     $newTax = $newSubtotal * $tax;
@@ -32,4 +32,18 @@ function getCheckoutNumbers()
         'newTax'       => $newTax,
         'newTotal'     => $newTotal,
     ]);
+}
+
+function getStockLevel($quantity)
+{
+
+    if ($quantity >= setting('site.stock_threshold')) {
+        $stockLevel = "<div class='badge badge-success'>In stock</div>";
+    } elseif ($quantity < setting('site.stock_threshold') && $quantity > 0) {
+        $stockLevel = "<div class='badge badge-warning'>Low stock</div>";
+    } else {
+        $stockLevel = "<div class='badge badge-secondary'>Not available</div>";
+    }
+
+    return $stockLevel;
 }

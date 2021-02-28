@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CheckoutRequest;
 use App\Mail\OrderPlaced;
 use App\Models\Order;
+use App\Models\Product;
 use Cartalyst\Stripe\Exception\CardErrorException;
 use Cartalyst\Stripe\Laravel\Facades\Stripe;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -35,13 +36,17 @@ class CheckoutController extends Controller {
 
     public function store(CheckoutRequest $request)
     {
+        if ($this->productsNotAvailable()){
+            return redirect()->back()->withErrors('Sorry! One of the items in your cart is no longer available.');
+        }
+
         $contents = Cart::content()->map(function ($item) {
             return $item->model->slug . ',' . $item->qty;
         })->values()->toJson();
 
         try {
             $charge = Stripe::charges()->create([
-                'amount'        => $this->getCheckoutNumbers()->get('newTotal') / 100,
+                'amount'        => getCheckoutNumbers()->get('newTotal') / 100,
                 'currency'      => 'USD',
                 'source'        => $request->stripeToken,
                 'description'   => 'Order',
@@ -54,6 +59,9 @@ class CheckoutController extends Controller {
                 ]
             ]);
 
+
+            //Decrease products' quantities
+            $this->decreaseQuantities();
 
             $order = $this->addToOrdersTable($request);
             Cart::instance('default')->destroy();
@@ -97,9 +105,30 @@ class CheckoutController extends Controller {
 
         //insert into pivot table
         foreach (Cart::content() as $item) {
-            $order->products()->attach($item->model->id, ['quantity' => $item->qty] );
+            $order->products()->attach($item->model->id, ['quantity' => $item->qty]);
         }
 
         return $order;
+    }
+
+    public function decreaseQuantities()
+    {
+        foreach (Cart::content() as $item) {
+            $product = Product::find($item->model->id);
+            $product->update(['quantity' => $product->quantity - $item->qty]);
+        }
+    }
+
+    public function productsNotAvailable()
+    {
+        foreach (Cart::content() as $item) {
+
+            $product = Product::find($item->model->id);
+
+            if ($product->quantity < $item->qty){
+                return true;
+            }
+        }
+        return false;
     }
 }

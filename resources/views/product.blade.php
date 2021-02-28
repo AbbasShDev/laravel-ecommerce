@@ -41,15 +41,18 @@
         </div>
         <div class="product-section-information">
             <h1 class="product-section-title">{{ $product->getTranslatedAttribute('name') }}</h1>
+            <div class="stock-info">{!! $stockLevel !!}</div>
             <div class="product-section-subtitle">{{ $product->getTranslatedAttribute('details') }}</div>
             <div class="product-section-price">{{ $product->presentPrice() }}</div>
             <p>{{ $product->getTranslatedAttribute('details') }}</p>
 
-            {{--            <a href="#" class="button">Add to Cart</a>--}}
-            <form action="{{ route('cart.store', $product->slug) }}" method="post">
-                @csrf
-                <button type="submit" class="button button-plain">Add to Cart</button>
-            </form>
+            @if($product->quantity)
+                <form action="{{ route('cart.store', $product->slug) }}" method="post">
+                    @csrf
+                    <button type="submit" class="button button-plain">Add to Cart</button>
+                </form>
+            @endif
+
         </div>
     </div> <!-- end product-section -->
 

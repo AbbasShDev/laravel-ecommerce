@@ -66,9 +66,21 @@ class CartController extends Controller {
     public function update(Request $request, $id)
     {
 
+
         $validator = Validator::make($request->all(), [
             'quantity' => 'required|numeric|max:10'
         ]);
+
+        $cartItem =Cart::get($id);
+        $product = Product::find($cartItem->model->id);
+
+        if ($request->quantity > $product->quantity) {
+
+            session()->flash('errors', collect(['We currently do not have enough items in stock']));
+
+            return response()->json(['success' => false], 400);
+
+        }
 
         if ($validator->fails()) {
 

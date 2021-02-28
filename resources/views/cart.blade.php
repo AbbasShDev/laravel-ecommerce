@@ -90,7 +90,7 @@
 
             @if (! session()->has('coupon'))
 
-                <a href="#" class="have-code">Have a Code?</a>
+                <h4 class="have-code">Have a Code?</h4>
 
                 <div class="have-code-container">
                     <form action="{{ route('coupon.store') }}" method="POST">
