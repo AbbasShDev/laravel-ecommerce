@@ -1,0 +1,66 @@
+.my-profile {
+    overflow: hidden;
+    max-width: 100vw;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    padding: 0px 12px;
+
+    label {
+        display: block;
+    }
+
+    .form-control {
+        margin-bottom: 30px;
+    }
+
+    input {
+        border: 1px solid $text-color-light;
+        padding: 16px 10px;
+        border-radius: 5px;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .my-profile-button {
+        background: $text-color;
+        color: $white;
+        border-radius: 5px;
+        padding: 8px 20px;
+        float: right;
+        font-size: 16px;
+        margin-bottom: 14px;
+
+        &:hover {
+            background: lighten($text-color, 10%);
+        }
+    }
+
+    .profile-container {
+        margin-bottom: 64px;
+        border-radius: 10px;
+        border: 1px solid #DDDDDD;
+        overflow: hidden;
+    }
+    .profile-header {
+        background: #F6F6F6;
+        padding: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .profile-form {
+        background: white;
+        border-top: none;
+        padding: 14px;
+    }
+}
+
+@media only screen and (min-width: 992px){
+    .my-profile {
+        max-width: calc((100vw - 230px) - 12px);
+    }
+}
+
+
+

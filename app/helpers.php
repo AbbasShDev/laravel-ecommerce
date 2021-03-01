@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 function presentPrice($price)
@@ -46,4 +47,9 @@ function getStockLevel($quantity)
     }
 
     return $stockLevel;
+}
+
+function presentDateString($date){
+
+    return Carbon::createFromFormat('Y-m-d H:i:s', $date)->toFormattedDateString();
 }

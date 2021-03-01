@@ -5,8 +5,10 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ConfirmationController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\saveForLaterController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -47,6 +49,14 @@ Route::group(['prefix' => app()->getLocale()], function (){
     Route::get('/thankyou',[ConfirmationController::class, 'index'])->name('confirmation.index');
 
     Route::get('/search',[ShopController::class, 'search'])->name('search');
+
+    Route::middleware('auth')->group(function (){
+
+        Route::get('/my-profile', [UsersController::class, 'edit'])->name('users.edit');
+        Route::get('/orders', [OrdersController::class, 'index'])->name('orders.index');
+
+
+    });
 
 
 });

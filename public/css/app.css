@@ -1116,3 +1116,115 @@ h1.checkout-heading {
 .auth-pages .already-have-container {
   text-align: right;
 }
+
+.my-orders .order-container {
+  margin-bottom: 64px;
+  border-radius: 10px;
+  border: 1px solid #DDDDDD;
+  overflow: hidden;
+}
+.my-orders .order-header {
+  background: #F6F6F6;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.my-orders .order-products {
+  background: white;
+  border-top: none;
+  padding: 14px;
+  overflow-x: auto;
+  display: flex;
+}
+.my-orders .order-header-items {
+  display: flex;
+}
+.my-orders .order-header-items div {
+  margin-right: 14px;
+}
+.my-orders .order-header-items .order-id {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #3866df;
+  font-size: 1.1667rem;
+  text-transform: uppercase;
+}
+.my-orders .order-header-items .order-date {
+  color: #7e859b;
+  line-height: 2;
+  font-size: 14px;
+}
+.my-orders .order-product-item {
+  display: flex;
+  margin: 20px 6px 20px;
+}
+.my-orders .order-product-item img {
+  max-width: 110px;
+  margin-right: 24px;
+}
+.my-orders .order-product-item .order-product-info {
+  width: 200px;
+}
+
+@media only screen and (max-width: 557px) {
+  .order-header-items-left {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.my-profile {
+  overflow: hidden;
+  max-width: 100vw;
+  flex-grow: 1;
+  padding: 0px 12px;
+}
+.my-profile label {
+  display: block;
+}
+.my-profile .form-control {
+  margin-bottom: 30px;
+}
+.my-profile input {
+  border: 1px solid #919191;
+  padding: 16px 10px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 14px;
+}
+.my-profile .my-profile-button {
+  background: #212121;
+  color: #e9e9e9;
+  border-radius: 5px;
+  padding: 8px 20px;
+  float: right;
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+.my-profile .my-profile-button:hover {
+  background: #3b3b3b;
+}
+.my-profile .profile-container {
+  margin-bottom: 64px;
+  border-radius: 10px;
+  border: 1px solid #DDDDDD;
+  overflow: hidden;
+}
+.my-profile .profile-header {
+  background: #F6F6F6;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.my-profile .profile-form {
+  background: white;
+  border-top: none;
+  padding: 14px;
+}
+
+@media only screen and (min-width: 992px) {
+  .my-profile {
+    max-width: calc((100vw - 230px) - 12px);
+  }
+}
