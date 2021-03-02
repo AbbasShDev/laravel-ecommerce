@@ -49,19 +49,21 @@
             <div style="position: relative">
                 @foreach ($orders as $order)
                     <div class="order-container">
-                        <div class="order-header">
-                            <div class="order-header-items">
-                                <div class="order-header-items-left">
-                                    <span class="uppercase font-bold order-id">Order #{{ $order->id }}</span>
-                                    <span class="order-date">Order Placed {{ presentDateString($order->created_at)  }}</span>
-                                </div>
-                            </div>
-                            <div>
+                        <a href="{{ route('orders.show', $order) }}">
+                            <div class="order-header">
                                 <div class="order-header-items">
-                                    <div><a href=""><i class="fa fa-chevron-right"></i></a></div>
+                                    <div class="order-header-items-left">
+                                        <span class="uppercase font-bold order-id">Order #{{ $order->id }}</span>
+                                        <span class="order-date">Placed {{ presentDateString($order->created_at)  }}</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="order-header-items">
+                                        <div><i class="fa fa-chevron-right"></i></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                         <div>
                             <div class="order-products">
                                 @foreach ($order->products as $product)

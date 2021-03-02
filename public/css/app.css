@@ -1166,6 +1166,57 @@ h1.checkout-heading {
 .my-orders .order-product-item .order-product-info {
   width: 200px;
 }
+.my-orders .single-order-container {
+  margin-bottom: 25px;
+  overflow: hidden;
+  background-color: #F5F5F5;
+  box-shadow: #dddddd 0px 1px 5px 2px;
+  border-radius: 3px;
+  padding: 15px;
+}
+.my-orders .single-order-container .order-header {
+  background-color: #F5F5F5;
+  padding: 0px;
+  border-bottom: 1px solid #e9e9e9;
+}
+.my-orders .single-order-container .order-header .order-details-heading {
+  font-weight: 700;
+  font-size: 15px;
+  margin-right: 5px;
+}
+.my-orders .single-order-container .order-body {
+  background-color: #F5F5F5;
+  border-top: none;
+  padding: 10px 0px 0px 0px;
+}
+.my-orders .single-order-container .order-body .order-details-heading {
+  padding-top: 5px;
+  font-weight: 700;
+  font-size: 14px;
+}
+.my-orders .single-order-container .order-body .order-details {
+  font-size: 14px;
+  color: #7e859b;
+}
+.my-orders .single-order-container .order-body .divider {
+  width: 100%;
+  height: 1px;
+  background-color: #e9e9e9;
+  margin-top: 10px;
+}
+.my-orders .single-order-container .order-body .order-summary {
+  display: flex;
+  justify-content: space-between;
+}
+.my-orders .single-order-container .order-body .order-summary .discount {
+  color: #86CE71;
+}
+.my-orders .single-order-container .order-body .order-summary .total {
+  font-weight: 700;
+}
+.my-orders .single-order-container .order-body .order-summary:not(:first-child) {
+  margin-top: 10px;
+}
 
 @media only screen and (max-width: 557px) {
   .order-header-items-left {
