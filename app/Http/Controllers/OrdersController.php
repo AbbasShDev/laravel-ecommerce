@@ -9,7 +9,7 @@ class OrdersController extends Controller
 
     public function index()
     {
-        $orders = auth()->user()->orders()->with('products')->get();
+        $orders = auth()->user()->orders()->with('products')->latest()->get();
 
 
         return view('orders.index', compact('orders'));

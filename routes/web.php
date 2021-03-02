@@ -53,6 +53,8 @@ Route::group(['prefix' => app()->getLocale()], function (){
     Route::middleware('auth')->group(function (){
 
         Route::get('/my-profile', [UsersController::class, 'edit'])->name('users.edit');
+        Route::patch('/my-profile', [UsersController::class, 'update'])->name('users.update');
+        Route::patch('/my-profile/change-password', [UsersController::class, 'updatePassword'])->name('users.updatePassword');
         Route::get('/orders', [OrdersController::class, 'index'])->name('orders.index');
 
 
