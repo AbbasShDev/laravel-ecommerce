@@ -4,6 +4,7 @@
 
 @section('extra-css')
     <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 @endsection
 
 @section('content')
@@ -98,6 +99,11 @@
 
 
                 </form>
+
+                <div class="spacer"></div>
+                <h2 style="text-align: center">Or</h2>
+                <div class="spacer"></div>
+                <div id="paypal-button"></div>
             </div>
 
 
@@ -237,5 +243,36 @@
                 form.submit();
             }
         }())
+    </script>
+
+    <script>
+        paypal.Button.render({
+            env: 'sandbox',
+            style: {
+                size: 'responsive',
+                color: 'silver',
+            },
+            // Set up the payment:
+            // 1. Add a payment callback
+            payment: function(data, actions) {
+                // 2. Make a request to your server
+                return actions.request.post('/api/create-payment/')
+                    .then(function(res) {
+                        return res.id;
+                    });
+            },
+            // Execute the payment:
+            // 1. Add an onAuthorize callback
+            onAuthorize: function(data, actions) {
+                // 2. Make a request to your server
+                return actions.request.post('/api/execute-payment/', {
+                    paymentID: data.paymentID,
+                    payerID:   data.payerID
+                })
+                    .then(function(res) {
+                        console.log(res);
+                    });
+            }
+        }, '#paypal-button');
     </script>
 @endsection

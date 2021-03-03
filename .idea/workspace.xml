@@ -23,8 +23,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7974f52-85f3-409d-8ba1-9706aab0ceb6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config/paypal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/laravel-ecommerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel-ecommerce.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/checkout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,6 +179,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
       <path value="$PROJECT_DIR$/vendor/algolia/algoliasearch-client-php" />
       <path value="$PROJECT_DIR$/vendor/laravel/scout" />
+      <path value="$PROJECT_DIR$/vendor/paypal/rest-api-sdk-php" />
     </include_path>
   </component>
   <component name="ProjectId" id="1oXT5y1pcLIB287RHy2zuwT9hPH" />
@@ -263,7 +273,8 @@
       <workItem from="1614592488026" duration="2485000" />
       <workItem from="1614606867634" duration="5913000" />
       <workItem from="1614681960529" duration="2584000" />
-      <workItem from="1614701129826" duration="6078000" />
+      <workItem from="1614701129826" duration="6225000" />
+      <workItem from="1614783526503" duration="3388000" />
     </task>
     <servers />
   </component>
@@ -283,10 +294,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="274" y="71" key="#Inspections" timestamp="1613865923937">
+    <state x="274" y="71" key="#Inspections" timestamp="1614786853983">
       <screen x="0" y="25" width="1280" height="723" />
     </state>
-    <state x="274" y="71" key="#Inspections/0.25.1280.723@0.25.1280.723" timestamp="1613865923937" />
+    <state x="274" y="71" key="#Inspections/0.25.1280.723@0.25.1280.723" timestamp="1614786853983" />
     <state x="446" y="59" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1613862735469">
       <screen x="0" y="25" width="1280" height="723" />
     </state>
@@ -295,10 +306,10 @@
       <screen x="0" y="25" width="1280" height="723" />
     </state>
     <state x="379" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1280.723@0.25.1280.723" timestamp="1614441274184" />
-    <state x="431" y="313" key="NewPhpFileDialog" timestamp="1614323105624">
+    <state x="431" y="313" key="NewPhpFileDialog" timestamp="1614786908838">
       <screen x="0" y="25" width="1280" height="723" />
     </state>
-    <state x="431" y="313" key="NewPhpFileDialog/0.25.1280.723@0.25.1280.723" timestamp="1614323105624" />
+    <state x="431" y="313" key="NewPhpFileDialog/0.25.1280.723@0.25.1280.723" timestamp="1614786908838" />
     <state x="124" y="75" width="1032" height="672" key="Registry" timestamp="1614070583812">
       <screen x="0" y="25" width="1280" height="723" />
     </state>
@@ -307,9 +318,9 @@
       <screen x="0" y="25" width="1280" height="723" />
     </state>
     <state x="112" y="25" width="937" height="723" key="SettingsEditor/0.25.1280.723@0.25.1280.723" timestamp="1614143431954" />
-    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup" timestamp="1614701255459">
+    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup" timestamp="1614786708369">
       <screen x="0" y="25" width="1280" height="723" />
     </state>
-    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1614701255459" />
+    <state x="306" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1614786708369" />
   </component>
 </project>

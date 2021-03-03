@@ -12,7 +12,7 @@ use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::group(['prefix' => app()->getLocale()], function () {
+Route::group(['prefix' => app()->getLocale(), 'middleware' => 'localized'], function () {
 
     Route::group(['prefix' => 'admin'], function () {
         Voyager::routes();
@@ -43,6 +43,7 @@ Route::group(['prefix' => app()->getLocale()], function () {
 
     Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index')->middleware('auth');
     Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+
 
     Route::get('/guest-checkout', [CheckoutController::class, 'index'])->name('guest-checkout.index');
 
