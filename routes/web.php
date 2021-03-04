@@ -62,6 +62,4 @@ Route::group(['prefix' => app()->getLocale(), 'middleware' => 'localized'], func
 
     });
 
-
 });
-

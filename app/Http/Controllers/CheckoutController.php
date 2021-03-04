@@ -47,7 +47,7 @@ class CheckoutController extends Controller {
 
     public function store(CheckoutRequest $request)
     {
-        if ($this->productsNotAvailable()){
+        if ($this->productsNotAvailable()) {
             return redirect()->back()->withErrors('Sorry! One of the items in your cart is no longer available.');
         }
 
@@ -87,12 +87,13 @@ class CheckoutController extends Controller {
 
             $this->addToOrdersTable($request, $e->getMessage());
 
-            return redirect()->back()->withErrors('Error! ' . $e->getMessage());
+            return redirect()->back()->withInput()->withErrors('Error! ' . $e->getMessage());
         }
     }
 
     public function paypalCreate(Request $request)
     {
+
         $apiContext = new \PayPal\Rest\ApiContext(
             new \PayPal\Auth\OAuthTokenCredential(config('paypal.paypal_key'), config('paypal.paypal_secret'),)
         );
@@ -100,30 +101,38 @@ class CheckoutController extends Controller {
         $payer = new Payer();
         $payer->setPaymentMethod("paypal");
 
-        $item1 = new Item();
-        $item1->setName('Ground Coffee 40 oz')
-            ->setCurrency('USD')
-            ->setQuantity(1)
-            ->setSku("123123") // Similar to `item_number` in Classic API
-            ->setPrice(7.5);
-        $item2 = new Item();
-        $item2->setName('Granola bars')
-            ->setCurrency('USD')
-            ->setQuantity(5)
-            ->setSku("321321") // Similar to `item_number` in Classic API
-            ->setPrice(2);
+        $itemsAry = [];
+        //insert into pivot table
+        foreach (Cart::content() as $item) {
+            $setItem = new Item();
+            $setItem->setName($item->name)
+                ->setCurrency('USD')
+                ->setQuantity(intval($item->qty))
+                ->setSku(strval($item->id)) // Similar to `item_number` in Classic API
+                ->setPrice($item->price / 100);
+            $itemsAry[] = $setItem;
+        }
+
+        if (getCheckoutNumbers()->get('discount') > 0) {
+            $itemTmp = new Item();
+            $itemTmp->setName('Discount')
+                ->setCurrency('USD')
+                ->setQuantity(1)
+                ->setPrice(-getCheckoutNumbers()->get('discount') / 100);
+            $itemsAry[] = $itemTmp;
+        }
+
 
         $itemList = new ItemList();
-        $itemList->setItems(array($item1, $item2));
+        $itemList->setItems($itemsAry);
 
         $details = new Details();
-        $details->setShipping(1.2)
-            ->setTax(1.3)
-            ->setSubtotal(17.50);
+        $details->setTax(round(getCheckoutNumbers()->get('newTax') / 100, 2))
+            ->setSubtotal(round(getCheckoutNumbers()->get('newSubtotal') / 100, 2));
 
         $amount = new Amount();
         $amount->setCurrency("USD")
-            ->setTotal(20)
+            ->setTotal(round(getCheckoutNumbers()->get('newTotal') / 100, 2))
             ->setDetails($details);
 
         $transaction = new Transaction();
@@ -133,8 +142,8 @@ class CheckoutController extends Controller {
             ->setInvoiceNumber(uniqid());
 
         $redirectUrls = new RedirectUrls();
-        $redirectUrls->setReturnUrl("http://laravel-paypal-example.test")
-            ->setCancelUrl("http://laravel-paypal-example.test");
+        $redirectUrls->setReturnUrl(route('checkout.index'))
+            ->setCancelUrl(route('checkout.index'));
 
         // Add NO SHIPPING OPTION
         $inputFields = new InputFields();
@@ -176,26 +185,52 @@ class CheckoutController extends Controller {
         $execution = new PaymentExecution();
         $execution->setPayerId($request->payerID);
 
-        // $transaction = new Transaction();
-        // $amount = new Amount();
-        // $details = new Details();
-
-        // $details->setShipping(2.2)
-        //     ->setTax(1.3)
-        //     ->setSubtotal(17.50);
-
-        // $amount->setCurrency('USD');
-        // $amount->setTotal(21);
-        // $amount->setDetails($details);
-        // $transaction->setAmount($amount);
-
-        // $execution->addTransaction($transaction);
 
         try {
+
             $result = $payment->execute($execution, $apiContext);
+
+            //Decrease products' quantities
+            $this->decreaseQuantities();
+
+            //insert into orders
+            $order = Order::create([
+                'user_id'               => auth()->user() ? auth()->user()->id : null,
+                'billing_discount'      => getCheckoutNumbers()->get('discount'),
+                'billing_discount_code' => getCheckoutNumbers()->get('discountCode'),
+                'billing_subtotal'      => getCheckoutNumbers()->get('newSubtotal'),
+                'billing_tax'           => getCheckoutNumbers()->get('newTax'),
+                'billing_total'         => getCheckoutNumbers()->get('newTotal'),
+                'payment_gateway'       => 'paypal',
+                'error'                 => null,
+            ]);
+
+            //insert into pivot table
+            foreach (Cart::content() as $item) {
+                $order->products()->attach($item->model->id, ['quantity' => $item->qty]);
+            }
+            Cart::instance('default')->destroy();
+            session()->forget('coupon');
+
+            //Mail::send(new OrderPlaced($order));
+
+            session()->flash('success_message', 'Thank you! your payment has been successfully accepted.');
+
         } catch (Exception $ex) {
-            echo $ex;
-            exit(1);
+
+            //insert into orders
+            $order = Order::create([
+                'user_id'               => auth()->user() ? auth()->user()->id : null,
+                'billing_discount'      => getCheckoutNumbers()->get('discount'),
+                'billing_discount_code' => getCheckoutNumbers()->get('discountCode'),
+                'billing_subtotal'      => getCheckoutNumbers()->get('newSubtotal'),
+                'billing_tax'           => getCheckoutNumbers()->get('newTax'),
+                'billing_total'         => getCheckoutNumbers()->get('newTotal'),
+                'payment_gateway'       => 'paypal',
+                'error'                 => $ex->getMessage(),
+            ]);
+            session()->flash('errors', collect(['Error! ' . $ex->getMessage()]));
+
         }
 
         return $result;
@@ -247,10 +282,12 @@ class CheckoutController extends Controller {
 
             $product = Product::find($item->model->id);
 
-            if ($product->quantity < $item->qty){
+            if ($product->quantity < $item->qty) {
                 return true;
             }
         }
+
         return false;
     }
+
 }

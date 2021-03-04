@@ -2,6 +2,7 @@
 
 @section('title', 'Checkout')
 
+
 @section('extra-css')
     <script src="https://js.stripe.com/v3/"></script>
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
@@ -29,81 +30,101 @@
         <h1 class="checkout-heading stylish-heading">Checkout</h1>
         <div class="checkout-section">
             <div>
-                <form action="{{ route('checkout.store') }}" method="post" id="payment-form">
-                    @csrf
-                    <h2>Billing Details</h2>
+                @if(request()->payment == 'credit-debit')
+                    <form action="{{ route('checkout.store') }}" method="post" id="payment-form" >
+                        @csrf
+                        <h2>Billing Details</h2>
 
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        @auth
-                            <input type="email" class="form-control" id="email" name="email" value="{{ auth()->user()->email }}" readonly>
-                        @else
-                            <input type="email" class="form-control @error('email') border-error @enderror" id="email" name="email" value="{{ old('email')  }}">
-                        @endauth
-                    </div>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control @error('name') border-error @enderror" id="name" name="name" value="{{ old('name') }}">
-                    </div>
-                    <div class="form-group">
-                        <label for="address">Address</label>
-                        <input type="text" class="form-control @error('address') border-error @enderror" id="address" name="address" value="{{ old('address') }}">
-                    </div>
-
-                    <div class="half-form">
                         <div class="form-group">
-                            <label for="city">City</label>
-                            <input type="text" class="form-control @error('city') border-error @enderror" id="city" name="city" value="{{ old('city')}}">
+                            <label for="email">Email Address</label>
+                            @auth
+                                <input type="email" class="form-control" id="email" name="email"
+                                       value="{{ auth()->user()->email }}" readonly>
+                            @else
+                                <input type="email" class="form-control @error('email') border-error @enderror" id="email"
+                                       name="email" value="{{ old('billing_email')  }}">
+                            @endauth
                         </div>
                         <div class="form-group">
-                            <label for="province">Province</label>
-                            <input type="text" class="form-control @error('province') border-error @enderror" id="province" name="province" value="{{ old('province') }}">
-                        </div>
-                    </div> <!-- end half-form -->
-
-                    <div class="half-form">
-                        <div class="form-group">
-                            <label for="postalcode">Postal Code</label>
-                            <input type="text" class="form-control @error('postalcode') border-error @enderror" id="postalcode" name="postalcode" value="{{ old('postalcode') }}">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control @error('name') border-error @enderror" id="name"
+                                   name="name" value="{{ old('name') }}">
                         </div>
                         <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="text" class="form-control @error('phone') border-error @enderror" id="phone" name="phone" value="{{ old('phone') }}">
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control @error('address') border-error @enderror" id="address"
+                                   name="address" value="{{ old('address') }}">
                         </div>
-                    </div> <!-- end half-form -->
 
-                    <div class="spacer"></div>
+                        <div class="half-form">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" class="form-control @error('city') border-error @enderror" id="city"
+                                       name="city" value="{{ old('city')}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="province">Province</label>
+                                <input type="text" class="form-control @error('province') border-error @enderror"
+                                       id="province" name="province" value="{{ old('province') }}">
+                            </div>
+                        </div> <!-- end half-form -->
 
-                    <h2>Payment Details</h2>
+                        <div class="half-form">
+                            <div class="form-group">
+                                <label for="postalcode">Postal Code</label>
+                                <input type="text" class="form-control @error('postalcode') border-error @enderror"
+                                       id="postalcode" name="postalcode" value="{{ old('postalcode') }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="text" class="form-control @error('phone') border-error @enderror" id="phone"
+                                       name="phone" value="{{ old('phone') }}">
+                            </div>
+                        </div> <!-- end half-form -->
 
-                    <div class="form-group">
-                        <label for="name_on_card">Name on Card</label>
-                        <input type="text" class="form-control @error('name_on_card') border-error @enderror" id="name_on_card" name="name_on_card" value="{{ old('name_on_card') }}">
-                    </div>
+                        <div class="spacer"></div>
 
+                        <h2>Payment Details</h2>
 
-                    <div class="form-group">
-                        <label for="card-element">Credit or debit card</label>
-
-                        <div id="card-element" class="form-control">
-                            <!-- A Stripe Element will be inserted here. -->
+                        <div class="form-group">
+                            <label for="name_on_card">Name on Card</label>
+                            <input type="text" class="form-control @error('name_on_card') border-error @enderror"
+                                   id="name_on_card" name="name_on_card" value="{{ old('name_on_card') }}">
                         </div>
-                        <!-- Used to display Element errors. -->
-                        <div id="card-errors" role="alert"></div>
+
+
+                        <div class="form-group">
+                            <label for="card-element">Credit or debit card</label>
+
+                            <div id="card-element" class="form-control">
+                                <!-- A Stripe Element will be inserted here. -->
+                            </div>
+                            <!-- Used to display Element errors. -->
+                            <div id="card-errors" role="alert"></div>
+                        </div>
+
+
+                        <div class="spacer"></div>
+
+                        <button type="submit" class="button-primary full-width" id="complete-order">Complete Order</button>
+
+
+                    </form>
+                @endif
+                @if(!request()->payment)
+                    <div id="payment-method">
+                        <h2>Payment Details</h2>
+                        <a href="{{ request()->fullUrlWithQuery(['payment' => 'credit-debit']) }}">
+                            <button  class="button-primary full-width credit-debit-btn">
+                                Credit or Debit Card
+                            </button>
+                        </a>
+                        <div class="spacer"></div>
+                        <h2 style="text-align: center">Or</h2>
+                        <div class="spacer"></div>
+                        <div id="paypal-button"></div>
                     </div>
-
-
-                    <div class="spacer"></div>
-
-                    <button type="submit" class="button-primary full-width" id="complete-order">Complete Order</button>
-
-
-                </form>
-
-                <div class="spacer"></div>
-                <h2 style="text-align: center">Or</h2>
-                <div class="spacer"></div>
-                <div id="paypal-button"></div>
+                @endif
             </div>
 
 
@@ -117,8 +138,10 @@
                                 <img src="{{ presentImage($item->model->image) }}" alt="item"
                                      class="checkout-table-img">
                                 <div class="checkout-item-details">
-                                    <div class="checkout-table-item">{{ $item->model->getTranslatedAttribute('name') }}</div>
-                                    <div class="checkout-table-description">{{ $item->model->getTranslatedAttribute('details') }}</div>
+                                    <div
+                                        class="checkout-table-item">{{ $item->model->getTranslatedAttribute('name') }}</div>
+                                    <div
+                                        class="checkout-table-description">{{ $item->model->getTranslatedAttribute('details') }}</div>
                                     <div class="checkout-table-price">{{ $item->model->presentPrice() }}</div>
                                 </div>
                             </div> <!-- end checkout-table -->
@@ -148,9 +171,9 @@
                     <div class="checkout-totals-right">
                         {{ presentPrice(Cart::subtotal()) }} <br>
                         @if(session()->has('coupon'))
-                        -{{ presentPrice($discount) }} <br>
-                        <hr>
-                        {{ presentPrice($newSubtotal) }} <br>
+                            -{{ presentPrice($discount) }} <br>
+                            <hr>
+                            {{ presentPrice($newSubtotal) }} <br>
                         @endif
                         {{ presentPrice($newTax) }} <br>
                         <span class="checkout-totals-total">{{ presentPrice($newTotal) }}</span>
@@ -168,6 +191,7 @@
 @section('extra-js')
     <script>
         (function () {
+
             const stripe = Stripe('pk_test_51ILy9rLwhl8jQZZNkcfGafRFKH7hNsClemq0KKk25UepdtcuLgAyDd4IaVzpfby59EkorR5BjxpbXX3vnph8vvrQ00w3zJLx3J', {
                 locale: 'en'
             });
@@ -246,31 +270,38 @@
     </script>
 
     <script>
+        var locale = document.getElementsByTagName("html")[0].getAttribute("lang");
         paypal.Button.render({
             env: 'sandbox',
             style: {
                 size: 'responsive',
                 color: 'silver',
+                shape: 'rect',
             },
             // Set up the payment:
             // 1. Add a payment callback
-            payment: function(data, actions) {
+            payment: function (data, actions) {
                 // 2. Make a request to your server
                 return actions.request.post('/api/create-payment/')
-                    .then(function(res) {
+                    .then(function (res) {
                         return res.id;
                     });
             },
             // Execute the payment:
             // 1. Add an onAuthorize callback
-            onAuthorize: function(data, actions) {
+            onAuthorize: function (data, actions) {
                 // 2. Make a request to your server
                 return actions.request.post('/api/execute-payment/', {
                     paymentID: data.paymentID,
-                    payerID:   data.payerID
+                    payerID: data.payerID
                 })
-                    .then(function(res) {
-                        console.log(res);
+                    .then(function (res) {
+                        if (res.state == "approved"){
+                            window.location.href = '/' + locale + '/thankyou';
+                        }else {
+                            window.location.href = '';
+                        }
+
                     });
             }
         }, '#paypal-button');
