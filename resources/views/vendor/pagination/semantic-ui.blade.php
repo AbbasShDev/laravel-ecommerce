@@ -4,7 +4,7 @@
             {{-- Previous Page Link --}}
             @if ($paginator->onFirstPage())
                 <li class="disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">
-                    <span aria-hidden="true">&lsaquo;</span>
+                    <span aria-hidden="true">{!!  getAppDir() == 'rtl' ? '&rsaquo;' : '&lsaquo;' !!}</span>
                 </li>
             @else
                 <li>
@@ -38,7 +38,7 @@
                 </li>
             @else
                 <li class="disabled" aria-disabled="true" aria-label="@lang('pagination.next')">
-                    <span aria-hidden="true">&rsaquo;</span>
+                    <span aria-hidden="true">{!! getAppDir() == 'rtl' ? '&lsaquo;' : '&rsaquo;' !!}</span>
                 </li>
             @endif
         </ul>

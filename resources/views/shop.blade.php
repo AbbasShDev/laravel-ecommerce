@@ -10,18 +10,18 @@
 
     <div class="breadcrumbs">
         <div class="container">
-            <a href="{{ route('landing-page') }}">Home</a>
-            <i class="fa fa-chevron-right breadcrumb-separator"></i>
-            <span>Shop</span>
+            <a href="{{ route('landing-page') }}">{{ __('general.home') }}</a>
+            <i class="fa {{ getAppDir() == 'rtl' ? 'fa-chevron-left' : 'fa-chevron-right' }} breadcrumb-separator"></i>
+            <span>{{ __('shop.shop') }}</span>
         </div>
     </div> <!-- end breadcrumbs -->
 
     <div class="products-section container main-container">
         <div class="sidebar">
-            <h3>By Category</h3>
+            <h3>{{ __('shop.categories') }}</h3>
             <ul>
                 <li class="{{ !request()->category ? 'active' : '' }}">
-                    <a href="{{ route('shop.index') }}">Featured</a>
+                    <a href="{{ route('shop.index') }}">{{ __('shop.featured') }}</a>
                 </li>
             @foreach($categories as $category)
                     <li class="{{ request()->category ==  $category->slug ? 'active' : ''}}">
@@ -37,10 +37,10 @@
             <div class="products-header">
                 <h1 class="stylish-heading">{{ $categoryName }}</h1>
                 <div>
-                    <span style="font-weight: bold;">Price: </span>
-                    <a href="{{ route('shop.index', ['category' => request()->category, 'sort' => 'low_high']) }}">Low to high</a>
+                    <span style="font-weight: bold;">{{ __('shop.price') }}: </span>
+                    <a href="{{ route('shop.index', ['category' => request()->category, 'sort' => 'low_high']) }}">{{ __('shop.low_to_high') }}</a>
                     <span style="font-weight: bold;"> | </span>
-                    <a href="{{ route('shop.index', ['category' => request()->category, 'sort' => 'high_low']) }}">High to low</a>
+                    <a href="{{ route('shop.index', ['category' => request()->category, 'sort' => 'high_low']) }}">{{ __('shop.high_to_low') }}</a>
                 </div>
             </div>
             <div class="products text-center">

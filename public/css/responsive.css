@@ -17,6 +17,7 @@
   }
   header.with-background .top-nav-left, header .top-nav-left {
     flex-direction: column;
+    gap: 0px;
   }
   header.with-background .hero, header .hero {
     grid-template-columns: 1fr;

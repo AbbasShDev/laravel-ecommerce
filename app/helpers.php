@@ -53,3 +53,7 @@ function presentDateString($date){
 
     return Carbon::createFromFormat('Y-m-d H:i:s', $date)->toFormattedDateString();
 }
+
+function getAppDir(){
+    return config('locales.languages')[app()->getLocale()]['dir'];
+}

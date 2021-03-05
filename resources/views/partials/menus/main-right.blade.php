@@ -1,14 +1,14 @@
 <ul>
     @guest
-    <li><a href="{{ route('login') }}">Login</a></li>
-    <li><a href="{{ route('register') }}">Sign up</a></li>
+    <li><a href="{{ route('login') }}">{{ __('nav.log_in') }}</a></li>
+    <li><a href="{{ route('register') }}">{{ __('nav.sign_up') }}</a></li>
     @else
-    <li><a href="{{ route('users.edit') }}">My Account</a></li>
+    <li><a href="{{ route('users.edit') }}">{{ __('nav.my_account') }}</a></li>
     <li>
         <a href="{{ route('logout') }}"
         onclick="event.preventDefault();
         document.getElementById('logout-form').submit();">
-        {{ __('Logout') }}
+            {{ __('nav.log_out') }}
         </a>
 
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -17,7 +17,7 @@
     </li>
     @endguest
     <li><a href="{{ route('cart.index') }}">
-            cart
+            {{ __('nav.cart') }}
             @if(Cart::count() > 0)
                 <span class="cart-count">
                         <span>{{ Cart::count() }}</span>

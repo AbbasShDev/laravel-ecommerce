@@ -68,14 +68,13 @@ header {
     .top-nav {
         display: flex;
         justify-content: space-between;
-        padding: 30px 0;
-        letter-spacing: 1.5px;
+        padding: 10px 0;
+        //letter-spacing: 1.5px;
 
         .logo {
             font-weight: bold;
             font-size: 28px;
             color: $white;
-            margin-right: 58px;
         }
 
         ul {
@@ -85,14 +84,7 @@ header {
             //width: 40%;
             padding-top: 8px;
             font-weight: 400;
-
-            li {
-                margin-right: 38px;
-
-                &:last-child {
-                    margin-right: 0;
-                }
-            }
+            gap: 38px;
 
             a {
                 color: $white;
@@ -134,6 +126,7 @@ header {
     .top-nav-left{
         display: flex;
         align-items: center;
+        gap: 58px;
 
         .logo {
             font-weight: bold;

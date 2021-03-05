@@ -21,7 +21,7 @@ class ShopController extends Controller {
             $categoryName = optional(Category::where('slug', request()->category)->first())->getTranslatedAttribute('name');
         } else {
             $products = Product::where('featured', true);
-            $categoryName = 'Featured';
+            $categoryName = __('shop.featured');
         }
 
         if (request()->sort == 'low_high') {
