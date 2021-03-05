@@ -136,6 +136,13 @@
     margin-right: 10px;
   }
 
+  html[dir=rtl] .auth-pages .auth-right {
+    border-left: none;
+    padding-left: 0px;
+    border-right: none;
+    padding-right: 0px;
+  }
+
   .auth-pages {
     margin: 50px auto;
     grid-template-columns: 1fr;
@@ -144,6 +151,8 @@
   .auth-pages .auth-right {
     border-left: none;
     padding-left: 0px;
+    border-right: none;
+    padding-right: 0px;
   }
 
   .my-profile input {

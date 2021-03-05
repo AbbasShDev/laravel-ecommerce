@@ -1100,9 +1100,18 @@ h1.checkout-heading {
 .auth-pages .auth-right {
   border-left: 1px solid #CDCDCD;
   padding-left: 100px;
+  border-right: none;
+  padding-right: 0px;
 }
 .auth-pages .already-have-container {
   text-align: right;
+}
+
+html[dir=rtl] .auth-pages .auth-right {
+  border-left: none;
+  padding-left: 0px;
+  border-right: 1px solid #CDCDCD;
+  padding-right: 100px;
 }
 
 .my-orders .order-container {

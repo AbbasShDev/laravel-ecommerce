@@ -51,10 +51,24 @@
     .auth-right {
         border-left: 1px solid $separator-color;
         padding-left: 100px;
+        border-right: none;
+        padding-right: 0px;
     }
+
 
     .already-have-container {
         text-align: right;
+    }
+
+}
+
+html[dir="rtl"] .auth-pages {
+
+    .auth-right {
+        border-left: none;
+        padding-left: 0px;
+        border-right: 1px solid $separator-color;
+        padding-right: 100px;
     }
 
 }
