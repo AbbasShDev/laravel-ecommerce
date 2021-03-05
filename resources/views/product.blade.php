@@ -10,13 +10,13 @@
 
     <div class="breadcrumbs">
         <div class="container">
-            <a href="{{ route('landing-page') }}">Home</a>
-            <i class="fa fa-chevron-right breadcrumb-separator"></i>
-            <a href="{{ route('shop.index') }}"><span>Shop</span></a>
-            <i class="fa fa-chevron-right breadcrumb-separator"></i>
+            <a href="{{ route('landing-page') }}">{{ __('general.home') }}</a>
+            <i class="fa {{ getAppDir() == 'rtl' ? 'fa-chevron-left' : 'fa-chevron-right' }} breadcrumb-separator"></i>
+            <a href="{{ route('shop.index') }}"><span>{{ __('shop.shop') }}</span></a>
+            <i class="fa {{ getAppDir() == 'rtl' ? 'fa-chevron-left' : 'fa-chevron-right' }} breadcrumb-separator"></i>
             <a href="{{ route('shop.index', ['category' => $product->category->slug]) }}">{{ $product->category->getTranslatedAttribute('name') }}</a>
-            <i class="fa fa-chevron-right breadcrumb-separator"></i>
-            <span>{{ $product->name }}</span>
+            <i class="fa {{ getAppDir() == 'rtl' ? 'fa-chevron-left' : 'fa-chevron-right' }} breadcrumb-separator"></i>
+            <span>{{ $product->getTranslatedAttribute('name') }}</span>
         </div>
     </div> <!-- end breadcrumbs -->
 
@@ -49,7 +49,7 @@
             @if($product->quantity)
                 <form action="{{ route('cart.store', $product->slug) }}" method="post">
                     @csrf
-                    <button type="submit" class="button button-plain">Add to Cart</button>
+                    <button type="submit" class="button button-plain">{{ __('shop.add_to_cart') }}</button>
                 </form>
             @endif
 

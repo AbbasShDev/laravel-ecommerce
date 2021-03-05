@@ -39,11 +39,11 @@ function getStockLevel($quantity)
 {
 
     if ($quantity >= setting('site.stock_threshold')) {
-        $stockLevel = "<div class='badge badge-success'>In stock</div>";
+        $stockLevel = "<div class='badge badge-success'>".__('shop.in_stock')."</div>";
     } elseif ($quantity < setting('site.stock_threshold') && $quantity > 0) {
-        $stockLevel = "<div class='badge badge-warning'>Low stock</div>";
+        $stockLevel = "<div class='badge badge-warning'>".__('shop.low_stock')."</div>";
     } else {
-        $stockLevel = "<div class='badge badge-secondary'>Not available</div>";
+        $stockLevel = "<div class='badge badge-secondary'>".__('shop.not_available')."</div>";
     }
 
     return $stockLevel;
