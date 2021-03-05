@@ -56,6 +56,7 @@ Route::group(['prefix' => app()->getLocale(), 'middleware' => 'localized'], func
         Route::get('/my-profile', [UsersController::class, 'edit'])->name('users.edit');
         Route::patch('/my-profile', [UsersController::class, 'update'])->name('users.update');
         Route::patch('/my-profile/change-password', [UsersController::class, 'updatePassword'])->name('users.updatePassword');
+        Route::patch('/my-profile/change-address', [UsersController::class, 'updateAddress'])->name('users.updateAddress');
 
         Route::get('/orders', [OrdersController::class, 'index'])->name('orders.index');
         Route::get('/orders/{order}', [OrdersController::class, 'show'])->name('orders.show');

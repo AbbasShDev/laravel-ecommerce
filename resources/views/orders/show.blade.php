@@ -57,16 +57,16 @@
                                 <div class="order-body">
                                     <div class="order-details-heading">SHIPPING ADDRESS</div>
                                     <div class="order-details">
-                                        <p>{{ $order->billing_address }}</p>
+                                        <p>{{ $order->shipping_address }}</p>
                                         <p>
-                                            {{$order->billing_city}} ,
-                                            {{$order->billing_province}}
-                                            {{$order->billing_postalcode}}
+                                            {{ $order->shipping_city }} ,
+                                            {{ $order->shipping_province }}
+                                            {{ $order->shipping_postalcode }}
                                         </p>
                                     </div>
                                     <div class="order-details-heading">MOBILE NUMBER</div>
                                     <div class="order-details">
-                                        <p>{{ $order->billing_phone }}</p>
+                                        <p>{{ auth()->user()->shipping_phone }}</p>
                                     </div>
                                 </div>
                     </div> <!-- end single-order-container -->

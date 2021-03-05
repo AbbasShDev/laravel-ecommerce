@@ -30,101 +30,150 @@
         <h1 class="checkout-heading stylish-heading">Checkout</h1>
         <div class="checkout-section">
             <div>
-                @if(request()->payment == 'credit-debit')
-                    <form action="{{ route('checkout.store') }}" method="post" id="payment-form" >
+                @if(auth()->user() && !auth()->user()->shipping_address)
+                    <form action="{{ route('users.updateAddress') }}" method="post" id="payment-form" >
                         @csrf
-                        <h2>Billing Details</h2>
-
+                        <h2>Add Shipping Address</h2>
+                        @method('patch')
+                        @csrf
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            @auth
-                                <input type="email" class="form-control" id="email" name="email"
-                                       value="{{ auth()->user()->email }}" readonly>
-                            @else
-                                <input type="email" class="form-control @error('email') border-error @enderror" id="email"
-                                       name="email" value="{{ old('billing_email')  }}">
-                            @endauth
+                            <label for="shipping_address">Address</label>
+                            <input id="shipping_address" type="text" name="shipping_address" value="{{ old('shipping_address', auth()->user()->shipping_address) }}" placeholder="Address" required>
                         </div>
                         <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control @error('name') border-error @enderror" id="name"
-                                   name="name" value="{{ old('name') }}">
+                            <label for="shipping_city">City</label>
+                            <input id="shipping_city" type="text" name="shipping_city" value="{{ old('shipping_city', auth()->user()->shipping_city) }}" placeholder="City" required>
                         </div>
                         <div class="form-group">
-                            <label for="address">Address</label>
-                            <input type="text" class="form-control @error('address') border-error @enderror" id="address"
-                                   name="address" value="{{ old('address') }}">
+                            <label for="shipping_province">Province</label>
+                            <input id="shipping_province" type="text" name="shipping_province" value="{{ old('shipping_province', auth()->user()->shipping_province) }}" placeholder="Province" required>
                         </div>
-
-                        <div class="half-form">
-                            <div class="form-group">
-                                <label for="city">City</label>
-                                <input type="text" class="form-control @error('city') border-error @enderror" id="city"
-                                       name="city" value="{{ old('city')}}">
-                            </div>
-                            <div class="form-group">
-                                <label for="province">Province</label>
-                                <input type="text" class="form-control @error('province') border-error @enderror"
-                                       id="province" name="province" value="{{ old('province') }}">
-                            </div>
-                        </div> <!-- end half-form -->
-
-                        <div class="half-form">
-                            <div class="form-group">
-                                <label for="postalcode">Postal Code</label>
-                                <input type="text" class="form-control @error('postalcode') border-error @enderror"
-                                       id="postalcode" name="postalcode" value="{{ old('postalcode') }}">
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone</label>
-                                <input type="text" class="form-control @error('phone') border-error @enderror" id="phone"
-                                       name="phone" value="{{ old('phone') }}">
-                            </div>
-                        </div> <!-- end half-form -->
-
+                        <div class="form-group">
+                            <label for="shipping_postalcode">Postal Code</label>
+                            <input id="shipping_postalcode" type="text" name="shipping_postalcode" value="{{ old('shipping_postalcode', auth()->user()->shipping_postalcode) }}" placeholder="Postal Code" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="shipping_phone">Phone</label>
+                            <input id="shipping_phone" type="text" name="shipping_phone" value="{{ old('shipping_phone', auth()->user()->shipping_phone) }}" placeholder="Phone" >
+                        </div>
                         <div class="spacer"></div>
-
-                        <h2>Payment Details</h2>
-
-                        <div class="form-group">
-                            <label for="name_on_card">Name on Card</label>
-                            <input type="text" class="form-control @error('name_on_card') border-error @enderror"
-                                   id="name_on_card" name="name_on_card" value="{{ old('name_on_card') }}">
-                        </div>
-
-
-                        <div class="form-group">
-                            <label for="card-element">Credit or debit card</label>
-
-                            <div id="card-element" class="form-control">
-                                <!-- A Stripe Element will be inserted here. -->
-                            </div>
-                            <!-- Used to display Element errors. -->
-                            <div id="card-errors" role="alert"></div>
-                        </div>
-
-
-                        <div class="spacer"></div>
-
-                        <button type="submit" class="button-primary full-width" id="complete-order">Complete Order</button>
-
+                        <button type="submit" class="button-primary full-width" id="complete-order">Add Address</button>
 
                     </form>
+                @else
+
+                    @if(auth()->user())
+                        <div>
+                            <h2>Shipping Details</h2>
+                            <p>{{ auth()->user()->shipping_address }}</p>
+                            <p>
+                                {{auth()->user()->shipping_city}} ,
+                                {{auth()->user()->shipping_province}}
+                                {{auth()->user()->shipping_postalcode}}
+                            </p>
+                            <p>{{ auth()->user()->shipping_phone }}</p>
+                        </div>
+                    @endif
+
+                    <div class="spacer"></div>
+
+                    @if(request()->payment == 'credit-debit')
+                        <form action="{{ route('checkout.store') }}" method="post" id="payment-form" >
+                            @csrf
+                            <h2>Billing Details</h2>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                @auth
+                                    <input type="email" class="form-control" id="email" name="email"
+                                           value="{{ auth()->user()->email }}" readonly>
+                                @else
+                                    <input type="email" class="form-control @error('email') border-error @enderror" id="email"
+                                           name="email" value="{{ old('billing_email')  }}">
+                                @endauth
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control @error('name') border-error @enderror" id="name"
+                                       name="name" value="{{ old('name') }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input type="text" class="form-control @error('address') border-error @enderror" id="address"
+                                       name="address" value="{{ old('address') }}">
+                            </div>
+
+                            <div class="half-form">
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <input type="text" class="form-control @error('city') border-error @enderror" id="city"
+                                           name="city" value="{{ old('city')}}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="province">Province</label>
+                                    <input type="text" class="form-control @error('province') border-error @enderror"
+                                           id="province" name="province" value="{{ old('province') }}">
+                                </div>
+                            </div> <!-- end half-form -->
+
+                            <div class="half-form">
+                                <div class="form-group">
+                                    <label for="postalcode">Postal Code</label>
+                                    <input type="text" class="form-control @error('postalcode') border-error @enderror"
+                                           id="postalcode" name="postalcode" value="{{ old('postalcode') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <input type="text" class="form-control @error('phone') border-error @enderror" id="phone"
+                                           name="phone" value="{{ old('phone') }}">
+                                </div>
+                            </div> <!-- end half-form -->
+
+                            <div class="spacer"></div>
+
+                            <h2>Payment Details</h2>
+
+                            <div class="form-group">
+                                <label for="name_on_card">Name on Card</label>
+                                <input type="text" class="form-control @error('name_on_card') border-error @enderror"
+                                       id="name_on_card" name="name_on_card" value="{{ old('name_on_card') }}">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="card-element">Credit or debit card</label>
+
+                                <div id="card-element" class="form-control">
+                                    <!-- A Stripe Element will be inserted here. -->
+                                </div>
+                                <!-- Used to display Element errors. -->
+                                <div id="card-errors" role="alert"></div>
+                            </div>
+
+
+                            <div class="spacer"></div>
+
+                            <button type="submit" class="button-primary full-width" id="complete-order">Complete Order</button>
+
+
+                        </form>
+                    @endif
+                    @if(!request()->payment)
+                        <div id="payment-method">
+                            <h2>Payment Details</h2>
+                            <a href="{{ request()->fullUrlWithQuery(['payment' => 'credit-debit']) }}">
+                                <button  class="button-primary full-width credit-debit-btn">
+                                    Credit or Debit Card
+                                </button>
+                            </a>
+                            <div class="spacer"></div>
+                            <h2 style="text-align: center">Or</h2>
+                            <div class="spacer"></div>
+                            <div id="paypal-button"></div>
+                        </div>
+                    @endif
                 @endif
-                @if(!request()->payment)
-                    <div id="payment-method">
-                        <h2>Payment Details</h2>
-                        <a href="{{ request()->fullUrlWithQuery(['payment' => 'credit-debit']) }}">
-                            <button  class="button-primary full-width credit-debit-btn">
-                                Credit or Debit Card
-                            </button>
-                        </a>
-                        <div class="spacer"></div>
-                        <h2 style="text-align: center">Or</h2>
-                        <div class="spacer"></div>
-                        <div id="paypal-button"></div>
-                    </div>
-                @endif
+
             </div>
 
 

@@ -530,9 +530,9 @@
                                                         <tr style="border-collapse:collapse">
                                                             <td align="left"
                                                                 style="padding:0;Margin:0;padding-bottom:10px"><p
-                                                                    style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333">{{ $order->billing_address }}</p>
-                                                                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333"> {{$order->billing_city}}
-                                                                    , {{$order->billing_province}} {{$order->billing_postalcode}}</p>
+                                                                    style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333">{{ $order->shippingaddress }}</p>
+                                                                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333"> {{$order->shipping_city}}
+                                                                    , {{$order->shipping_province}} {{$order->shipping_postalcode}}</p>
                                                             </td>
                                                         </tr>
                                                     </table>
