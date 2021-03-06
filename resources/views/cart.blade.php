@@ -10,9 +10,9 @@
 
     <div class="breadcrumbs">
         <div class="container">
-            <a href="{{ route('landing-page') }}">Home</a>
-            <i class="fa fa-chevron-right breadcrumb-separator"></i>
-            <span>Shopping Cart</span>
+            <a href="{{ route('landing-page') }}">{{ __('general.home') }}</a>
+            <i class="fa {{ getAppDir() == 'rtl' ? 'fa-chevron-left' : 'fa-chevron-right' }} breadcrumb-separator"></i>
+            <span>{{ __('shop.shopping_cart') }}</span>
         </div>
     </div> <!-- end breadcrumbs -->
 
@@ -34,7 +34,7 @@
                 </div>
             @endif
             @if(Cart::count() > 0)
-                <h2>{{ Cart::count() }} item(s) in Shopping Cart</h2>
+                <h2>{{ Cart::count() }} {{ __('shop.items_in_shopping_cart') }}</h2>
                 <div class="cart-table">
                     @foreach(Cart::content() as $item)
                         <div class="cart-table-row">
@@ -56,12 +56,12 @@
                                     <form action="{{ route('cart.destroy', $item->rowId) }}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="cart-options">Remove</button>
+                                        <button type="submit" class="cart-options">{{ __('shop.remove') }}</button>
                                     </form>
 
                                     <form action="{{ route('cart.switchToSaveForLater', $item->rowId) }}" method="post">
                                         @csrf
-                                        <button type="submit" class="cart-options">Save for Later</button>
+                                        <button type="submit" class="cart-options">{{ __('shop.save_for_later') }}</button>
                                     </form>
                                 </div>
                                 <div>
@@ -81,47 +81,46 @@
 
             @else
                 <div class="have-code-container">
-                    <h3>No items in cart!</h3>
+                    <h3>{{ __('shop.no_items_in_cart') }}</h3>
                     <div class="spacer"></div>
-                    <a href="{{ route('shop.index') }}" class="button">Continue shopping</a>
+                    <a href="{{ route('shop.index') }}" class="button">{{ __('shop.continue_shopping') }}</a>
                     <div class="spacer"></div>
                 </div>
             @endif
 
             @if (! session()->has('coupon'))
 
-                <h4 class="have-code">Have a Code?</h4>
+                <h4 class="have-code">{{ __('shop.have_a_code') }}</h4>
 
                 <div class="have-code-container">
                     <form action="{{ route('coupon.store') }}" method="POST">
                         {{ csrf_field() }}
                         <input type="text" name="coupon_code" id="coupon_code">
-                        <button type="submit" class="button button-plain">Apply</button>
+                        <button type="submit" class="button button-plain">{{ __('shop.apply') }}</button>
                     </form>
                 </div> <!-- end have-code-container -->
             @endif
 
             <div class="cart-totals">
                 <div class="cart-totals-left">
-                    Shipping is free because we’re awesome like that. Also because that’s additional stuff I don’t feel
-                    like figuring out :).
+                    {{ __('shop.shipping_is_free') }}
                 </div>
 
                 <div class="cart-totals-right">
                     <div>
-                        Subtotal <br>
+                        {{ __('shop.subtotal') }} <br>
                         @if (session()->has('coupon'))
-                            Code ({{ session()->get('coupon')['name'] }})
+                            {{__('shop.code')}} ({{ session()->get('coupon')['name'] }})
                             <form action="{{ route('coupon.destroy') }}" method="post" style="display: inline-block">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="remove-coupon"><i class="fa fa-times-circle"></i></button>
                             </form>
                             <hr>
-                            New Subtotal <br>
+                            {{__('shop.new_subtotal')}} <br>
                         @endif
-                        Tax ({{config('cart.tax')}}%)<br>
-                        <span class="cart-totals-total">Total</span>
+                        {{__('shop.tax')}} ({{config('cart.tax')}}%)<br>
+                        <span class="cart-totals-total">{{__('shop.total')}}</span>
                     </div>
                     <div class="cart-totals-subtotal">
                         {{ presentPrice(Cart::subtotal()) }} <br>
@@ -137,12 +136,12 @@
             </div> <!-- end cart-totals -->
 
             <div class="cart-buttons">
-                <a href="#" class="button">Continue Shopping</a>
-                <a href="{{ route('checkout.index') }}" class="button-primary">Proceed to Checkout</a>
+                <a href="{{ route('shop.index') }}" class="button">{{ __('shop.continue_shopping') }}</a>
+                <a href="{{ route('checkout.index') }}" class="button-primary">{{ __('shop.proceed_to_checkout') }}</a>
             </div>
 
             @if(Cart::instance('saveForLater')->count() > 0)
-                <h2>{{ Cart::instance('saveForLater')->count() }} item(s) Saved For Later</h2>
+                <h2>{{ Cart::instance('saveForLater')->count() }} {{ __('shop.items_in_saved_for_later') }}</h2>
 
                 <div class="saved-for-later cart-table">
                     @foreach(Cart::instance('saveForLater')->content() as $item)
@@ -153,9 +152,9 @@
                                         class="cart-table-img"></a>
                                 <div class="cart-item-details">
                                     <div class="cart-table-item"><a
-                                            href="{{ route('shop.show', $item->model->slug) }}">{{ $item->model->name }}</a>
+                                            href="{{ route('shop.show', $item->model->slug) }}">{{ $item->model->getTranslatedAttribute('name') }}</a>
                                     </div>
-                                    <div class="cart-table-description">{{ $item->model->details }}</div>
+                                    <div class="cart-table-description">{{ $item->model->getTranslatedAttribute('details') }}</div>
                                 </div>
                             </div>
                             <div class="cart-table-row-right">
@@ -163,24 +162,14 @@
                                     <form action="{{ route('saveForLater.destroy', $item->rowId) }}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="cart-options">Remove</button>
+                                        <button type="submit" class="cart-options">{{ __('shop.remove') }}</button>
                                     </form>
 
                                     <form action="{{ route('saveForLater.switchToCart', $item->rowId) }}" method="post">
                                         @csrf
-                                        <button type="submit" class="cart-options">Move to cart</button>
+                                        <button type="submit" class="cart-options">{{ __('shop.move_to_cart') }}</button>
                                     </form>
-                                    s
                                 </div>
-                                {{-- <div>
-                                    <select class="quantity">
-                                        <option selected="">1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div> --}}
                                 <div>{{ $item->model->presentPrice() }}</div>
                             </div>
                         </div> <!-- end cart-table-row -->

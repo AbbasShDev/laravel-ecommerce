@@ -34,7 +34,7 @@ return [
     'creating_an_account_will_allow_you'  => "Creating an account will allow you to checkout faster in the future, have easy access to order history and customize your experience to suit your preferences.",
     'loyalty_program'                     => 'Loyalty Program',
     'loyalty_program_description'         => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt debitis, amet magnam accusamus nisi distinctio eveniet ullam. Facere, cumque architecto.',
-    'forgot_password' => 'Forgot Password?',
-    'send_password_reset_link' => 'Send Password Reset Link',
-    'reset_password' => 'Reset Password',
-    ];
+    'forgot_password'                     => 'Forgot Password?',
+    'send_password_reset_link'            => 'Send Password Reset Link',
+    'reset_password'                      => 'Reset Password',
+];

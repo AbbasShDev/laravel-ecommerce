@@ -35,7 +35,7 @@ class CartController extends Controller {
         if ($maxInCart->isNotEmpty()) {
             return redirect()
                 ->route('cart.index')
-                ->with('errors', collect(["Quantity can't be greater than 10"]));
+                ->with('errors', collect(__("shop.quantity_can't_be_greater_than_10")));
         }
 
         $isExist = Cart::search(function ($cartItem, $rowId) use ($product) {
@@ -51,7 +51,7 @@ class CartController extends Controller {
         if ($isExist->isNotEmpty()) {
             return redirect()
                 ->route('cart.index')
-                ->with('success_message', $product->name . ' added to cart successfully');
+                ->with('success_message', '('.$product->getTranslatedAttribute('name') . ') ' . __('shop.added_to_cart_successfully'));
         }
 
 
@@ -60,7 +60,7 @@ class CartController extends Controller {
 
         return redirect()
             ->route('cart.index')
-            ->with('success_message', $product->name . ' added to cart successfully');
+            ->with('success_message', '('.$product->getTranslatedAttribute('name') . ') ' . __('shop.added_to_cart_successfully'));
     }
 
     public function update(Request $request, $id)
@@ -76,7 +76,7 @@ class CartController extends Controller {
 
         if ($request->quantity > $product->quantity) {
 
-            session()->flash('errors', collect(['We currently do not have enough items in stock']));
+            session()->flash('errors', collect([__('shop.we_currently_do_not_have_enough_items_in_stock')]));
 
             return response()->json(['success' => false], 400);
 
@@ -84,13 +84,13 @@ class CartController extends Controller {
 
         if ($validator->fails()) {
 
-            session()->flash('errors', collect(['Quantity must be between 1 and 10']));
+            session()->flash('errors', collect([__('shop.quantity_must_be_between_1_and_10')]));
 
             return response()->json(['success' => false], 400);
         }
 
         Cart::update($id, $request->quantity);
-        session()->flash('success_message', 'Quantity updated successfully!');
+        session()->flash('success_message', __('shop.quantity_updated_successfully'));
 
         return response()->json(['success' => true]);
     }
@@ -100,7 +100,7 @@ class CartController extends Controller {
     {
         Cart::remove($id);
 
-        return redirect()->back()->with('success_message', 'Item has been removed');
+        return redirect()->back()->with('success_message', __('shop.item_has_been_removed'));
     }
 
     public function switchToSaveForLater($id)
@@ -114,11 +114,11 @@ class CartController extends Controller {
         });
 
         if ($duplicates->isNotEmpty()) {
-            return redirect()->route('cart.index')->with('success_message', 'Item is already saved for later!');
+            return redirect()->route('cart.index')->with('success_message', __('shop.item_is_already_saved_for_later'));
         }
         Cart::instance('saveForLater')->add($item->id, $item->name, 1, $item->price)
             ->associate('App\Models\Product');
 
-        return redirect()->route('cart.index')->with('success_message', $item->name . ' has been saved for later');
+        return redirect()->route('cart.index')->with('success_message', '('.$item->model->getTranslatedAttribute('name') . ') ' . __('shop.has_been_saved_for_later'));
     }
 }

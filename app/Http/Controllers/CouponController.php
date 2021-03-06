@@ -14,12 +14,12 @@ class CouponController extends Controller {
         $coupon = Coupon::where('code', $request->coupon_code)->first();
 
         if ( ! $coupon) {
-            return redirect()->route('checkout.index')->withErrors('Invalid coupon code, try again!');
+            return redirect()->route('cart.index')->withErrors(__('shop.invalid_coupon_code_try_again'));
         }
 
         dispatch_now(new UpdateCoupon($coupon));
 
-        return redirect()->route('cart.index')->with('success_message', 'Coupon(' . $coupon->code . ') has been applied');
+        return redirect()->route('cart.index')->with('success_message', __('shop.coupon_has_been_applied').' ( '.$coupon->code .' )');
 
     }
 
@@ -27,7 +27,7 @@ class CouponController extends Controller {
     {
         session()->forget('coupon');
 
-        return redirect()->route('cart.index')->with('success_message', 'Coupon has been removed');
+        return redirect()->route('cart.index')->with('success_message', __('shop.coupon_has_been_removed'));
 
     }
 }
