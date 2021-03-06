@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container">
-        <div class="auth-pages">
+        <div class="auth-pages" style="margin: 100px 10% ;display: block; !important;">
             <div class="auth-left">
                 @if (session()->has('status'))
                     <div class="alert alert-success">
@@ -19,33 +19,24 @@
                         </ul>
                     </div>
                 @endif
-                <h2>Reset Password</h2>
+                <h2>{{ __('auth.reset_password') }}</h2>
                 <div class="spacer"></div>
                 <form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
                     {{ csrf_field() }}
 
                     <input type="hidden" name="token" value="{{ $token }}">
 
-                    <input id="email" type="email" class="form-control" name="email" value="{{ $email or old('email') }}" placeholder="Email" required autofocus>
+                    <input id="email" type="email" class="form-control" name="email" value="{{ $email or old('email') }}" placeholder="{{ __('auth.email') }}" required autofocus>
 
-                    <input id="password" type="password" class="form-control" name="password" placeholder="Password" required>
+                    <input id="password" type="password" class="form-control" name="password" placeholder="{{ __('auth.password_') }}" required>
 
-                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password" required>
+                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="{{ __('auth.password_confirm') }}" required>
 
                     <div class="login-container">
-                        <button type="submit" class="auth-button">Reset Password</button>
+                        <button type="submit" class="auth-button">{{ __('auth.reset_password') }}</button>
                     </div>
 
                 </form>
-            </div>
-            <div class="auth-right">
-                <h2>Reset Password Information</h2>
-                <div class="spacer"></div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dicta obcaecati exercitationem ut atque inventore
-                    cum. Magni autem error ut!</p>
-                <div class="spacer"></div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel accusantium quasi necessitatibus rerum fugiat eos,
-                    a repudiandae tempore nisi ipsa delectus sunt natus!</p>
             </div>
         </div>
     </div>
