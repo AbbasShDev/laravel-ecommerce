@@ -27,44 +27,44 @@
                 </ul>
             </div>
         @endif
-        <h1 class="checkout-heading stylish-heading">Checkout</h1>
+        <h1 class="checkout-heading stylish-heading">{{ __('checkout.checkout') }}</h1>
         <div class="checkout-section">
             <div>
                 @if(auth()->user() && !auth()->user()->shipping_address)
                     <form action="{{ route('users.updateAddress') }}" method="post" id="payment-form" >
                         @csrf
-                        <h2>Add Shipping Address</h2>
+                        <h2>{{ __('checkout.add_shipping_address') }}</h2>
                         @method('patch')
                         @csrf
                         <div class="form-group">
-                            <label for="shipping_address">Address</label>
-                            <input id="shipping_address" type="text" name="shipping_address" value="{{ old('shipping_address', auth()->user()->shipping_address) }}" placeholder="Address" required>
+                            <label for="shipping_address">{{ __('checkout.address') }}</label>
+                            <input id="shipping_address" type="text" name="shipping_address" value="{{ old('shipping_address', auth()->user()->shipping_address) }}" required>
                         </div>
                         <div class="form-group">
-                            <label for="shipping_city">City</label>
-                            <input id="shipping_city" type="text" name="shipping_city" value="{{ old('shipping_city', auth()->user()->shipping_city) }}" placeholder="City" required>
+                            <label for="shipping_city">{{ __('checkout.city') }}</label>
+                            <input id="shipping_city" type="text" name="shipping_city" value="{{ old('shipping_city', auth()->user()->shipping_city) }}" required>
                         </div>
                         <div class="form-group">
-                            <label for="shipping_province">Province</label>
-                            <input id="shipping_province" type="text" name="shipping_province" value="{{ old('shipping_province', auth()->user()->shipping_province) }}" placeholder="Province" required>
+                            <label for="shipping_province">{{ __('checkout.province') }}</label>
+                            <input id="shipping_province" type="text" name="shipping_province" value="{{ old('shipping_province', auth()->user()->shipping_province) }}" required>
                         </div>
                         <div class="form-group">
-                            <label for="shipping_postalcode">Postal Code</label>
-                            <input id="shipping_postalcode" type="text" name="shipping_postalcode" value="{{ old('shipping_postalcode', auth()->user()->shipping_postalcode) }}" placeholder="Postal Code" required>
+                            <label for="shipping_postalcode">{{ __('checkout.postal_code') }}</label>
+                            <input id="shipping_postalcode" type="text" name="shipping_postalcode" value="{{ old('shipping_postalcode', auth()->user()->shipping_postalcode) }}" required>
                         </div>
                         <div class="form-group">
-                            <label for="shipping_phone">Phone</label>
-                            <input id="shipping_phone" type="text" name="shipping_phone" value="{{ old('shipping_phone', auth()->user()->shipping_phone) }}" placeholder="Phone" >
+                            <label for="shipping_phone">{{ __('checkout.phone') }}</label>
+                            <input id="shipping_phone" type="text" name="shipping_phone" value="{{ old('shipping_phone', auth()->user()->shipping_phone) }}" >
                         </div>
                         <div class="spacer"></div>
-                        <button type="submit" class="button-primary full-width" id="complete-order">Add Address</button>
+                        <button type="submit" class="button-primary full-width" id="complete-order">{{ __('checkout.add_address') }}</button>
 
                     </form>
                 @else
 
                     @if(auth()->user())
                         <div>
-                            <h2>Shipping Details</h2>
+                            <h2>{{ __('checkout.shipping_details') }}</h2>
                             <p>{{ auth()->user()->shipping_address }}</p>
                             <p>
                                 {{auth()->user()->shipping_city}} ,
@@ -80,10 +80,10 @@
                     @if(request()->payment == 'credit-debit')
                         <form action="{{ route('checkout.store') }}" method="post" id="payment-form" >
                             @csrf
-                            <h2>Billing Details</h2>
+                            <h2>{{ __('checkout.billing details') }}</h2>
 
                             <div class="form-group">
-                                <label for="email">Email Address</label>
+                                <label for="email">{{ __('auth.email') }}</label>
                                 @auth
                                     <input type="email" class="form-control" id="email" name="email"
                                            value="{{ auth()->user()->email }}" readonly>
@@ -93,24 +93,24 @@
                                 @endauth
                             </div>
                             <div class="form-group">
-                                <label for="name">Name</label>
+                                <label for="name">{{ __('auth.name') }}</label>
                                 <input type="text" class="form-control @error('name') border-error @enderror" id="name"
                                        name="name" value="{{ old('name') }}">
                             </div>
                             <div class="form-group">
-                                <label for="address">Address</label>
+                                <label for="address">{{ __('checkout.address') }}</label>
                                 <input type="text" class="form-control @error('address') border-error @enderror" id="address"
                                        name="address" value="{{ old('address') }}">
                             </div>
 
                             <div class="half-form">
                                 <div class="form-group">
-                                    <label for="city">City</label>
+                                    <label for="city">{{ __('checkout.city') }}</label>
                                     <input type="text" class="form-control @error('city') border-error @enderror" id="city"
                                            name="city" value="{{ old('city')}}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="province">Province</label>
+                                    <label for="province">{{ __('checkout.province') }}</label>
                                     <input type="text" class="form-control @error('province') border-error @enderror"
                                            id="province" name="province" value="{{ old('province') }}">
                                 </div>
@@ -118,12 +118,12 @@
 
                             <div class="half-form">
                                 <div class="form-group">
-                                    <label for="postalcode">Postal Code</label>
+                                    <label for="postalcode">{{ __('checkout.postal_code') }}</label>
                                     <input type="text" class="form-control @error('postalcode') border-error @enderror"
                                            id="postalcode" name="postalcode" value="{{ old('postalcode') }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="phone">Phone</label>
+                                    <label for="phone">{{ __('checkout.phone') }}</label>
                                     <input type="text" class="form-control @error('phone') border-error @enderror" id="phone"
                                            name="phone" value="{{ old('phone') }}">
                                 </div>
@@ -131,17 +131,17 @@
 
                             <div class="spacer"></div>
 
-                            <h2>Payment Details</h2>
+                            <h2>{{ __('checkout.payment_details') }}</h2>
 
                             <div class="form-group">
-                                <label for="name_on_card">Name on Card</label>
+                                <label for="name_on_card">{{ __('checkout.name_on_card') }}</label>
                                 <input type="text" class="form-control @error('name_on_card') border-error @enderror"
                                        id="name_on_card" name="name_on_card" value="{{ old('name_on_card') }}">
                             </div>
 
 
                             <div class="form-group">
-                                <label for="card-element">Credit or debit card</label>
+                                <label for="card-element">{{ __('checkout.credit_or_debit_card') }}</label>
 
                                 <div id="card-element" class="form-control">
                                     <!-- A Stripe Element will be inserted here. -->
@@ -153,17 +153,17 @@
 
                             <div class="spacer"></div>
 
-                            <button type="submit" class="button-primary full-width" id="complete-order">Complete Order</button>
+                            <button type="submit" class="button-primary full-width" id="complete-order">{{ __('checkout.complete_order') }}</button>
 
 
                         </form>
                     @endif
                     @if(!request()->payment)
                         <div id="payment-method">
-                            <h2>Payment Details</h2>
+                            <h2>{{ __('checkout.payment_details') }}</h2>
                             <a href="{{ request()->fullUrlWithQuery(['payment' => 'credit-debit']) }}">
                                 <button  class="button-primary full-width credit-debit-btn">
-                                    Credit or Debit Card
+                                    {{ __('checkout.credit_or_debit_card') }}
                                 </button>
                             </a>
                             <div class="spacer"></div>
@@ -178,7 +178,7 @@
 
 
             <div class="checkout-table-container">
-                <h2>Your Order</h2>
+                <h2>{{ __('checkout.your_order') }}</h2>
 
                 <div class="checkout-table">
                     @foreach(Cart::content() as $item)
@@ -205,15 +205,15 @@
 
                 <div class="checkout-totals">
                     <div class="checkout-totals-left">
-                        Subtotal <br>
+                        {{ __('shop.subtotal') }} <br>
                         @if(session()->has('coupon'))
-                            Discount ({{ session()->get('coupon')['name'] }})
+                            {{ __('shop.code') }} ({{ session()->get('coupon')['name'] }})
                             <br>
                             <hr>
-                            New subtotal <br>
+                            {{ __('shop.new_subtotal') }} <br>
                         @endif
-                        Tax <br>
-                        <span class="checkout-totals-total">Total</span>
+                        {{ __('shop.tax') }} <br>
+                        <span class="checkout-totals-total">{{ __('shop.total') }}</span>
 
                     </div>
 
@@ -240,9 +240,10 @@
 @section('extra-js')
     <script>
         (function () {
+            var locale = document.getElementsByTagName("html")[0].getAttribute("lang");
 
             const stripe = Stripe('pk_test_51ILy9rLwhl8jQZZNkcfGafRFKH7hNsClemq0KKk25UepdtcuLgAyDd4IaVzpfby59EkorR5BjxpbXX3vnph8vvrQ00w3zJLx3J', {
-                locale: 'en'
+                locale: locale
             });
             const elements = stripe.elements();
 
@@ -322,6 +323,7 @@
         var locale = document.getElementsByTagName("html")[0].getAttribute("lang");
         paypal.Button.render({
             env: 'sandbox',
+            locale: locale === 'ar' ? 'ar_SA' : 'en_US',
             style: {
                 size: 'responsive',
                 color: 'silver',
@@ -333,7 +335,11 @@
                 // 2. Make a request to your server
                 return actions.request.post('/api/create-payment/')
                     .then(function (res) {
-                        return res.id;
+                        if (res.id){
+                            return res.id;
+                        }else {
+                            window.location.href = '';
+                        }
                     });
             },
             // Execute the payment:

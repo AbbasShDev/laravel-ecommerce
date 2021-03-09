@@ -113,3 +113,11 @@ h1.checkout-heading {
     }
 
 }
+
+html[dir="rtl"] .checkout-section  {
+    grid-gap: 154px;
+    .checkout-table-container {
+        margin-left: 0px;
+    }
+
+}

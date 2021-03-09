@@ -11,11 +11,11 @@
 @section('content')
 
    <div class="thank-you-section">
-       <h1>Thank you for <br> Your Order!</h1>
-       <p>A confirmation email was sent</p>
+       <h1>{{ __('general.thank_you_for_your_order') }}!</h1>
+       <p>{{ __('general.a_confirmation_email_was_sent') }}</p>
        <div class="spacer"></div>
        <div>
-           <a href="{{ url('/') }}" class="button">Home Page</a>
+           <a href="{{ route('landing-page') }}" class="button">{{ __('general.home_page') }}</a>
        </div>
    </div>
 

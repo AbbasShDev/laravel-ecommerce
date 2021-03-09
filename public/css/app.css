@@ -963,6 +963,13 @@ h1.checkout-heading {
   color: #DC3545;
 }
 
+html[dir=rtl] .checkout-section {
+  grid-gap: 154px;
+}
+html[dir=rtl] .checkout-section .checkout-table-container {
+  margin-left: 0px;
+}
+
 .thank-you-section {
   display: flex;
   flex-direction: column;

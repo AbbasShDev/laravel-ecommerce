@@ -57,12 +57,12 @@ class UsersController extends Controller {
             'shipping_city' => ['required', 'string' ],
             'shipping_province' => ['required', 'string'],
             'shipping_postalcode' => ['required', 'string'],
-            'shipping_phone' => ['nullable', 'numeric', 'min:10'],
+            'shipping_phone' => ['nullable', 'min:10'],
         ]);
 
         $user->update($attributes);
 
-        return redirect()->back()->with('success_message', 'Address Updated Successfully');
+        return redirect()->back()->with('success_message', __('general.address_updated_successfully'));
     }
 
 }

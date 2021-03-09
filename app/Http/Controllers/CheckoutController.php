@@ -10,6 +10,7 @@ use Cartalyst\Stripe\Exception\CardErrorException;
 use Cartalyst\Stripe\Laravel\Facades\Stripe;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
 use PayPal\Api\Item;
 use PayPal\Api\Payer;
@@ -47,8 +48,9 @@ class CheckoutController extends Controller {
 
     public function store(CheckoutRequest $request)
     {
+
         if ($this->productsNotAvailable()) {
-            return redirect()->back()->withErrors('Sorry! One of the items in your cart is no longer available.');
+            return redirect()->back()->withErrors( __('checkout.sorry_items_not_available') );
         }
 
         $contents = Cart::content()->map(function ($item) {
@@ -81,18 +83,24 @@ class CheckoutController extends Controller {
 
             Mail::send(new OrderPlaced($order));
 
-            return redirect()->route('confirmation.index')->with('success_message', 'Thank you! your payment has been successfully accepted.');
+            return redirect()->route('confirmation.index')->with('success_message', __('checkout.payment_successfully_accepted'));
 
         } catch (CardErrorException $e) {
 
             $this->addToOrdersTable($request, $e->getMessage());
 
-            return redirect()->back()->withInput()->withErrors('Error! ' . $e->getMessage());
+            return redirect()->back()->withInput()->withErrors(__('checkout.error') . $e->getMessage());
         }
     }
 
     public function paypalCreate(Request $request)
     {
+
+        if ($this->productsNotAvailable()) {
+            $errorMessage = __('checkout.sorry_items_not_available');
+            return session()->flash('errors', collect([ $errorMessage ]));
+        }
+
 
         $apiContext = new \PayPal\Rest\ApiContext(
             new \PayPal\Auth\OAuthTokenCredential(config('paypal.paypal_key'), config('paypal.paypal_secret'),)
@@ -214,7 +222,7 @@ class CheckoutController extends Controller {
 
             //Mail::send(new OrderPlaced($order));
 
-            session()->flash('success_message', 'Thank you! your payment has been successfully accepted.');
+            session()->flash('success_message', __('checkout.payment_successfully_accepted'));
 
         } catch (Exception $ex) {
 
@@ -229,7 +237,7 @@ class CheckoutController extends Controller {
                 'payment_gateway'       => 'paypal',
                 'error'                 => $ex->getMessage(),
             ]);
-            session()->flash('errors', collect(['Error! ' . $ex->getMessage()]));
+            session()->flash('errors', collect([__('checkout.error') . $ex->getMessage()]));
 
         }
 

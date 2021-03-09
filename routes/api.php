@@ -1,3 +1,4 @@
+
 <?php
 
 use App\Http\Controllers\CheckoutController;
@@ -19,5 +20,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
 Route::post('create-payment', [CheckoutController::class, 'paypalCreate']);
-Route::post('execute-payment', [CheckoutController::class, 'paypalExecute'])->name('checkout.paypal-execute');
+Route::post('execute-payment', [CheckoutController::class, 'paypalExecute']);
+
+
+
