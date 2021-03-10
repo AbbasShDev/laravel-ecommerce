@@ -8,6 +8,11 @@
         .product-price {
             color: $text-color-light !important;
         }
+
+        img {
+            max-width: 170px;
+            max-height: 140px;
+        }
     }
 }
 

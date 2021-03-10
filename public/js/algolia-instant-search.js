@@ -16,7 +16,7 @@
             container: '#hits',templates: {
                 item: function (item) {
                     return `
-                    <a href="${window.location.origin}/shop/${item.slug}">
+                    <a href="${window.location.origin}/${locale}/shop/${item.slug}">
                             <div class="instantsearch-result">
                                 <div>
                                     <img src="${window.location.origin}/storage/${item.image}" alt="img" class="algolia-thumb-result">

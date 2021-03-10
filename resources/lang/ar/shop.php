@@ -45,5 +45,5 @@ return [
     "coupon_has_been_applied"                        => "تم إضافة كود الخصم",
     "invalid_coupon_code_try_again"                  => "معذرة! كود الخصم غير صالح",
     'checkout'                                       => 'إتمام الشراء',
-
+    "search_for_products"                            => "البحث عن منتجات ..",
 ];

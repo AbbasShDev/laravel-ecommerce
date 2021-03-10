@@ -14,7 +14,7 @@ class ShopController extends Controller {
         $categories = Category::all();
 
         if (request()->category) {
-            $products = Product::with('category')->whereHas('category', function ($query) {
+            $products = Product::latest()->with('category')->whereHas('category', function ($query) {
                 $query->where('slug', request()->category);
             });
 

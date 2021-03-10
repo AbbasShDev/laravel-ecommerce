@@ -656,6 +656,10 @@ footer {
 .featured-section .products .product-price {
   color: #919191 !important;
 }
+.featured-section .products img {
+  max-width: 170px;
+  max-height: 140px;
+}
 
 .blog-section {
   background: #F5F5F5;
@@ -692,6 +696,10 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 60px 30px;
+}
+.products-section .products img {
+  max-width: 182px;
+  max-height: 140px;
 }
 .products-section .products .product-price {
   color: #919191;

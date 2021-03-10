@@ -12,6 +12,10 @@
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 60px $gutter;
 
+        img {
+            max-width: 182px;
+            max-height: 140px;
+        }
         .product-price {
           color: $text-color-light;
         }
