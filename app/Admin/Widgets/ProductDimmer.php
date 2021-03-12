@@ -31,7 +31,7 @@ class ProductDimmer extends BaseDimmer
             'title'  => "{$count} {$string}",
             'text'   => __('voyager::dimmer.user_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [
-                'text' => __('view_all_products'),
+                'text' => __('View all products'),
                 'link' => route('voyager.products.index'),
             ],
             'image' => asset('img/admin/widgets/admin-widget-products-backgrounds.jpg'),

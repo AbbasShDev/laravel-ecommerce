@@ -55,5 +55,6 @@ function presentDateString($date){
 }
 
 function getAppDir(){
+
     return config('locales.languages')[app()->getLocale()]['dir'];
 }

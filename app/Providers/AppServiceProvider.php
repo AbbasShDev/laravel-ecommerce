@@ -24,7 +24,9 @@ class AppServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
-        if ( request()->segment(1) != 'admin'){
+        if (request()->segment(1) == 'admin') {
+            app()->setLocale('en');
+        } else {
             app()->setLocale(request()->segment(1));
         }
 

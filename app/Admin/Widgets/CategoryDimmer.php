@@ -31,7 +31,7 @@ class CategoryDimmer extends BaseDimmer
             'title'  => "{$count} {$string}",
             'text'   => __('voyager::dimmer.user_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [
-                'text' => __('view_all_categories'),
+                'text' => __('View all categories'),
                 'link' => route('voyager.categories.index'),
             ],
             'image' => asset('img/admin/widgets/admin-widget-categories-backgrounds.jpg'),
