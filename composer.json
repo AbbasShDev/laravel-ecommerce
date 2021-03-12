@@ -23,7 +23,7 @@
         "paypal/rest-api-sdk-php": "^1.14",
         "spatie/laravel-sluggable": "^2.6",
         "spatie/laravel-translatable": "^4.6",
-        "tcg/voyager": "^1.4"
+        "tcg/voyager": "^1.4.2"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

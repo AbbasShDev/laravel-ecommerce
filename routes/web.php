@@ -10,7 +10,6 @@ use App\Http\Controllers\saveForLaterController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
-use TCG\Voyager\Facades\Voyager;
 
 
 Route::group(['prefix' => 'admin'], function () {
