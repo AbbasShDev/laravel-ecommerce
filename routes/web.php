@@ -10,13 +10,14 @@ use App\Http\Controllers\saveForLaterController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
+use TCG\Voyager\Facades\Voyager;
 
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
 
 Route::group(['prefix' => app()->getLocale(), 'middleware' => 'localized'], function () {
-
-    Route::group(['prefix' => 'admin'], function () {
-        Voyager::routes();
-    });
 
     Auth::routes();
 

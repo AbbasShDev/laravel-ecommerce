@@ -17,6 +17,11 @@ class SetLocale
     public function handle(Request $request, Closure $next)
     {
 
+        if ($request->segment(1) == 'admin'){
+            return $next($request);
+
+        }
+
         if ( is_null($request->segment(1)) || ! array_key_exists($request->segment(1) , config('locales.languages'))) {
 
             return redirect()->to(config('locales.fallback_locale'));

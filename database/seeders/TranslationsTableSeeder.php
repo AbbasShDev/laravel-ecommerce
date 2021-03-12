@@ -2,314 +2,2766 @@
 
 namespace Database\Seeders;
 
-use App\Models\Product;
 use Illuminate\Database\Seeder;
-use App\Models\Category;
-use TCG\Voyager\Models\DataType;
-use TCG\Voyager\Models\MenuItem;
-use TCG\Voyager\Models\Translation;
 
 class TranslationsTableSeeder extends Seeder
 {
+
     /**
-     * Auto generated seed file.
+     * Auto generated seed file
      *
      * @return void
      */
     public function run()
     {
-        $this->categoriesTranslations();
-        $this->productsTranslations();
-    }
+        
 
-    /**
-     * Auto generate Categories Translations.
-     *
-     * @return void
-     */
-    private function categoriesTranslations()
-    {
-        // Adding translations for 'categories'
-        //
-        $cat = Category::where('slug', 'laptops')->firstOrFail();
-        if ($cat->exists) {
-            $this->trans('ar', $this->arr(['categories', 'name'], $cat->id), 'لابتوبات');
-        }
+        \DB::table('translations')->delete();
+        
+        \DB::table('translations')->insert(array (
+            0 => 
+            array (
+                'id' => 1,
+                'table_name' => 'categories',
+                'column_name' => 'name',
+                'foreign_key' => 1,
+                'locale' => 'ar',
+                'value' => 'لابتوبات',
+                'created_at' => '2021-02-22 01:56:09',
+                'updated_at' => '2021-02-22 01:56:09',
+            ),
+            1 => 
+            array (
+                'id' => 2,
+                'table_name' => 'categories',
+                'column_name' => 'name',
+                'foreign_key' => 2,
+                'locale' => 'ar',
+                'value' => 'كمبيوترات مكتبية',
+                'created_at' => '2021-02-22 01:56:09',
+                'updated_at' => '2021-02-22 01:56:09',
+            ),
+            2 => 
+            array (
+                'id' => 3,
+                'table_name' => 'categories',
+                'column_name' => 'name',
+                'foreign_key' => 3,
+                'locale' => 'ar',
+                'value' => 'جوالات',
+                'created_at' => '2021-02-22 01:56:09',
+                'updated_at' => '2021-02-22 01:56:09',
+            ),
+            3 => 
+            array (
+                'id' => 4,
+                'table_name' => 'categories',
+                'column_name' => 'name',
+                'foreign_key' => 4,
+                'locale' => 'ar',
+                'value' => 'تابلت',
+                'created_at' => '2021-02-22 01:56:09',
+                'updated_at' => '2021-02-22 01:56:09',
+            ),
+            4 => 
+            array (
+                'id' => 5,
+                'table_name' => 'categories',
+                'column_name' => 'name',
+                'foreign_key' => 5,
+                'locale' => 'ar',
+                'value' => 'تلفزيونات',
+                'created_at' => '2021-02-22 01:56:09',
+                'updated_at' => '2021-02-22 01:56:09',
+            ),
+            5 => 
+            array (
+                'id' => 6,
+                'table_name' => 'categories',
+                'column_name' => 'name',
+                'foreign_key' => 6,
+                'locale' => 'ar',
+                'value' => 'كاميرات',
+                'created_at' => '2021-02-22 01:56:09',
+                'updated_at' => '2021-02-22 01:56:09',
+            ),
+            6 => 
+            array (
+                'id' => 7,
+                'table_name' => 'categories',
+                'column_name' => 'name',
+                'foreign_key' => 7,
+                'locale' => 'ar',
+                'value' => 'الاجهزة المنزلية',
+                'created_at' => '2021-02-22 01:56:09',
+                'updated_at' => '2021-02-22 01:56:09',
+            ),
+            7 => 
+            array (
+                'id' => 8,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 1,
+                'locale' => 'ar',
+                'value' => '1ماك بوك برو ',
+                'created_at' => '2021-02-22 01:56:09',
+                'updated_at' => '2021-02-22 01:56:09',
+            ),
+            8 => 
+            array (
+                'id' => 9,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 1,
+                'locale' => 'ar',
+                'value' => '1ماك بوك برو15 بوصة ، 1 تيرا بايت SSD ، 32 جيجا رام',
+                'created_at' => '2021-02-22 01:56:09',
+                'updated_at' => '2021-02-22 01:56:09',
+            ),
+            9 => 
+            array (
+                'id' => 10,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 1,
+                'locale' => 'ar',
+                'value' => '1هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:09',
+                'updated_at' => '2021-02-22 01:56:09',
+            ),
+            10 => 
+            array (
+                'id' => 11,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 2,
+                'locale' => 'ar',
+                'value' => '2ماك بوك برو ',
+                'created_at' => '2021-02-22 01:56:09',
+                'updated_at' => '2021-02-22 01:56:09',
+            ),
+            11 => 
+            array (
+                'id' => 12,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 2,
+                'locale' => 'ar',
+                'value' => '2ماك بوك برو15 بوصة ، 1 تيرا بايت SSD ، 32 جيجا رام',
+                'created_at' => '2021-02-22 01:56:09',
+                'updated_at' => '2021-02-22 01:56:09',
+            ),
+            12 => 
+            array (
+                'id' => 13,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 2,
+                'locale' => 'ar',
+                'value' => '2هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:09',
+                'updated_at' => '2021-02-22 01:56:09',
+            ),
+            13 => 
+            array (
+                'id' => 14,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 3,
+                'locale' => 'ar',
+                'value' => '3ماك بوك برو ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            14 => 
+            array (
+                'id' => 15,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 3,
+                'locale' => 'ar',
+                'value' => '3ماك بوك برو15 بوصة ، 1 تيرا بايت SSD ، 32 جيجا رام',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            15 => 
+            array (
+                'id' => 16,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 3,
+                'locale' => 'ar',
+                'value' => '3هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            16 => 
+            array (
+                'id' => 17,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 4,
+                'locale' => 'ar',
+                'value' => '4ماك بوك برو ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            17 => 
+            array (
+                'id' => 18,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 4,
+                'locale' => 'ar',
+                'value' => '4ماك بوك برو15 بوصة ، 1 تيرا بايت SSD ، 32 جيجا رام',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            18 => 
+            array (
+                'id' => 19,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 4,
+                'locale' => 'ar',
+                'value' => '4هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            19 => 
+            array (
+                'id' => 20,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 5,
+                'locale' => 'ar',
+                'value' => '5ماك بوك برو ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            20 => 
+            array (
+                'id' => 21,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 5,
+                'locale' => 'ar',
+                'value' => '5ماك بوك برو15 بوصة ، 1 تيرا بايت SSD ، 32 جيجا رام',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            21 => 
+            array (
+                'id' => 22,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 5,
+                'locale' => 'ar',
+                'value' => '5هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            22 => 
+            array (
+                'id' => 23,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 6,
+                'locale' => 'ar',
+                'value' => '6ماك بوك برو ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            23 => 
+            array (
+                'id' => 24,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 6,
+                'locale' => 'ar',
+                'value' => '6ماك بوك برو15 بوصة ، 1 تيرا بايت SSD ، 32 جيجا رام',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            24 => 
+            array (
+                'id' => 25,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 6,
+                'locale' => 'ar',
+                'value' => '6هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            25 => 
+            array (
+                'id' => 26,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 7,
+                'locale' => 'ar',
+                'value' => '7ماك بوك برو ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            26 => 
+            array (
+                'id' => 27,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 7,
+                'locale' => 'ar',
+                'value' => '7ماك بوك برو15 بوصة ، 1 تيرا بايت SSD ، 32 جيجا رام',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            27 => 
+            array (
+                'id' => 28,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 7,
+                'locale' => 'ar',
+                'value' => '7هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            28 => 
+            array (
+                'id' => 29,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 8,
+                'locale' => 'ar',
+                'value' => '8ماك بوك برو ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            29 => 
+            array (
+                'id' => 30,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 8,
+                'locale' => 'ar',
+                'value' => '8ماك بوك برو15 بوصة ، 1 تيرا بايت SSD ، 32 جيجا رام',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            30 => 
+            array (
+                'id' => 31,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 8,
+                'locale' => 'ar',
+                'value' => '8هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            31 => 
+            array (
+                'id' => 32,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 9,
+                'locale' => 'ar',
+                'value' => '9ماك بوك برو ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            32 => 
+            array (
+                'id' => 33,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 9,
+                'locale' => 'ar',
+                'value' => '9ماك بوك برو15 بوصة ، 1 تيرا بايت SSD ، 32 جيجا رام',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            33 => 
+            array (
+                'id' => 34,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 9,
+                'locale' => 'ar',
+                'value' => '9هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            34 => 
+            array (
+                'id' => 35,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 10,
+                'locale' => 'ar',
+                'value' => '1أتش بي22 ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            35 => 
+            array (
+                'id' => 36,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 10,
+                'locale' => 'ar',
+                'value' => '1الكل في واحد، رايزن3، 21.5 بوصة، 4 جيجا، 1 تيرا، أسود ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            36 => 
+            array (
+                'id' => 37,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 10,
+                'locale' => 'ar',
+                'value' => '1هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            37 => 
+            array (
+                'id' => 38,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 11,
+                'locale' => 'ar',
+                'value' => '2أتش بي22 ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            38 => 
+            array (
+                'id' => 39,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 11,
+                'locale' => 'ar',
+                'value' => '2الكل في واحد، رايزن3، 21.5 بوصة، 4 جيجا، 1 تيرا، أسود ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            39 => 
+            array (
+                'id' => 40,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 11,
+                'locale' => 'ar',
+                'value' => '2هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            40 => 
+            array (
+                'id' => 41,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 12,
+                'locale' => 'ar',
+                'value' => '3أتش بي22 ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            41 => 
+            array (
+                'id' => 42,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 12,
+                'locale' => 'ar',
+                'value' => '3الكل في واحد، رايزن3، 21.5 بوصة، 4 جيجا، 1 تيرا، أسود ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            42 => 
+            array (
+                'id' => 43,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 12,
+                'locale' => 'ar',
+                'value' => '3هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            43 => 
+            array (
+                'id' => 44,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 13,
+                'locale' => 'ar',
+                'value' => '4أتش بي22 ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            44 => 
+            array (
+                'id' => 45,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 13,
+                'locale' => 'ar',
+                'value' => '4الكل في واحد، رايزن3، 21.5 بوصة، 4 جيجا، 1 تيرا، أسود ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            45 => 
+            array (
+                'id' => 46,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 13,
+                'locale' => 'ar',
+                'value' => '4هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            46 => 
+            array (
+                'id' => 47,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 14,
+                'locale' => 'ar',
+                'value' => '5أتش بي22 ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            47 => 
+            array (
+                'id' => 48,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 14,
+                'locale' => 'ar',
+                'value' => '5الكل في واحد، رايزن3، 21.5 بوصة، 4 جيجا، 1 تيرا، أسود ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            48 => 
+            array (
+                'id' => 49,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 14,
+                'locale' => 'ar',
+                'value' => '5هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            49 => 
+            array (
+                'id' => 50,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 15,
+                'locale' => 'ar',
+                'value' => '6أتش بي22 ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            50 => 
+            array (
+                'id' => 51,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 15,
+                'locale' => 'ar',
+                'value' => '6الكل في واحد، رايزن3، 21.5 بوصة، 4 جيجا، 1 تيرا، أسود ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            51 => 
+            array (
+                'id' => 52,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 15,
+                'locale' => 'ar',
+                'value' => '6هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            52 => 
+            array (
+                'id' => 53,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 16,
+                'locale' => 'ar',
+                'value' => '7أتش بي22 ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            53 => 
+            array (
+                'id' => 54,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 16,
+                'locale' => 'ar',
+                'value' => '7الكل في واحد، رايزن3، 21.5 بوصة، 4 جيجا، 1 تيرا، أسود ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            54 => 
+            array (
+                'id' => 55,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 16,
+                'locale' => 'ar',
+                'value' => '7هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            55 => 
+            array (
+                'id' => 56,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 17,
+                'locale' => 'ar',
+                'value' => '8أتش بي22 ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            56 => 
+            array (
+                'id' => 57,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 17,
+                'locale' => 'ar',
+                'value' => '8الكل في واحد، رايزن3، 21.5 بوصة، 4 جيجا، 1 تيرا، أسود ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            57 => 
+            array (
+                'id' => 58,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 17,
+                'locale' => 'ar',
+                'value' => '8هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            58 => 
+            array (
+                'id' => 59,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 18,
+                'locale' => 'ar',
+                'value' => '9أتش بي22 ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            59 => 
+            array (
+                'id' => 60,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 18,
+                'locale' => 'ar',
+                'value' => '9الكل في واحد، رايزن3، 21.5 بوصة، 4 جيجا، 1 تيرا، أسود ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            60 => 
+            array (
+                'id' => 61,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 18,
+                'locale' => 'ar',
+                'value' => '9هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            61 => 
+            array (
+                'id' => 62,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 19,
+                'locale' => 'ar',
+                'value' => '1آبل أيفون 12 برو ماكس',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            62 => 
+            array (
+                'id' => 63,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 19,
+                'locale' => 'ar',
+                'value' => '1 5 جي ، 512 جيجا ، فضي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            63 => 
+            array (
+                'id' => 64,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 19,
+                'locale' => 'ar',
+                'value' => '1هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            64 => 
+            array (
+                'id' => 65,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 20,
+                'locale' => 'ar',
+                'value' => '2آبل أيفون 12 برو ماكس',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            65 => 
+            array (
+                'id' => 66,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 20,
+                'locale' => 'ar',
+                'value' => '2 5 جي ، 512 جيجا ، فضي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            66 => 
+            array (
+                'id' => 67,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 20,
+                'locale' => 'ar',
+                'value' => '2هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            67 => 
+            array (
+                'id' => 68,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 21,
+                'locale' => 'ar',
+                'value' => '3آبل أيفون 12 برو ماكس',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            68 => 
+            array (
+                'id' => 69,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 21,
+                'locale' => 'ar',
+                'value' => '3 5 جي ، 512 جيجا ، فضي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            69 => 
+            array (
+                'id' => 70,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 21,
+                'locale' => 'ar',
+                'value' => '3هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            70 => 
+            array (
+                'id' => 71,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 22,
+                'locale' => 'ar',
+                'value' => '4آبل أيفون 12 برو ماكس',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            71 => 
+            array (
+                'id' => 72,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 22,
+                'locale' => 'ar',
+                'value' => '4 5 جي ، 512 جيجا ، فضي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            72 => 
+            array (
+                'id' => 73,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 22,
+                'locale' => 'ar',
+                'value' => '4هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            73 => 
+            array (
+                'id' => 74,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 23,
+                'locale' => 'ar',
+                'value' => '5آبل أيفون 12 برو ماكس',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            74 => 
+            array (
+                'id' => 75,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 23,
+                'locale' => 'ar',
+                'value' => '5 5 جي ، 512 جيجا ، فضي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            75 => 
+            array (
+                'id' => 76,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 23,
+                'locale' => 'ar',
+                'value' => '5هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            76 => 
+            array (
+                'id' => 77,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 24,
+                'locale' => 'ar',
+                'value' => '6آبل أيفون 12 برو ماكس',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            77 => 
+            array (
+                'id' => 78,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 24,
+                'locale' => 'ar',
+                'value' => '6 5 جي ، 512 جيجا ، فضي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            78 => 
+            array (
+                'id' => 79,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 24,
+                'locale' => 'ar',
+                'value' => '6هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            79 => 
+            array (
+                'id' => 80,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 25,
+                'locale' => 'ar',
+                'value' => '7آبل أيفون 12 برو ماكس',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            80 => 
+            array (
+                'id' => 81,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 25,
+                'locale' => 'ar',
+                'value' => '7 5 جي ، 512 جيجا ، فضي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            81 => 
+            array (
+                'id' => 82,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 25,
+                'locale' => 'ar',
+                'value' => '7هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            82 => 
+            array (
+                'id' => 83,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 26,
+                'locale' => 'ar',
+                'value' => '8آبل أيفون 12 برو ماكس',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            83 => 
+            array (
+                'id' => 84,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 26,
+                'locale' => 'ar',
+                'value' => '8 5 جي ، 512 جيجا ، فضي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            84 => 
+            array (
+                'id' => 85,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 26,
+                'locale' => 'ar',
+                'value' => '8هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            85 => 
+            array (
+                'id' => 86,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 27,
+                'locale' => 'ar',
+                'value' => '9آبل أيفون 12 برو ماكس',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            86 => 
+            array (
+                'id' => 87,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 27,
+                'locale' => 'ar',
+                'value' => '9 5 جي ، 512 جيجا ، فضي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            87 => 
+            array (
+                'id' => 88,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 27,
+                'locale' => 'ar',
+                'value' => '9هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            88 => 
+            array (
+                'id' => 89,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 28,
+                'locale' => 'ar',
+                'value' => '1أبل أيباد برو 2020 ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            89 => 
+            array (
+                'id' => 90,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 28,
+                'locale' => 'ar',
+                'value' => '111 بوصة، واي فاي 4 جي، 1 تيرا، رمادي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            90 => 
+            array (
+                'id' => 91,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 28,
+                'locale' => 'ar',
+                'value' => '1هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            91 => 
+            array (
+                'id' => 92,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 29,
+                'locale' => 'ar',
+                'value' => '2أبل أيباد برو 2020 ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            92 => 
+            array (
+                'id' => 93,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 29,
+                'locale' => 'ar',
+                'value' => '211 بوصة، واي فاي 4 جي، 1 تيرا، رمادي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            93 => 
+            array (
+                'id' => 94,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 29,
+                'locale' => 'ar',
+                'value' => '2هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            94 => 
+            array (
+                'id' => 95,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 30,
+                'locale' => 'ar',
+                'value' => '3أبل أيباد برو 2020 ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            95 => 
+            array (
+                'id' => 96,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 30,
+                'locale' => 'ar',
+                'value' => '311 بوصة، واي فاي 4 جي، 1 تيرا، رمادي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            96 => 
+            array (
+                'id' => 97,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 30,
+                'locale' => 'ar',
+                'value' => '3هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            97 => 
+            array (
+                'id' => 98,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 31,
+                'locale' => 'ar',
+                'value' => '4أبل أيباد برو 2020 ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            98 => 
+            array (
+                'id' => 99,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 31,
+                'locale' => 'ar',
+                'value' => '411 بوصة، واي فاي 4 جي، 1 تيرا، رمادي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            99 => 
+            array (
+                'id' => 100,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 31,
+                'locale' => 'ar',
+                'value' => '4هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            100 => 
+            array (
+                'id' => 101,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 32,
+                'locale' => 'ar',
+                'value' => '5أبل أيباد برو 2020 ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            101 => 
+            array (
+                'id' => 102,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 32,
+                'locale' => 'ar',
+                'value' => '511 بوصة، واي فاي 4 جي، 1 تيرا، رمادي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            102 => 
+            array (
+                'id' => 103,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 32,
+                'locale' => 'ar',
+                'value' => '5هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            103 => 
+            array (
+                'id' => 104,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 33,
+                'locale' => 'ar',
+                'value' => '6أبل أيباد برو 2020 ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            104 => 
+            array (
+                'id' => 105,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 33,
+                'locale' => 'ar',
+                'value' => '611 بوصة، واي فاي 4 جي، 1 تيرا، رمادي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            105 => 
+            array (
+                'id' => 106,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 33,
+                'locale' => 'ar',
+                'value' => '6هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            106 => 
+            array (
+                'id' => 107,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 34,
+                'locale' => 'ar',
+                'value' => '7أبل أيباد برو 2020 ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            107 => 
+            array (
+                'id' => 108,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 34,
+                'locale' => 'ar',
+                'value' => '711 بوصة، واي فاي 4 جي، 1 تيرا، رمادي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            108 => 
+            array (
+                'id' => 109,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 34,
+                'locale' => 'ar',
+                'value' => '7هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            109 => 
+            array (
+                'id' => 110,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 35,
+                'locale' => 'ar',
+                'value' => '8أبل أيباد برو 2020 ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            110 => 
+            array (
+                'id' => 111,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 35,
+                'locale' => 'ar',
+                'value' => '811 بوصة، واي فاي 4 جي، 1 تيرا، رمادي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            111 => 
+            array (
+                'id' => 112,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 35,
+                'locale' => 'ar',
+                'value' => '8هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            112 => 
+            array (
+                'id' => 113,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 36,
+                'locale' => 'ar',
+                'value' => '9أبل أيباد برو 2020 ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            113 => 
+            array (
+                'id' => 114,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 36,
+                'locale' => 'ar',
+                'value' => '911 بوصة، واي فاي 4 جي، 1 تيرا، رمادي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            114 => 
+            array (
+                'id' => 115,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 36,
+                'locale' => 'ar',
+                'value' => '9هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            115 => 
+            array (
+                'id' => 116,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 46,
+                'locale' => 'ar',
+                'value' => '1كانون كاميرا 800دي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            116 => 
+            array (
+                'id' => 117,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 46,
+                'locale' => 'ar',
+                'value' => '11124 ميجابيكسل, بعدسه 18-55, تصوير فيديو عالى الدقه. شاشة 3 بوصة لمس, لون أسود',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            117 => 
+            array (
+                'id' => 118,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 46,
+                'locale' => 'ar',
+                'value' => '1هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            118 => 
+            array (
+                'id' => 119,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 47,
+                'locale' => 'ar',
+                'value' => '2كانون كاميرا 800دي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            119 => 
+            array (
+                'id' => 120,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 47,
+                'locale' => 'ar',
+                'value' => '21124 ميجابيكسل, بعدسه 18-55, تصوير فيديو عالى الدقه. شاشة 3 بوصة لمس, لون أسود',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            120 => 
+            array (
+                'id' => 121,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 47,
+                'locale' => 'ar',
+                'value' => '2هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            121 => 
+            array (
+                'id' => 122,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 48,
+                'locale' => 'ar',
+                'value' => '3كانون كاميرا 800دي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            122 => 
+            array (
+                'id' => 123,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 48,
+                'locale' => 'ar',
+                'value' => '31124 ميجابيكسل, بعدسه 18-55, تصوير فيديو عالى الدقه. شاشة 3 بوصة لمس, لون أسود',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            123 => 
+            array (
+                'id' => 124,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 48,
+                'locale' => 'ar',
+                'value' => '3هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            124 => 
+            array (
+                'id' => 125,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 49,
+                'locale' => 'ar',
+                'value' => '4كانون كاميرا 800دي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            125 => 
+            array (
+                'id' => 126,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 49,
+                'locale' => 'ar',
+                'value' => '41124 ميجابيكسل, بعدسه 18-55, تصوير فيديو عالى الدقه. شاشة 3 بوصة لمس, لون أسود',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            126 => 
+            array (
+                'id' => 127,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 49,
+                'locale' => 'ar',
+                'value' => '4هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            127 => 
+            array (
+                'id' => 128,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 50,
+                'locale' => 'ar',
+                'value' => '5كانون كاميرا 800دي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            128 => 
+            array (
+                'id' => 129,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 50,
+                'locale' => 'ar',
+                'value' => '51124 ميجابيكسل, بعدسه 18-55, تصوير فيديو عالى الدقه. شاشة 3 بوصة لمس, لون أسود',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            129 => 
+            array (
+                'id' => 130,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 50,
+                'locale' => 'ar',
+                'value' => '5هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            130 => 
+            array (
+                'id' => 131,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 51,
+                'locale' => 'ar',
+                'value' => '6كانون كاميرا 800دي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            131 => 
+            array (
+                'id' => 132,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 51,
+                'locale' => 'ar',
+                'value' => '61124 ميجابيكسل, بعدسه 18-55, تصوير فيديو عالى الدقه. شاشة 3 بوصة لمس, لون أسود',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            132 => 
+            array (
+                'id' => 133,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 51,
+                'locale' => 'ar',
+                'value' => '6هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            133 => 
+            array (
+                'id' => 134,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 52,
+                'locale' => 'ar',
+                'value' => '7كانون كاميرا 800دي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            134 => 
+            array (
+                'id' => 135,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 52,
+                'locale' => 'ar',
+                'value' => '71124 ميجابيكسل, بعدسه 18-55, تصوير فيديو عالى الدقه. شاشة 3 بوصة لمس, لون أسود',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            135 => 
+            array (
+                'id' => 136,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 52,
+                'locale' => 'ar',
+                'value' => '7هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            136 => 
+            array (
+                'id' => 137,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 53,
+                'locale' => 'ar',
+                'value' => '8كانون كاميرا 800دي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            137 => 
+            array (
+                'id' => 138,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 53,
+                'locale' => 'ar',
+                'value' => '81124 ميجابيكسل, بعدسه 18-55, تصوير فيديو عالى الدقه. شاشة 3 بوصة لمس, لون أسود',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            138 => 
+            array (
+                'id' => 139,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 53,
+                'locale' => 'ar',
+                'value' => '8هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            139 => 
+            array (
+                'id' => 140,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 54,
+                'locale' => 'ar',
+                'value' => '9كانون كاميرا 800دي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            140 => 
+            array (
+                'id' => 141,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 54,
+                'locale' => 'ar',
+                'value' => '91124 ميجابيكسل, بعدسه 18-55, تصوير فيديو عالى الدقه. شاشة 3 بوصة لمس, لون أسود',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            141 => 
+            array (
+                'id' => 142,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 54,
+                'locale' => 'ar',
+                'value' => '9هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            142 => 
+            array (
+                'id' => 143,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 37,
+                'locale' => 'ar',
+                'value' => '1ال جي، تلفزيون ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            143 => 
+            array (
+                'id' => 144,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 37,
+                'locale' => 'ar',
+                'value' => '11165 بوصة، ذكي، فائق الوضوح ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            144 => 
+            array (
+                'id' => 145,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 37,
+                'locale' => 'ar',
+                'value' => '1هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            145 => 
+            array (
+                'id' => 146,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 38,
+                'locale' => 'ar',
+                'value' => '2ال جي، تلفزيون ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            146 => 
+            array (
+                'id' => 147,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 38,
+                'locale' => 'ar',
+                'value' => '21165 بوصة، ذكي، فائق الوضوح ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            147 => 
+            array (
+                'id' => 148,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 38,
+                'locale' => 'ar',
+                'value' => '2هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            148 => 
+            array (
+                'id' => 149,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 39,
+                'locale' => 'ar',
+                'value' => '3ال جي، تلفزيون ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            149 => 
+            array (
+                'id' => 150,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 39,
+                'locale' => 'ar',
+                'value' => '31165 بوصة، ذكي، فائق الوضوح ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            150 => 
+            array (
+                'id' => 151,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 39,
+                'locale' => 'ar',
+                'value' => '3هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            151 => 
+            array (
+                'id' => 152,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 40,
+                'locale' => 'ar',
+                'value' => '4ال جي، تلفزيون ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            152 => 
+            array (
+                'id' => 153,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 40,
+                'locale' => 'ar',
+                'value' => '41165 بوصة، ذكي، فائق الوضوح ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            153 => 
+            array (
+                'id' => 154,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 40,
+                'locale' => 'ar',
+                'value' => '4هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            154 => 
+            array (
+                'id' => 155,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 41,
+                'locale' => 'ar',
+                'value' => '5ال جي، تلفزيون ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            155 => 
+            array (
+                'id' => 156,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 41,
+                'locale' => 'ar',
+                'value' => '51165 بوصة، ذكي، فائق الوضوح ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            156 => 
+            array (
+                'id' => 157,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 41,
+                'locale' => 'ar',
+                'value' => '5هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            157 => 
+            array (
+                'id' => 158,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 42,
+                'locale' => 'ar',
+                'value' => '6ال جي، تلفزيون ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            158 => 
+            array (
+                'id' => 159,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 42,
+                'locale' => 'ar',
+                'value' => '61165 بوصة، ذكي، فائق الوضوح ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            159 => 
+            array (
+                'id' => 160,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 42,
+                'locale' => 'ar',
+                'value' => '6هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            160 => 
+            array (
+                'id' => 161,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 43,
+                'locale' => 'ar',
+                'value' => '7ال جي، تلفزيون ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            161 => 
+            array (
+                'id' => 162,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 43,
+                'locale' => 'ar',
+                'value' => '71165 بوصة، ذكي، فائق الوضوح ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            162 => 
+            array (
+                'id' => 163,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 43,
+                'locale' => 'ar',
+                'value' => '7هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            163 => 
+            array (
+                'id' => 164,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 44,
+                'locale' => 'ar',
+                'value' => '8ال جي، تلفزيون ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            164 => 
+            array (
+                'id' => 165,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 44,
+                'locale' => 'ar',
+                'value' => '81165 بوصة، ذكي، فائق الوضوح ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            165 => 
+            array (
+                'id' => 166,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 44,
+                'locale' => 'ar',
+                'value' => '8هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            166 => 
+            array (
+                'id' => 167,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 45,
+                'locale' => 'ar',
+                'value' => '9ال جي، تلفزيون ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            167 => 
+            array (
+                'id' => 168,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 45,
+                'locale' => 'ar',
+                'value' => '91165 بوصة، ذكي، فائق الوضوح ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            168 => 
+            array (
+                'id' => 169,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 45,
+                'locale' => 'ar',
+                'value' => '9هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            169 => 
+            array (
+                'id' => 170,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 55,
+                'locale' => 'ar',
+                'value' => '1توشيبا ثلاجة ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            170 => 
+            array (
+                'id' => 171,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 55,
+                'locale' => 'ar',
+                'value' => '112.7 قدم،إنفيرتر، فضي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            171 => 
+            array (
+                'id' => 172,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 55,
+                'locale' => 'ar',
+                'value' => '1هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            172 => 
+            array (
+                'id' => 173,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 56,
+                'locale' => 'ar',
+                'value' => '2توشيبا ثلاجة ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            173 => 
+            array (
+                'id' => 174,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 56,
+                'locale' => 'ar',
+                'value' => '212.7 قدم،إنفيرتر، فضي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            174 => 
+            array (
+                'id' => 175,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 56,
+                'locale' => 'ar',
+                'value' => '2هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            175 => 
+            array (
+                'id' => 176,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 57,
+                'locale' => 'ar',
+                'value' => '3توشيبا ثلاجة ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            176 => 
+            array (
+                'id' => 177,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 57,
+                'locale' => 'ar',
+                'value' => '312.7 قدم،إنفيرتر، فضي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            177 => 
+            array (
+                'id' => 178,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 57,
+                'locale' => 'ar',
+                'value' => '3هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            178 => 
+            array (
+                'id' => 179,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 58,
+                'locale' => 'ar',
+                'value' => '4توشيبا ثلاجة ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            179 => 
+            array (
+                'id' => 180,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 58,
+                'locale' => 'ar',
+                'value' => '412.7 قدم،إنفيرتر، فضي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            180 => 
+            array (
+                'id' => 181,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 58,
+                'locale' => 'ar',
+                'value' => '4هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            181 => 
+            array (
+                'id' => 182,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 59,
+                'locale' => 'ar',
+                'value' => '5توشيبا ثلاجة ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            182 => 
+            array (
+                'id' => 183,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 59,
+                'locale' => 'ar',
+                'value' => '512.7 قدم،إنفيرتر، فضي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            183 => 
+            array (
+                'id' => 184,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 59,
+                'locale' => 'ar',
+                'value' => '5هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            184 => 
+            array (
+                'id' => 185,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 60,
+                'locale' => 'ar',
+                'value' => '6توشيبا ثلاجة ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            185 => 
+            array (
+                'id' => 186,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 60,
+                'locale' => 'ar',
+                'value' => '612.7 قدم،إنفيرتر، فضي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            186 => 
+            array (
+                'id' => 187,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 60,
+                'locale' => 'ar',
+                'value' => '6هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            187 => 
+            array (
+                'id' => 188,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 61,
+                'locale' => 'ar',
+                'value' => '7توشيبا ثلاجة ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            188 => 
+            array (
+                'id' => 189,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 61,
+                'locale' => 'ar',
+                'value' => '712.7 قدم،إنفيرتر، فضي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            189 => 
+            array (
+                'id' => 190,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 61,
+                'locale' => 'ar',
+                'value' => '7هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            190 => 
+            array (
+                'id' => 191,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 62,
+                'locale' => 'ar',
+                'value' => '8توشيبا ثلاجة ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            191 => 
+            array (
+                'id' => 192,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 62,
+                'locale' => 'ar',
+                'value' => '812.7 قدم،إنفيرتر، فضي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            192 => 
+            array (
+                'id' => 193,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 62,
+                'locale' => 'ar',
+                'value' => '8هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            193 => 
+            array (
+                'id' => 194,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 63,
+                'locale' => 'ar',
+                'value' => '9توشيبا ثلاجة ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            194 => 
+            array (
+                'id' => 195,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 63,
+                'locale' => 'ar',
+                'value' => '912.7 قدم،إنفيرتر، فضي ',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            195 => 
+            array (
+                'id' => 196,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 63,
+                'locale' => 'ar',
+                'value' => '9هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-22 01:56:10',
+                'updated_at' => '2021-02-22 01:56:10',
+            ),
+            196 => 
+            array (
+                'id' => 197,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 27,
+                'locale' => 'ar',
+                'value' => 'Id',
+                'created_at' => '2021-02-22 02:08:38',
+                'updated_at' => '2021-02-22 02:08:38',
+            ),
+            197 => 
+            array (
+                'id' => 198,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 28,
+                'locale' => 'ar',
+                'value' => 'Name',
+                'created_at' => '2021-02-22 02:08:38',
+                'updated_at' => '2021-02-22 02:08:38',
+            ),
+            198 => 
+            array (
+                'id' => 199,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 29,
+                'locale' => 'ar',
+                'value' => 'Slug',
+                'created_at' => '2021-02-22 02:08:39',
+                'updated_at' => '2021-02-22 02:08:39',
+            ),
+            199 => 
+            array (
+                'id' => 200,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 30,
+                'locale' => 'ar',
+                'value' => 'Details',
+                'created_at' => '2021-02-22 02:08:39',
+                'updated_at' => '2021-02-22 02:08:39',
+            ),
+            200 => 
+            array (
+                'id' => 201,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 31,
+                'locale' => 'ar',
+                'value' => 'Price',
+                'created_at' => '2021-02-22 02:08:39',
+                'updated_at' => '2021-02-22 02:08:39',
+            ),
+            201 => 
+            array (
+                'id' => 202,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 32,
+                'locale' => 'ar',
+                'value' => 'Description',
+                'created_at' => '2021-02-22 02:08:39',
+                'updated_at' => '2021-02-22 02:08:39',
+            ),
+            202 => 
+            array (
+                'id' => 203,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 33,
+                'locale' => 'ar',
+                'value' => 'Featured',
+                'created_at' => '2021-02-22 02:08:39',
+                'updated_at' => '2021-02-22 02:08:39',
+            ),
+            203 => 
+            array (
+                'id' => 204,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 34,
+                'locale' => 'ar',
+                'value' => 'Image',
+                'created_at' => '2021-02-22 02:08:39',
+                'updated_at' => '2021-02-22 02:08:39',
+            ),
+            204 => 
+            array (
+                'id' => 205,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 35,
+                'locale' => 'ar',
+                'value' => 'Category Id',
+                'created_at' => '2021-02-22 02:08:39',
+                'updated_at' => '2021-02-22 02:08:39',
+            ),
+            205 => 
+            array (
+                'id' => 206,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 36,
+                'locale' => 'ar',
+                'value' => 'Created At',
+                'created_at' => '2021-02-22 02:08:39',
+                'updated_at' => '2021-02-22 02:08:39',
+            ),
+            206 => 
+            array (
+                'id' => 207,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 37,
+                'locale' => 'ar',
+                'value' => 'Updated At',
+                'created_at' => '2021-02-22 02:08:39',
+                'updated_at' => '2021-02-22 02:08:39',
+            ),
+            207 => 
+            array (
+                'id' => 208,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 38,
+                'locale' => 'ar',
+                'value' => 'categories',
+                'created_at' => '2021-02-22 02:08:39',
+                'updated_at' => '2021-02-22 02:08:39',
+            ),
+            208 => 
+            array (
+                'id' => 209,
+                'table_name' => 'data_types',
+                'column_name' => 'display_name_singular',
+                'foreign_key' => 5,
+                'locale' => 'ar',
+                'value' => 'Product',
+                'created_at' => '2021-02-22 02:08:39',
+                'updated_at' => '2021-02-22 02:08:39',
+            ),
+            209 => 
+            array (
+                'id' => 210,
+                'table_name' => 'data_types',
+                'column_name' => 'display_name_plural',
+                'foreign_key' => 5,
+                'locale' => 'ar',
+                'value' => 'Products',
+                'created_at' => '2021-02-22 02:08:39',
+                'updated_at' => '2021-02-22 02:08:39',
+            ),
+            210 => 
+            array (
+                'id' => 211,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 39,
+                'locale' => 'ar',
+                'value' => 'Images',
+                'created_at' => '2021-02-22 02:28:42',
+                'updated_at' => '2021-02-22 02:28:42',
+            ),
+            211 => 
+            array (
+                'id' => 212,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 40,
+                'locale' => 'ar',
+                'value' => 'Id',
+                'created_at' => '2021-02-23 10:10:14',
+                'updated_at' => '2021-02-23 10:10:14',
+            ),
+            212 => 
+            array (
+                'id' => 213,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 41,
+                'locale' => 'ar',
+                'value' => 'User Id',
+                'created_at' => '2021-02-23 10:10:14',
+                'updated_at' => '2021-02-23 10:10:14',
+            ),
+            213 => 
+            array (
+                'id' => 214,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 42,
+                'locale' => 'ar',
+                'value' => 'Billing Email',
+                'created_at' => '2021-02-23 10:10:14',
+                'updated_at' => '2021-02-23 10:10:14',
+            ),
+            214 => 
+            array (
+                'id' => 215,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 43,
+                'locale' => 'ar',
+                'value' => 'Billing Name',
+                'created_at' => '2021-02-23 10:10:14',
+                'updated_at' => '2021-02-23 10:10:14',
+            ),
+            215 => 
+            array (
+                'id' => 216,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 44,
+                'locale' => 'ar',
+                'value' => 'Billing Address',
+                'created_at' => '2021-02-23 10:10:14',
+                'updated_at' => '2021-02-23 10:10:14',
+            ),
+            216 => 
+            array (
+                'id' => 217,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 45,
+                'locale' => 'ar',
+                'value' => 'Billing City',
+                'created_at' => '2021-02-23 10:10:14',
+                'updated_at' => '2021-02-23 10:10:14',
+            ),
+            217 => 
+            array (
+                'id' => 218,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 46,
+                'locale' => 'ar',
+                'value' => 'Billing Province',
+                'created_at' => '2021-02-23 10:10:14',
+                'updated_at' => '2021-02-23 10:10:14',
+            ),
+            218 => 
+            array (
+                'id' => 219,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 47,
+                'locale' => 'ar',
+                'value' => 'Billing Postalcode',
+                'created_at' => '2021-02-23 10:10:14',
+                'updated_at' => '2021-02-23 10:10:14',
+            ),
+            219 => 
+            array (
+                'id' => 220,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 48,
+                'locale' => 'ar',
+                'value' => 'Billing Phone',
+                'created_at' => '2021-02-23 10:10:14',
+                'updated_at' => '2021-02-23 10:10:14',
+            ),
+            220 => 
+            array (
+                'id' => 221,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 49,
+                'locale' => 'ar',
+                'value' => 'Billing Name On Card',
+                'created_at' => '2021-02-23 10:10:14',
+                'updated_at' => '2021-02-23 10:10:14',
+            ),
+            221 => 
+            array (
+                'id' => 222,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 50,
+                'locale' => 'ar',
+                'value' => 'Billing Discount',
+                'created_at' => '2021-02-23 10:10:14',
+                'updated_at' => '2021-02-23 10:10:14',
+            ),
+            222 => 
+            array (
+                'id' => 223,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 51,
+                'locale' => 'ar',
+                'value' => 'Billing Discount Code',
+                'created_at' => '2021-02-23 10:10:14',
+                'updated_at' => '2021-02-23 10:10:14',
+            ),
+            223 => 
+            array (
+                'id' => 224,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 52,
+                'locale' => 'ar',
+                'value' => 'Billing Subtotal',
+                'created_at' => '2021-02-23 10:10:14',
+                'updated_at' => '2021-02-23 10:10:14',
+            ),
+            224 => 
+            array (
+                'id' => 225,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 53,
+                'locale' => 'ar',
+                'value' => 'Billing Tax',
+                'created_at' => '2021-02-23 10:10:14',
+                'updated_at' => '2021-02-23 10:10:14',
+            ),
+            225 => 
+            array (
+                'id' => 226,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 54,
+                'locale' => 'ar',
+                'value' => 'Billing Total',
+                'created_at' => '2021-02-23 10:10:14',
+                'updated_at' => '2021-02-23 10:10:14',
+            ),
+            226 => 
+            array (
+                'id' => 227,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 55,
+                'locale' => 'ar',
+                'value' => 'Payment Gateway',
+                'created_at' => '2021-02-23 10:10:14',
+                'updated_at' => '2021-02-23 10:10:14',
+            ),
+            227 => 
+            array (
+                'id' => 228,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 56,
+                'locale' => 'ar',
+                'value' => 'Shipped',
+                'created_at' => '2021-02-23 10:10:14',
+                'updated_at' => '2021-02-23 10:10:14',
+            ),
+            228 => 
+            array (
+                'id' => 229,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 57,
+                'locale' => 'ar',
+                'value' => 'Error',
+                'created_at' => '2021-02-23 10:10:14',
+                'updated_at' => '2021-02-23 10:10:14',
+            ),
+            229 => 
+            array (
+                'id' => 230,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 58,
+                'locale' => 'ar',
+                'value' => 'Created At',
+                'created_at' => '2021-02-23 10:10:14',
+                'updated_at' => '2021-02-23 10:10:14',
+            ),
+            230 => 
+            array (
+                'id' => 231,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 59,
+                'locale' => 'ar',
+                'value' => 'Updated At',
+                'created_at' => '2021-02-23 10:10:14',
+                'updated_at' => '2021-02-23 10:10:14',
+            ),
+            231 => 
+            array (
+                'id' => 232,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 60,
+                'locale' => 'ar',
+                'value' => 'users',
+                'created_at' => '2021-02-23 10:10:14',
+                'updated_at' => '2021-02-23 10:10:14',
+            ),
+            232 => 
+            array (
+                'id' => 233,
+                'table_name' => 'data_types',
+                'column_name' => 'display_name_singular',
+                'foreign_key' => 6,
+                'locale' => 'ar',
+                'value' => 'Order',
+                'created_at' => '2021-02-23 10:10:14',
+                'updated_at' => '2021-02-23 10:10:14',
+            ),
+            233 => 
+            array (
+                'id' => 234,
+                'table_name' => 'data_types',
+                'column_name' => 'display_name_plural',
+                'foreign_key' => 6,
+                'locale' => 'ar',
+                'value' => 'Orders',
+                'created_at' => '2021-02-23 10:10:14',
+                'updated_at' => '2021-02-23 10:10:14',
+            ),
+            234 => 
+            array (
+                'id' => 235,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 61,
+                'locale' => 'ar',
+                'value' => 'order_product',
+                'created_at' => '2021-02-23 10:15:50',
+                'updated_at' => '2021-02-23 10:15:50',
+            ),
+            235 => 
+            array (
+                'id' => 236,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 62,
+                'locale' => 'ar',
+                'value' => 'products',
+                'created_at' => '2021-02-24 01:05:12',
+                'updated_at' => '2021-02-24 01:05:12',
+            ),
+            236 => 
+            array (
+                'id' => 237,
+                'table_name' => 'data_rows',
+                'column_name' => 'display_name',
+                'foreign_key' => 63,
+                'locale' => 'ar',
+                'value' => 'categories',
+                'created_at' => '2021-02-24 01:17:15',
+                'updated_at' => '2021-02-24 01:17:15',
+            ),
+            237 => 
+            array (
+                'id' => 238,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 64,
+                'locale' => 'ar',
+                'value' => 'سامسونج جالكسي إس 21 ألتر',
+                'created_at' => '2021-02-25 14:11:34',
+                'updated_at' => '2021-02-25 14:11:34',
+            ),
+            238 => 
+            array (
+                'id' => 239,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 64,
+                'locale' => 'ar',
+                'value' => ' 5 جي، 512 جيجا، أسود',
+                'created_at' => '2021-02-25 14:11:34',
+                'updated_at' => '2021-02-25 14:11:34',
+            ),
+            239 => 
+            array (
+                'id' => 240,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 64,
+                'locale' => 'ar',
+                'value' => '1هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-25 14:11:34',
+                'updated_at' => '2021-02-25 14:11:34',
+            ),
+            240 => 
+            array (
+                'id' => 241,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 65,
+                'locale' => 'ar',
+                'value' => 'هواوي ميت 40 برو',
+                'created_at' => '2021-02-25 14:23:14',
+                'updated_at' => '2021-02-25 14:23:14',
+            ),
+            241 => 
+            array (
+                'id' => 242,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 65,
+                'locale' => 'ar',
+                'value' => ' 5 جي ، 256 جيجا، فضي',
+                'created_at' => '2021-02-25 14:23:14',
+                'updated_at' => '2021-02-25 14:23:14',
+            ),
+            242 => 
+            array (
+                'id' => 243,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 65,
+                'locale' => 'ar',
+                'value' => '1هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض',
+                'created_at' => '2021-02-25 14:23:14',
+                'updated_at' => '2021-02-25 14:23:14',
+            ),
+            243 => 
+            array (
+                'id' => 325,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 102,
+                'locale' => 'ar',
+                'value' => ' سوني، تلفزيون 65 بوصة',
+                'created_at' => '2021-02-26 11:30:52',
+                'updated_at' => '2021-02-26 11:33:50',
+            ),
+            244 => 
+            array (
+                'id' => 326,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 102,
+                'locale' => 'ar',
+                'value' => ' ذكي، فائق الوضوح',
+                'created_at' => '2021-02-26 11:30:52',
+                'updated_at' => '2021-02-26 11:30:52',
+            ),
+            245 => 
+            array (
+                'id' => 327,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 102,
+                'locale' => 'ar',
+                'value' => '2هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض
 
-        $cat = Category::where('slug', 'desktops')->firstOrFail();
-        if ($cat->exists) {
-            $this->trans('ar', $this->arr(['categories', 'name'], $cat->id), 'كمبيوترات مكتبية');
-        }
-
-        $cat = Category::where('slug', 'phones')->firstOrFail();
-        if ($cat->exists) {
-            $this->trans('ar', $this->arr(['categories', 'name'], $cat->id), 'جوالات');
-        }
-
-        $cat = Category::where('slug', 'tablets')->firstOrFail();
-        if ($cat->exists) {
-            $this->trans('ar', $this->arr(['categories', 'name'], $cat->id), 'تابلت');
-        }
-
-        $cat = Category::where('slug', 'tvs')->firstOrFail();
-        if ($cat->exists) {
-            $this->trans('ar', $this->arr(['categories', 'name'], $cat->id), 'تلفزيونات');
-        }
-
-        $cat = Category::where('slug', 'digital-cameras')->firstOrFail();
-        if ($cat->exists) {
-            $this->trans('ar', $this->arr(['categories', 'name'], $cat->id), 'كاميرات');
-        }
-
-        $cat = Category::where('slug', 'appliances')->firstOrFail();
-        if ($cat->exists) {
-            $this->trans('ar', $this->arr(['categories', 'name'], $cat->id), 'الاجهزة المنزلية');
-        }
-
-
-    }
-
-    /**
-     * Auto generate Products Translations.
-     *
-     * @return void
-     */
-    private function productsTranslations()
-    {
-        // Adding translations for 'products'
-        //
-        $cat = Category::where('slug', 'laptops')->firstOrFail();
-        if ($cat->exists) {
-            $this->trans('ar', $this->arr(['categories', 'name'], $cat->id), 'لابتوبات');
-        }
-
-        //Laptops
-        for ($i = 1; $i <= 9; $i++) {
-            $product = Product::where('slug', 'macBook-pro-' . $i)->firstOrFail();
-            if ($product->exists) {
-                $this->trans('ar', $this->arr(['products', 'name'], $product->id), $i . 'ماك بوك برو ');
-                $this->trans('ar', $this->arr(['products', 'details'], $product->id), $i . 'ماك بوك برو15 بوصة ، 1 تيرا بايت SSD ، 32 جيجا رام');
-                $this->trans('ar', $this->arr(['products', 'description'], $product->id), $i . 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض');
-            }
-        }
-
-        //Desktops
-        for ($i = 1; $i <= 9; $i++) {
-            $product = Product::where('slug', 'hp-22-aio-' . $i)->firstOrFail();
-            if ($product->exists) {
-                $this->trans('ar', $this->arr(['products', 'name'], $product->id), $i . 'أتش بي22 ');
-                $this->trans('ar', $this->arr(['products', 'details'], $product->id), $i . 'الكل في واحد، رايزن3، 21.5 بوصة، 4 جيجا، 1 تيرا، أسود ');
-                $this->trans('ar', $this->arr(['products', 'description'], $product->id), $i . 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض');
-            }
-        }
-
-        //Phones
-        for ($i = 1; $i <= 9; $i++) {
-            $product = Product::where('slug', 'apple-iphone-12-pro-max-' . $i)->firstOrFail();
-            if ($product->exists) {
-                $this->trans('ar', $this->arr(['products', 'name'], $product->id), $i . 'آبل أيفون 12 برو ماكس');
-                $this->trans('ar', $this->arr(['products', 'details'], $product->id), $i . ' 5 جي ، 512 جيجا ، فضي ');
-                $this->trans('ar', $this->arr(['products', 'description'], $product->id), $i . 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض');
-            }
-        }
-
-        //Tablets
-        for ($i = 1; $i <= 9; $i++) {
-            $product = Product::where('slug', 'apple-ipad-pro-2020-' . $i)->firstOrFail();
-            if ($product->exists) {
-                $this->trans('ar', $this->arr(['products', 'name'], $product->id), $i . 'أبل أيباد برو 2020 ');
-                $this->trans('ar', $this->arr(['products', 'details'], $product->id), $i . '11 بوصة، واي فاي 4 جي، 1 تيرا، رمادي ');
-                $this->trans('ar', $this->arr(['products', 'description'], $product->id), $i . 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض');
-            }
-        }
-
-        //Cameras
-        for ($i = 1; $i <= 9; $i++) {
-            $product = Product::where('slug', 'canon-eos-800d-' . $i)->firstOrFail();
-            if ($product->exists) {
-                $this->trans('ar', $this->arr(['products', 'name'], $product->id), $i . 'كانون كاميرا 800دي ');
-                $this->trans('ar', $this->arr(['products', 'details'], $product->id), $i . '1124 ميجابيكسل, بعدسه 18-55, تصوير فيديو عالى الدقه. شاشة 3 بوصة لمس, لون أسود');
-                $this->trans('ar', $this->arr(['products', 'description'], $product->id), $i . 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض');
-            }
-        }
-
-        //TVs
-        for ($i = 1; $i <= 9; $i++) {
-            $product = Product::where('slug', 'lg-tv-' . $i)->firstOrFail();
-            if ($product->exists) {
-                $this->trans('ar', $this->arr(['products', 'name'], $product->id), $i . 'ال جي، تلفزيون ');
-                $this->trans('ar', $this->arr(['products', 'details'], $product->id), $i . '1165 بوصة، ذكي، فائق الوضوح ');
-                $this->trans('ar', $this->arr(['products', 'description'], $product->id), $i . 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض');
-            }
-        }
-
-        //Appliances
-        for ($i = 1; $i <= 9; $i++) {
-            $product = Product::where('slug', 'toshiba-inverter-refrigerator-' . $i)->firstOrFail();
-            if ($product->exists) {
-                $this->trans('ar', $this->arr(['products', 'name'], $product->id), $i . 'توشيبا ثلاجة ');
-                $this->trans('ar', $this->arr(['products', 'details'], $product->id), $i . '12.7 قدم،إنفيرتر، فضي ');
-                $this->trans('ar', $this->arr(['products', 'description'], $product->id), $i . 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض');
-            }
-        }
-
-    }
-
-    /**
-     * Auto generate DataTypes Translations.
-     *
-     * @return void
-     */
-    private function dataTypesTranslations()
-    {
-        // Adding translations for 'display_name_singular'
-        //
-        $_fld = 'display_name_singular';
-        $_tpl = ['data_types', $_fld];
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.post.singular'))->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Post');
-        }
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.page.singular'))->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Página');
-        }
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.user.singular'))->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Utilizador');
-        }
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.category.singular'))->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Categoria');
-        }
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.menu.singular'))->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Menu');
-        }
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.role.singular'))->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Função');
-        }
-
-        // Adding translations for 'display_name_plural'
-        //
-        $_fld = 'display_name_plural';
-        $_tpl = ['data_types', $_fld];
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.post.plural'))->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Posts');
-        }
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.page.plural'))->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Páginas');
-        }
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.user.plural'))->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Utilizadores');
-        }
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.category.plural'))->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Categorias');
-        }
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.menu.plural'))->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Menus');
-        }
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.role.plural'))->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Funções');
-        }
-    }
-
-    /**
-     * Auto generate Menus Translations.
-     *
-     * @return void
-     */
-    private function menusTranslations()
-    {
-        $_tpl = ['menu_items', 'title'];
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.dashboard'));
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Painel de Controle');
-        }
-
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.media'));
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Media');
-        }
-
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.posts'));
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Publicações');
-        }
-
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.users'));
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Utilizadores');
-        }
-
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.categories'));
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Categorias');
-        }
-
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.pages'));
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Páginas');
-        }
-
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.roles'));
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Funções');
-        }
-
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.tools'));
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Ferramentas');
-        }
-
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.menu_builder'));
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Menus');
-        }
-
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.database'));
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Base de dados');
-        }
-
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.settings'));
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Configurações');
-        }
-    }
-
-    private function findMenuItem($title)
-    {
-        return MenuItem::where('title', $title)->firstOrFail();
-    }
-
-    private function arr($par, $id)
-    {
-        return [
-            'table_name'  => $par[0],
-            'column_name' => $par[1],
-            'foreign_key' => $id,
-        ];
-    }
-
-    private function trans($lang, $keys, $value)
-    {
-        $_t = Translation::firstOrNew(array_merge($keys, [
-            'locale' => $lang,
-        ]));
-
-        if (!$_t->exists) {
-            $_t->fill(array_merge(
-                $keys,
-                ['value' => $value]
-            ))->save();
-        }
+',
+                'created_at' => '2021-02-26 11:30:52',
+                'updated_at' => '2021-02-26 11:30:52',
+            ),
+            246 => 
+            array (
+                'id' => 328,
+                'table_name' => 'products',
+                'column_name' => 'name',
+                'foreign_key' => 103,
+                'locale' => 'ar',
+                'value' => 'تجربةتجربةتجربة',
+                'created_at' => '2021-02-27 09:17:50',
+                'updated_at' => '2021-02-27 09:18:36',
+            ),
+            247 => 
+            array (
+                'id' => 329,
+                'table_name' => 'products',
+                'column_name' => 'details',
+                'foreign_key' => 103,
+                'locale' => 'ar',
+                'value' => 'تجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربة',
+                'created_at' => '2021-02-27 09:17:50',
+                'updated_at' => '2021-02-27 09:17:50',
+            ),
+            248 => 
+            array (
+                'id' => 330,
+                'table_name' => 'products',
+                'column_name' => 'description',
+                'foreign_key' => 103,
+                'locale' => 'ar',
+                'value' => 'تجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربةتجربة',
+                'created_at' => '2021-02-27 09:17:50',
+                'updated_at' => '2021-02-27 09:17:50',
+            ),
+        ));
+        
+        
     }
 }
