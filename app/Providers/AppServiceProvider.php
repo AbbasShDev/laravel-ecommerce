@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Search\ProductTrans;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider {
