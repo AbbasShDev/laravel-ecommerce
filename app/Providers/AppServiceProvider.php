@@ -24,11 +24,12 @@ class AppServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
-        if (request()->segment(1) == 'admin') {
-            app()->setLocale('en');
-        } else {
-            app()->setLocale(request()->segment(1));
-        }
+        app()->setLocale(request()->segment(1));
+//        if (request()->segment(1) == 'admin') {
+//            app()->setLocale('en');
+//        } else {
+//            app()->setLocale(request()->segment(1));
+//        }
 
     }
 }
