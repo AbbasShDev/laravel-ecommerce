@@ -57,6 +57,7 @@
         }
     }
 
+
     .single-order-container {
         margin-bottom: 25px;
         overflow: hidden;
@@ -115,6 +116,14 @@
                 margin-top: 10px;
             }
         }
+    }
+
+    .my-alert-danger {
+        box-shadow: none;
+    }
+
+    .my-alert-success {
+        box-shadow: none;
     }
 }
 

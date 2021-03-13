@@ -11,9 +11,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
-
-
-Route::group(['prefix' => app()->getLocale(), 'middleware' => 'localized'], function () {
+Route::group(['middleware' => 'localized'], function () {
 
     Route::group(['prefix' => 'admin'], function () {
         Voyager::routes();

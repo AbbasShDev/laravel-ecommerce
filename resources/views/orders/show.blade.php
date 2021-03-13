@@ -45,6 +45,16 @@
         </div> <!-- end sidebar -->
         <div class="my-orders">
             <div style="position: relative">
+                @if($order->shipped)
+                    <div class="single-order-container my-alert-success">
+                        <p>Your order has been delivered</p>
+                    </div>
+                @else
+                    <div class="single-order-container my-alert-danger">
+                        <p>Not delivered yet</p>
+                    </div>
+                @endif
+
                     <div class="single-order-container">
                             <div class="order-header">
                                 <div class="order-header-items">

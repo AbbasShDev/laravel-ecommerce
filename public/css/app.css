@@ -299,6 +299,18 @@ form button[type=submit] {
   border-color: #ebccd1;
 }
 
+.my-alert-danger {
+  color: #721C24 !important;
+  background-color: #F8D7DB !important;
+  border: 1px solid #f5c7cb !important;
+}
+
+.my-alert-success {
+  color: #165724 !important;
+  background-color: #D4EDDA !important;
+  border: 1px solid #BEE0C5 !important;
+}
+
 .pagination {
   display: inline-block;
   padding-left: 0;
@@ -1228,6 +1240,12 @@ html[dir=rtl] .auth-pages .auth-right {
 }
 .my-orders .single-order-container .order-body .order-summary:not(:first-child) {
   margin-top: 10px;
+}
+.my-orders .my-alert-danger {
+  box-shadow: none;
+}
+.my-orders .my-alert-success {
+  box-shadow: none;
 }
 
 @media only screen and (max-width: 557px) {
