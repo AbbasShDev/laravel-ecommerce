@@ -9,6 +9,8 @@ class Coupon extends Model
 {
     use HasFactory;
 
+    protected $dates = ['start_at', 'expire_at'];
+
     public static function findByCoupon($code){
         return self::where('code', $code)->first();
     }

@@ -246,7 +246,11 @@
                                                     @endif
                                                 @else
                                                     @include('voyager::multilingual.input-hidden-bread-browse')
-                                                    <span>{{ $data->{$row->field} }}</span>
+                                                    @if($row->display_name == 'Billing Total')
+                                                        <span>${{ $data->{$row->field} / 100 }}</span>
+                                                    @else
+                                                        <span>{{ $data->{$row->field} }}</span>
+                                                    @endif
                                                 @endif
                                             </td>
                                         @endforeach

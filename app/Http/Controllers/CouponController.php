@@ -11,7 +11,10 @@ class CouponController extends Controller {
 
     public function store(Request $request)
     {
-        $coupon = Coupon::where('code', $request->coupon_code)->first();
+        $coupon = Coupon::where('code', $request->coupon_code)
+            ->where('start_at', '<=', now())
+            ->where('expire_at', '>=', now())
+            ->first();
 
         if ( ! $coupon) {
             return redirect()->route('cart.index')->withErrors(__('shop.invalid_coupon_code_try_again'));

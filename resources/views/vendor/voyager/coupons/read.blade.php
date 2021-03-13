@@ -24,10 +24,10 @@
             @endif
         @endcan
         @can('browse', $dataTypeContent)
-            <a href="{{ route('voyager.'.$dataType->slug.'.index') }}" class="btn btn-warning">
-                <span class="glyphicon glyphicon-list"></span>&nbsp;
-                {{ __('voyager::generic.return_to_list') }}
-            </a>
+        <a href="{{ route('voyager.'.$dataType->slug.'.index') }}" class="btn btn-warning">
+            <span class="glyphicon glyphicon-list"></span>&nbsp;
+            {{ __('voyager::generic.return_to_list') }}
+        </a>
         @endcan
     </h1>
     @include('voyager::multilingual.language-selector')
@@ -42,9 +42,9 @@
                     <!-- form start -->
                     @foreach($dataType->readRows as $row)
                         @php
-                            if ($dataTypeContent->{$row->field.'_read'}) {
-                                $dataTypeContent->{$row->field} = $dataTypeContent->{$row->field.'_read'};
-                            }
+                        if ($dataTypeContent->{$row->field.'_read'}) {
+                            $dataTypeContent->{$row->field} = $dataTypeContent->{$row->field.'_read'};
+                        }
                         @endphp
                         <div class="panel-heading" style="border-bottom:0;">
                             <h3 class="panel-title">{{ $row->getTranslatedAttribute('display_name') }}</h3>
@@ -67,7 +67,7 @@
                                          src="{{ filter_var($dataTypeContent->{$row->field}, FILTER_VALIDATE_URL) ? $dataTypeContent->{$row->field} : Voyager::image($dataTypeContent->{$row->field}) }}">
                                 @endif
                             @elseif($row->type == 'relationship')
-                                @include('voyager::formfields.relationship', ['view' => 'read', 'options' => $row->details])
+                                 @include('voyager::formfields.relationship', ['view' => 'read', 'options' => $row->details])
                             @elseif($row->type == 'select_dropdown' && property_exists($row->details, 'options') &&
                                     !empty($row->details->options->{$dataTypeContent->{$row->field}})
                             )
@@ -99,12 +99,12 @@
                             @elseif($row->type == 'checkbox')
                                 @if(property_exists($row->details, 'on') && property_exists($row->details, 'off'))
                                     @if($dataTypeContent->{$row->field})
-                                        <span class="label label-info">{{ $row->details->on }}</span>
+                                    <span class="label label-info">{{ $row->details->on }}</span>
                                     @else
-                                        <span class="label label-primary">{{ $row->details->off }}</span>
+                                    <span class="label label-primary">{{ $row->details->off }}</span>
                                     @endif
                                 @else
-                                    {{ $dataTypeContent->{$row->field} }}
+                                {{ $dataTypeContent->{$row->field} }}
                                 @endif
                             @elseif($row->type == 'color')
                                 <span class="badge badge-lg" style="background-color: {{ $dataTypeContent->{$row->field} }}">{{ $dataTypeContent->{$row->field} }}</span>
@@ -128,7 +128,7 @@
                                 @endif
                             @else
                                 @include('voyager::multilingual.input-hidden-bread-read')
-                                @if($row->display_name == 'Billing Total')
+                                @if($row->display_name == 'Value')
                                     <p>${{ $dataTypeContent->{$row->field} / 100  }}</p>
                                 @else
                                     <p>{{ $dataTypeContent->{$row->field} }}</p>
@@ -139,42 +139,6 @@
                             <hr style="margin:0;">
                         @endif
                     @endforeach
-
-                    <div class="panel-heading" style="border-bottom:0;">
-                        <h3 class="panel-title">{{ __('Products for this order') }}</h3>
-                    </div>
-
-                    <div class="panel-body" style="padding-top:0;">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                </tr>
-                                @foreach($products as $product)
-                                    <tr>
-                                        <td>{{ $product->id }}</td>
-                                        <td><a href="{{ route('voyager.products.show', $product->id ) }}">{{ $product->name }}</a></td>
-                                        <td>{{ presentPrice($product->price) }}</td>
-                                        <td>{{ $product->pivot->quantity }}</td>
-                                    </tr>
-                                @endforeach
-                            </table>
-                        </div>
-{{--                        @foreach($products as $product)--}}
-{{--                            <ul>--}}
-{{--                                <li>Product ID: {{ $product->id }}</li>--}}
-{{--                                <li>Product Name: {{ $product->name }}</li>--}}
-{{--                                <li>Product Price: {{ presentPrice($product->price) }}</li>--}}
-{{--                                <li>Product Quantity: {{ $product->pivot->quantity }}</li>--}}
-{{--                            </ul>--}}
-{{--                            @if(! $loop->last)--}}
-{{--                                <hr style="margin:0;">--}}
-{{--                            @endif--}}
-{{--                        @endforeach--}}
-                    </div>
 
                 </div>
             </div>
