@@ -1164,9 +1164,6 @@ html[dir=rtl] .auth-pages .auth-right {
 .my-orders .order-header-items {
   display: flex;
 }
-.my-orders .order-header-items div {
-  margin-right: 14px;
-}
 .my-orders .order-header-items .order-id {
   margin-right: 10px;
   font-weight: bold;
@@ -1214,6 +1211,7 @@ html[dir=rtl] .auth-pages .auth-right {
   padding: 10px 0px 0px 0px;
 }
 .my-orders .single-order-container .order-body .order-details-heading {
+  text-transform: uppercase;
   padding-top: 5px;
   font-weight: 700;
   font-size: 14px;

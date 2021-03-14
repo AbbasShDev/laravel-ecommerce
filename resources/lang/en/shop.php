@@ -26,6 +26,7 @@ return [
     'shipping_is_free'                               => 'Shipping is free because we’re awesome like that. Also because that’s additional stuff I don’t feel like figuring out :).',
     'subtotal'                                       => 'Subtotal',
     'code'                                           => 'Discount',
+    'discount'                                       => 'Discount',
     'tax'                                            => 'Tax',
     'new_subtotal'                                   => 'New subtotal',
     'total'                                          => 'Total',

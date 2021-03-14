@@ -73,7 +73,7 @@
                                 </div>
                                 <div>
                                     <div class="order-header-items">
-                                        <div><i class="fa fa-chevron-right"></i></div>
+                                        <div><i class="fa {{ getAppDir() == 'rtl' ? 'fa-chevron-left' : 'fa-chevron-right' }}"></i></div>
                                     </div>
                                 </div>
                             </div>
@@ -85,10 +85,10 @@
                                         <div><img src="{{ asset($product->image) }}" alt="Product Image"></div>
                                         <div class="order-product-info">
                                             <div>
-                                                <a href="{{ route('shop.show', $product->slug) }}">{{ $product->name }}</a>
+                                                <a href="{{ route('shop.show', $product->slug) }}">{{ $product->getTranslatedAttribute('name') }}</a>
                                             </div>
                                             <div>{{ presentPrice($product->price) }}</div>
-                                            <div>Quantity: {{ $product->pivot->quantity }}</div>
+                                            <div>{{ __('profile.quantity') }}: {{ $product->pivot->quantity }}</div>
                                         </div>
                                     </div>
                                 @endforeach
