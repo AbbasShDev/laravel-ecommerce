@@ -8,6 +8,12 @@
     }
 }
 
+.button-active {
+    cursor: default !important;
+    color: $white !important;
+    background: $text-color !important;
+}
+
 .button-white {
     border: 1px solid $white;
     color: $white !important;

@@ -10,9 +10,10 @@ class LandingPageController extends Controller
 
     public function index()
     {
-        $products = Product::where('featured', true)->inRandomOrder()->take(8)->get();
+        $featuredProducts = Product::where('featured', true)->inRandomOrder()->take(8)->get();
+        $latestProducts = Product::latest()->inRandomOrder()->take(8)->get();
 
-        return view('landing-page', compact('products'));
+        return view('landing-page', compact('featuredProducts', 'latestProducts'));
     }
 
 }

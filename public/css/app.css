@@ -170,6 +170,12 @@ h2 {
   background: #212121;
 }
 
+.button-active {
+  cursor: default !important;
+  color: #e9e9e9 !important;
+  background: #212121 !important;
+}
+
 .button-white {
   border: 1px solid #e9e9e9;
   color: #e9e9e9 !important;
