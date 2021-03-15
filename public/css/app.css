@@ -702,6 +702,23 @@ footer {
   grid-area: blog3;
 }
 
+.swiper-container .swiper-wrapper .swiper-slide {
+  text-align: center;
+}
+.swiper-container .swiper-wrapper .swiper-slide div {
+  padding: 0px 20%;
+}
+.swiper-container .swiper-wrapper .swiper-slide div .review-avatar {
+  width: 100px;
+  border-radius: 50%;
+}
+.swiper-container .swiper-wrapper .swiper-slide div .review-name {
+  font-weight: 700;
+}
+.swiper-container .swiper-wrapper .swiper-slide div .review-details {
+  color: #919191;
+}
+
 .products-section {
   display: grid;
   grid-template-columns: 1fr 3fr;
