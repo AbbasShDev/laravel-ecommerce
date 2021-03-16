@@ -36,6 +36,8 @@
     img {
         opacity: 0;
         transition: opacity .10s ease-in-out;
+        height: auto;
+        max-height: 100%;
     }
 
     img.active {

@@ -17,42 +17,17 @@
         <!-- Swiper -->
         <div class="swiper-container swiper-1">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="{{ asset('img/banner/banner-slider-1.jpg') }}" alt="">
-                    <div class="banner-product-name" style="color: black">Sony ZX Series </div>
-                    <div class="banner-product-price-desc" style="color: black">Starting from $73.00</div>
-                    <div class="banner-product-stock-status" style="color: black">In stock</div>
-                    <div class="banner-product-btn">
-                        <a href="" style="color: black">Shop now</a>
+                @foreach($banners as $banner)
+                    <div class="swiper-slide">
+                        <img src="{{ asset('storage/'.$banner->image) }}" alt="">
+                        <div class="banner-product-name" style="color: {{ $banner->text_color }}">{{ $banner->getTranslatedAttribute('product_name') }}</div>
+                        <div class="banner-product-price-desc" style="color: {{ $banner->text_color }}">{{ $banner->getTranslatedAttribute('product_price_description') }}</div>
+                        <div class="banner-product-stock-status" style="color: {{ $banner->text_color }}">{{ $banner->getTranslatedAttribute('product_stock_status') }}</div>
+                        <div class="banner-product-btn">
+                            <a href=" {{ route('shop.show', $banner->product ) }}" style="color: black">{{ __('general.shop_now') }}</a>
+                        </div>
                     </div>
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{ asset('img/banner/banner-slider-2.jpg') }}" alt="">
-                    <div class="banner-product-name" style="color: white">Apple Watch</div>
-                    <div class="banner-product-price-desc" style="color: white">Starting from $400.00</div>
-                    <div class="banner-product-stock-status" style="color: white">limited offer</div>
-                    <div class="banner-product-btn">
-                        <a href="" style="color: black">Shop now</a>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{ asset('img/banner/banner-slider-3.jpg') }}" alt="">
-                    <div class="banner-product-name" style="color: white">blutooth speaker</div>
-                    <div class="banner-product-price-desc" style="color: white">Starting from $79.00</div>
-                    <div class="banner-product-stock-status" style="color: white">new in stock</div>
-                    <div class="banner-product-btn">
-                        <a href="" style="color: black">Shop now</a>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{ asset('img/banner/banner-slider-4.png') }}" alt="">
-                    <div class="banner-product-name" style="color: white">Mobile Phones</div>
-                    <div class="banner-product-price-desc" style="color: white">Starting from $600.00</div>
-                    <div class="banner-product-stock-status" style="color: white">sales on mobile Phones</div>
-                    <div class="banner-product-btn">
-                        <a href="" style="color: black">Shop now</a>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <!-- If we need navigation buttons -->
             <div class="swiper-button-prev" style="color: #a29f9f;"></div>
@@ -222,7 +197,7 @@
                 prevEl: '.swiper-button-prev',
             },
             autoplay: {
-                delay: 1500,
+                delay: 2500,
             },
         });
     </script>

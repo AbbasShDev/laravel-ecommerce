@@ -23,6 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7974f52-85f3-409d-8ba1-9706aab0ceb6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LandingPageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LandingPageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/ar/general.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/general.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/general.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/general.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/pages/product.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/product.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/landing-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/landing-page.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -278,7 +284,8 @@
       <workItem from="1615651427041" duration="5551000" />
       <workItem from="1615674127415" duration="4713000" />
       <workItem from="1615761520216" duration="7878000" />
-      <workItem from="1615848979003" duration="8297000" />
+      <workItem from="1615848979003" duration="8582000" />
+      <workItem from="1615926656390" duration="3725000" />
     </task>
     <servers />
   </component>
@@ -310,10 +317,10 @@
       <screen x="0" y="25" width="1280" height="723" />
     </state>
     <state x="446" y="59" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.25.1280.723@0.25.1280.723" timestamp="1613862735469" />
-    <state x="379" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615570641062">
+    <state x="379" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615927022946">
       <screen x="0" y="25" width="1280" height="721" />
     </state>
-    <state x="379" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1280.721@0.25.1280.721" timestamp="1615570641062" />
+    <state x="379" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1280.721@0.25.1280.721" timestamp="1615927022946" />
     <state x="379" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1280.723@0.25.1280.723" timestamp="1614855163945" />
     <state x="431" y="312" key="NewPhpFileDialog" timestamp="1615297597913">
       <screen x="0" y="25" width="1280" height="721" />
@@ -333,10 +340,10 @@
       <screen x="0" y="25" width="1280" height="723" />
     </state>
     <state x="355" y="177" key="refactoring.ChangeSignatureDialog/0.25.1280.723@0.25.1280.723" timestamp="1614857537648" />
-    <state x="306" y="72" width="670" height="675" key="search.everywhere.popup" timestamp="1615851038614">
+    <state x="306" y="72" width="670" height="675" key="search.everywhere.popup" timestamp="1615931979649">
       <screen x="0" y="25" width="1280" height="721" />
     </state>
-    <state x="306" y="72" width="670" height="675" key="search.everywhere.popup/0.25.1280.721@0.25.1280.721" timestamp="1615851038614" />
+    <state x="306" y="72" width="670" height="675" key="search.everywhere.popup/0.25.1280.721@0.25.1280.721" timestamp="1615931979649" />
     <state x="306" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1614958461981" />
   </component>
 </project>

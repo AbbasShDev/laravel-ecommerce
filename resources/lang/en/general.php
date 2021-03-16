@@ -7,6 +7,6 @@ return [
     'address_updated_successfully' => 'Address Updated Successfully',
     'thank_you_for_your_order' => 'Thank you for your order',
     'a_confirmation_email_was_sent' => 'A confirmation email was sent to you',
-
+    'shop_now' => 'Shop now',
 
 ];

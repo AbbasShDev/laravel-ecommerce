@@ -825,6 +825,8 @@ footer {
 .product-section-image img {
   opacity: 0;
   transition: opacity 0.1s ease-in-out;
+  height: auto;
+  max-height: 100%;
 }
 .product-section-image img.active {
   opacity: 1;
