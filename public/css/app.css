@@ -685,7 +685,7 @@ footer {
 .blog-section {
   background: #F5F5F5;
   border-top: 1px solid #CDCDCD;
-  padding: 50px 0;
+  padding: 50px 0px 40px 0px;
   grid-area: blog-section;
 }
 .blog-section .blog-posts {
@@ -749,7 +749,7 @@ footer {
   text-align: center;
 }
 .swiper-container.swiper-2 .swiper-wrapper .swiper-slide div {
-  padding: 0px 20%;
+  padding: 0px 20% 35px 20%;
 }
 .swiper-container.swiper-2 .swiper-wrapper .swiper-slide div .review-avatar {
   width: 100px;

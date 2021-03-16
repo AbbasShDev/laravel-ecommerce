@@ -28,7 +28,7 @@
 .blog-section {
     background: $light-gray-background;
     border-top: 1px solid $separator-color;
-    padding: 50px 0;
+    padding: 50px 0px 40px 0px;
     grid-area: blog-section;
 
 
@@ -114,7 +114,7 @@
         .swiper-slide {
             text-align: center;
             div {
-                padding: 0px 20%;
+                padding: 0px 20% 35px 20%;
 
                 .review-avatar {
                     width: 100px;

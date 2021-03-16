@@ -139,9 +139,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev" style="    color: #535353;"></div>
-                <div class="swiper-button-next" style="    color: #535353;"></div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
             </div>
         </div> <!-- end container -->
     </div> <!-- end blog-section -->
@@ -230,9 +229,10 @@
 
     <script>
         let swiper2 = new Swiper('.swiper-2', {
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
             },
             autoplay: {
                 delay: 5000,
