@@ -537,7 +537,6 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 header.with-background {
-  background: url("/img/triangles.svg");
   background-size: cover;
   color: #e9e9e9;
 }
@@ -663,6 +662,10 @@ footer {
   color: #e9e9e9;
 }
 
+.hero-section {
+  padding: 0px 0px 50px 0px;
+}
+
 .featured-section {
   padding: 50px 0;
 }
@@ -702,20 +705,60 @@ footer {
   grid-area: blog3;
 }
 
-.swiper-container .swiper-wrapper .swiper-slide {
+.swiper-container.swiper-1 .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  max-height: 370px;
+  min-height: 144px;
+  position: relative;
+}
+.swiper-container.swiper-1 .swiper-wrapper .swiper-slide .banner-product-name {
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  text-transform: capitalize;
+  font-size: 28px;
+  font-weight: 700;
+}
+.swiper-container.swiper-1 .swiper-wrapper .swiper-slide .banner-product-price-desc {
+  position: absolute;
+  top: 38%;
+  left: 20%;
+  font-weight: 700;
+}
+.swiper-container.swiper-1 .swiper-wrapper .swiper-slide .banner-product-stock-status {
+  position: absolute;
+  top: 45%;
+  left: 20%;
+  font-size: 20px;
+}
+.swiper-container.swiper-1 .swiper-wrapper .swiper-slide .banner-product-btn {
+  position: absolute;
+  top: 58%;
+  left: 20%;
+}
+.swiper-container.swiper-1 .swiper-wrapper .swiper-slide .banner-product-btn a {
+  background-color: #FDD622;
+  padding: 7px 14px;
+  border-radius: 20px;
+}
+.swiper-container.swiper-1 .swiper-wrapper .swiper-slide .banner-product-btn a:hover {
+  color: #000000;
+}
+
+.swiper-container.swiper-2 .swiper-wrapper .swiper-slide {
   text-align: center;
 }
-.swiper-container .swiper-wrapper .swiper-slide div {
+.swiper-container.swiper-2 .swiper-wrapper .swiper-slide div {
   padding: 0px 20%;
 }
-.swiper-container .swiper-wrapper .swiper-slide div .review-avatar {
+.swiper-container.swiper-2 .swiper-wrapper .swiper-slide div .review-avatar {
   width: 100px;
   border-radius: 50%;
 }
-.swiper-container .swiper-wrapper .swiper-slide div .review-name {
+.swiper-container.swiper-2 .swiper-wrapper .swiper-slide div .review-name {
   font-weight: 700;
 }
-.swiper-container .swiper-wrapper .swiper-slide div .review-details {
+.swiper-container.swiper-2 .swiper-wrapper .swiper-slide div .review-details {
   color: #919191;
 }
 

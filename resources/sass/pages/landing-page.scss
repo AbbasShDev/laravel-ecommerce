@@ -1,3 +1,9 @@
+
+.hero-section {
+    padding: 0px 0px 50px 0px;
+}
+
+
 .featured-section {
     padding: 50px 0;
 
@@ -16,6 +22,8 @@
         }
     }
 }
+
+
 
 .blog-section {
     background: $light-gray-background;
@@ -47,8 +55,61 @@
 
 }
 
+.swiper-container.swiper-1 {
+    .swiper-wrapper{
+        .swiper-slide {
+            img {
+                width: 100%;
+                max-height: 370px;
+                min-height: 144px;
+                position:relative
+            }
 
-.swiper-container {
+            .banner-product-name {
+                position: absolute;
+                top: 25%;
+                left: 20%;
+                text-transform: capitalize;
+                font-size: 28px;
+                font-weight: 700;
+            }
+
+            .banner-product-price-desc {
+                position: absolute;
+                top: 38%;
+                left: 20%;
+                font-weight: 700;
+            }
+
+            .banner-product-stock-status {
+                position: absolute;
+                top: 45%;
+                left: 20%;
+                font-size: 20px;
+            }
+
+            .banner-product-btn {
+                position: absolute;
+                top: 58%;
+                left: 20%;
+
+                a {
+                    background-color: #FDD622;
+                    padding: 7px 14px;
+                    border-radius: 20px;
+
+                    &:hover {
+                        color: #000000;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+.swiper-container.swiper-2 {
     .swiper-wrapper{
         .swiper-slide {
             text-align: center;

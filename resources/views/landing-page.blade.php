@@ -13,23 +13,52 @@
 @endsection
 
 @section('content')
-    <header class="with-background">
-        <div class="hero container">
-            <div class="hero-copy">
-                <h1>Laravel Ecommerce Demo</h1>
-                <p>Includes multiple products, categories, a shopping cart and a checkout system with Stripe
-                    integration.</p>
-                <div class="hero-buttons">
-                    <a href="#" class="button button-white">Blog Post</a>
-                    <a href="#" class="button button-white">GitHub</a>
+    <div class="hero-section ">
+        <!-- Swiper -->
+        <div class="swiper-container swiper-1">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="{{ asset('img/banner/banner-slider-1.jpg') }}" alt="">
+                    <div class="banner-product-name" style="color: black">Sony ZX Series </div>
+                    <div class="banner-product-price-desc" style="color: black">Starting from $73.00</div>
+                    <div class="banner-product-stock-status" style="color: black">In stock</div>
+                    <div class="banner-product-btn">
+                        <a href="" style="color: black">Shop now</a>
+                    </div>
                 </div>
-            </div> <!-- end hero-copy -->
-
-            <div class="hero-image">
-                <img src="{{ asset('img/macbook-pro-laravel.png') }}" alt="hero image">
-            </div> <!-- end hero-image -->
-        </div> <!-- end hero -->
-    </header>
+                <div class="swiper-slide">
+                    <img src="{{ asset('img/banner/banner-slider-2.jpg') }}" alt="">
+                    <div class="banner-product-name" style="color: white">Apple Watch</div>
+                    <div class="banner-product-price-desc" style="color: white">Starting from $400.00</div>
+                    <div class="banner-product-stock-status" style="color: white">limited offer</div>
+                    <div class="banner-product-btn">
+                        <a href="" style="color: black">Shop now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="{{ asset('img/banner/banner-slider-3.jpg') }}" alt="">
+                    <div class="banner-product-name" style="color: white">blutooth speaker</div>
+                    <div class="banner-product-price-desc" style="color: white">Starting from $79.00</div>
+                    <div class="banner-product-stock-status" style="color: white">new in stock</div>
+                    <div class="banner-product-btn">
+                        <a href="" style="color: black">Shop now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="{{ asset('img/banner/banner-slider-4.png') }}" alt="">
+                    <div class="banner-product-name" style="color: white">Mobile Phones</div>
+                    <div class="banner-product-price-desc" style="color: white">Starting from $600.00</div>
+                    <div class="banner-product-stock-status" style="color: white">sales on mobile Phones</div>
+                    <div class="banner-product-btn">
+                        <a href="" style="color: black">Shop now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev" style="color: #a29f9f;"></div>
+            <div class="swiper-button-next" style="color: #a29f9f;"></div>
+        </div>
+    </div> <!-- end hero -->
 
     <div class="featured-section">
 
@@ -80,11 +109,11 @@
     </div> <!-- end featured-section -->
 
     <div class="blog-section">
-        <div class="container">
+        <div class="main-container">
             <h1 class="text-center">Customer reviews</h1>
             <div class="spacer"></div>
             <!-- Slider main container -->
-            <div class="swiper-container">
+            <div class="swiper-container swiper-2">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
@@ -185,8 +214,22 @@
 
     <!-- swiper JS  -->
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+
     <script>
-        var swiper = new Swiper('.swiper-container', {
+        let swiper1 = new Swiper('.swiper-1', {
+            spaceBetween: 30,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 1500,
+            },
+        });
+    </script>
+
+    <script>
+        let swiper2 = new Swiper('.swiper-2', {
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
