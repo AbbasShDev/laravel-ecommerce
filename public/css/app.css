@@ -563,6 +563,9 @@ header .top-nav ul a:hover {
   color: #d0d0d0;
 }
 header .top-nav ul .change-lang {
+  color: #e9e9e9;
+  background: #535353;
+  cursor: pointer;
   border: 1px solid #e9e9e9;
   padding: 4px 17px;
   font-size: 14px;

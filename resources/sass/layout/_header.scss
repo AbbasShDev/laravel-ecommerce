@@ -32,6 +32,9 @@ header {
             }
 
             .change-lang {
+                color: $white;
+                background: $gray-background;
+                cursor: pointer;
                 border: 1px solid $white;
                 padding: 4px 17px;
                 font-size: 14px;
@@ -71,12 +74,12 @@ header {
         }
     }
 
-    .top-nav-right{
+    .top-nav-right {
         display: flex;
         align-items: center;
     }
 
-    .top-nav-left{
+    .top-nav-left {
         display: flex;
         align-items: center;
         gap: 58px;

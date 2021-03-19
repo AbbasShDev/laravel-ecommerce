@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ChangeLang;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ConfirmationController;
 use App\Http\Controllers\CouponController;
@@ -45,6 +46,8 @@ Route::group(['middleware' => 'localized'], function () {
     Route::get('/thankyou', [ConfirmationController::class, 'index'])->name('confirmation.index');
 
     Route::get('/search', [ShopController::class, 'search'])->name('search');
+
+    Route::post('/change-lang', [ChangeLang::class, 'switch'])->name('change-lang');
 
     Route::middleware('auth')->group(function () {
 
