@@ -46,5 +46,7 @@ return [
     "coupon_has_been_applied"                        => "Coupon has been applied",
     "invalid_coupon_code_try_again"                  => "Invalid coupon code, try again!",
     "search_for_products"                            => "Search for products..",
+    "latest"                                         => "Latest",
+    "view_more_products"                             => "View more products",
 
 ];

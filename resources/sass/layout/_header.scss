@@ -1,65 +1,3 @@
-header.with-background {
-    background-size: cover;
-    color: $white;
-
-    .top-nav {
-        display: flex;
-        justify-content: space-between;
-        padding: 40px 0;
-        letter-spacing: 1.5px;
-
-        .logo {
-            font-weight: bold;
-            font-size: 28px;
-
-            img {
-                display: flex;
-                width: 220px;
-            }
-        }
-
-        ul {
-            //display: flex;
-            //text-transform: uppercase;
-            //justify-content: space-between;
-            //width: 40%;
-
-            a {
-                color: $white;
-
-                &:hover {
-                    color: darken($white, 10%);
-                }
-            }
-
-        }
-    }
-
-    .hero {
-        display: grid;
-        grid-template-columns: 1fr 1fr; //repeat(2, 1fr)
-        grid-gap: $gutter;
-        padding-top: 20px;
-        padding-bottom: 84px;
-
-        .hero-image {
-            padding-left: 60px;
-        }
-
-        h1 {
-            font-size: 52px;
-            margin-top: 50px;
-        }
-
-        p {
-            margin: 40px 0 68px;
-        }
-
-        .button {
-            margin-right: 14px;
-        }
-    }
-}
 
 header {
     background: $gray-background;
@@ -92,6 +30,22 @@ header {
                     color: darken($white, 10%);
                 }
             }
+
+            .change-lang {
+                border: 1px solid $white;
+                padding: 4px 17px;
+                font-size: 14px;
+                text-transform: capitalize;
+                border-radius: 10px;
+                transition: all .3s ease-in-out;
+
+                &:hover {
+                    border: 1px solid $white;
+                    background: $white;
+                    color: $gray-background;
+                }
+            }
+
 
             .cart-count {
                 display: inline-block;

@@ -38,15 +38,13 @@
     <div class="featured-section">
 
         <div class="container">
-            <h1 class="text-center">Laravel Ecommerce</h1>
+            <h1 class="text-center">{{ __('general.laramerce') }}</h1>
 
-            <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore vitae nisi,
-                consequuntur illum dolores cumque pariatur quis provident deleniti nesciunt officia est reprehenderit sunt
-                aliquid possimus temporibus enim eum hic.</p>
+            <p class="section-description text-center">{{ __('general.laramerce_description') }}</p>
 
             <div class="text-center button-container taps">
-                <a class="button button-active" data-type="featured" style="cursor: pointer">Featured</a>
-                <a class="button" data-type="latest" style="cursor: pointer">Latest</a>
+                <a class="button button-active" data-type="featured" style="cursor: pointer">{{ __('shop.featured') }}</a>
+                <a class="button" data-type="latest" style="cursor: pointer">{{ __('shop.latest') }}</a>
             </div>
 
             <div class="products text-center featured">
@@ -76,7 +74,7 @@
             </div> <!-- end products -->
 
             <div class="text-center button-container">
-                <a href="{{ route('shop.index') }}" class="button">View more products</a>
+                <a href="{{ route('shop.index') }}" class="button">{{ __('shop.view_more_products') }}</a>
             </div>
 
         </div> <!-- end container -->
@@ -85,7 +83,7 @@
 
     <div class="blog-section">
         <div class="main-container">
-            <h1 class="text-center">Customer reviews</h1>
+            <h1 class="text-center">{{ __('general.customer_reviews') }}</h1>
             <div class="spacer"></div>
             <!-- Slider main container -->
             <div class="swiper-container swiper-2">
@@ -120,40 +118,6 @@
         </div> <!-- end container -->
     </div> <!-- end blog-section -->
 
-
-{{--    <div class="blog-section">--}}
-{{--        <div class="container">--}}
-{{--            <h1 class="text-center">From Our Blog</h1>--}}
-
-{{--            <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore vitae nisi,--}}
-{{--                consequuntur illum dolores cumque pariatur quis provident deleniti nesciunt officia est reprehenderit sunt--}}
-{{--                aliquid possimus temporibus enim eum hic.</p>--}}
-
-{{--            <div class="blog-posts">--}}
-{{--                <div class="blog-post" id="blog1">--}}
-{{--                    <a href="#"><img src="/img/blog1.png" alt="Blog Image"></a>--}}
-{{--                    <a href="#"><h2 class="blog-title">Blog Post Title 1</h2></a>--}}
-{{--                    <div class="blog-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, tenetur--}}
-{{--                        numquam ipsam reiciendis.--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="blog-post" id="blog2">--}}
-{{--                    <a href="#"><img src="/img/blog2.png" alt="Blog Image"></a>--}}
-{{--                    <a href="#"><h2 class="blog-title">Blog Post Title 2</h2></a>--}}
-{{--                    <div class="blog-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, tenetur--}}
-{{--                        numquam ipsam reiciendis.--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="blog-post" id="blog3">--}}
-{{--                    <a href="#"><img src="/img/blog3.png" alt="Blog Image"></a>--}}
-{{--                    <a href="#"><h2 class="blog-title">Blog Post Title 3</h2></a>--}}
-{{--                    <div class="blog-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, tenetur--}}
-{{--                        numquam ipsam reiciendis.--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div> <!-- end container -->--}}
-{{--    </div> <!-- end blog-section -->--}}
 @endsection
 @section('extra-js')
     <script>
