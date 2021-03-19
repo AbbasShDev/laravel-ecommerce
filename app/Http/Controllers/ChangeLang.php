@@ -2,17 +2,27 @@
 
 namespace App\Http\Controllers;
 
-class ChangeLang extends Controller
-{
+use Illuminate\Support\Str;
+
+class ChangeLang extends Controller {
 
     public function switch()
     {
-        $locle = request()->locale;
+        $locale = request()->locale;
+        $previousURL = url()->previous();
 
-        $segments = request()->create(url()->previous())->segments();
-        $segments[0] = $locle;
+        $URLQuery = Str::contains($previousURL, '?') ? Str::after($previousURL, '?') : null;
 
-        $redirectURL = implode('/', $segments);
+        $segments = request()->create($previousURL)->segments();
+        $segments[0] = $locale;
+
+        $URL = implode('/', $segments);
+
+        if ($URLQuery) {
+            $redirectURL = $URL . '?' . $URLQuery;
+        } else {
+            $redirectURL = $URL;
+        }
 
         return redirect()->to($redirectURL);
     }
