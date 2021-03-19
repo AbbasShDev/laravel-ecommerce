@@ -2,7 +2,7 @@
     <li>
         <form action="{{ route('change-lang') }}" method="post">
             @csrf
-            <input type="hidden" name="locale" value="{{ app()->getLocale() == 'en' ? 'ar' : 'en' }}">
+            <input type="hidden" name="lang" value="{{ app()->getLocale() == 'en' ? 'ar' : 'en' }}">
             <button class="change-lang">{{ __('general.change_lang') }}</button>
         </form>
     </li>

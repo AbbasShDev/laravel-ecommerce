@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 
 class ChangeLang extends Controller {
 
-    public function switch()
+    public function switch(Request $request)
     {
-        $locale = request()->locale;
+        $locale = request()->lang;
         $previousURL = url()->previous();
 
         $URLQuery = Str::contains($previousURL, '?') ? Str::after($previousURL, '?') : null;
