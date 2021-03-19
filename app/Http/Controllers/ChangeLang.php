@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Str;
-use Illuminate\Http\Request;
 
 class ChangeLang extends Controller {
 
-    public function switch(Request $request)
+    public function __invoke()
     {
         $locale = request()->lang;
         $previousURL = url()->previous();

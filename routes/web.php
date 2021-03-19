@@ -47,7 +47,7 @@ Route::group(['middleware' => 'localized'], function () {
 
     Route::get('/search', [ShopController::class, 'search'])->name('search');
 
-    Route::post('/change-lang', [ChangeLang::class, 'switch'])->name('change-lang');
+    Route::post('/change-lang', ChangeLang::class)->name('change-lang');
 
     Route::middleware('auth')->group(function () {
 
