@@ -15,6 +15,9 @@
   header.with-background .top-nav ul, header .top-nav ul {
     margin: 20px auto 0;
   }
+  header.with-background .top-nav .search-box-landing-page, header .top-nav .search-box-landing-page {
+    margin: 20px auto 0;
+  }
   header.with-background .top-nav-left, header .top-nav-left {
     flex-direction: column;
     gap: 0px;

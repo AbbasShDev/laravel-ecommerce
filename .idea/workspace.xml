@@ -23,13 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7974f52-85f3-409d-8ba1-9706aab0ceb6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/partials/menus/search.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/algolia.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/algolia.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/algolia-instant-search.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/algolia-instant-search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ar/shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/shop.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/shop.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/search-result.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/search-result.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/responsive.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/layout/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/layout/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/responsive.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/responsive.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/menus/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/menus/main.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/nav.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,7 +289,7 @@
       <workItem from="1615926656390" duration="3860000" />
       <workItem from="1616114539531" duration="5186000" />
       <workItem from="1616120242944" duration="315000" />
-      <workItem from="1616196033365" duration="8347000" />
+      <workItem from="1616196033365" duration="9646000" />
     </task>
     <servers />
   </component>
