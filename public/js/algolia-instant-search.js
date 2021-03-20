@@ -4,16 +4,17 @@
     const search = instantsearch({
         indexName: 'products',
         searchClient: algoliasearch('O28RQ1I31E', '44bc64e609062f72d24fcc242a14a1e1'),
-        routing: true
+        routing: true,
     });
 
     search.addWidgets([
         instantsearch.widgets.searchBox({
             container: '#search-box',
-            placeholder: "Search for products"
+            placeholder: locale == 'ar' ? "البحث عن منتجات .." : "Search for products"
         }),
         instantsearch.widgets.hits({
-            container: '#hits',templates: {
+            container: '#hits',
+            templates: {
                 item: function (item) {
                     return `
                     <a href="${window.location.origin}/${locale}/shop/${item.slug}">
@@ -39,15 +40,35 @@
         }),
         instantsearch.widgets.pagination({
             container: '#pagination',
-            totalPages:20,
+            totalPages: 20,
             scrollTo: false,
         }),
         instantsearch.widgets.stats({
             container: '#stats',
+            templates: {
+                text:
+                    locale == 'ar' ?
+                    `
+                    {{^areHitsSorted}}
+                    {{#hasNoResults}}لا يوجد نتائج{{/hasNoResults}}
+                    {{#hasOneResult}}1 نتيجة{{/hasOneResult}}
+                    {{#hasManyResults}}{{#helpers.formatNumber}}{{nbHits}}{{/helpers.formatNumber}} نتيجة{{/hasManyResults}}
+                    {{/areHitsSorted}}
+                    `
+                    :
+                        `
+                    {{^areHitsSorted}}
+                    {{#hasNoResults}}No results{{/hasNoResults}}
+                    {{#hasOneResult}}1 result{{/hasOneResult}}
+                    {{#hasManyResults}}{{#helpers.formatNumber}}{{nbHits}}{{/helpers.formatNumber}} results{{/hasManyResults}}
+                    {{/areHitsSorted}}
+                    `
+                ,
+            },
         }),
         instantsearch.widgets.refinementList({
             container: '#refinement-list',
-            attribute: 'category',
+            attribute: locale === 'ar' ? 'category.ar' : 'category.en',
         }),
     ]);
 

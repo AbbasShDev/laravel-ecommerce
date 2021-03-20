@@ -1,4 +1,4 @@
- @import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
+@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
 
 .aa-input-container {
     display: inline-block;
@@ -28,9 +28,10 @@
 }
 
 .aa-input-search:focus {
-    outline: 0;
-    border-color: #3a96cf;
-    box-shadow: 4px 4px 0 rgba(58, 150, 207, 0.1);
+    outline: none;
+}
+.aa-input-search:active {
+    outline: none;
 }
 
 .aa-input-icon {
@@ -45,12 +46,13 @@
     fill: #e4e4e4;
     pointer-events: none;
 }
+
 html[dir="rtl"] .aa-input-icon {
     left: 16px;
     right: auto;
 }
 
- .aa-hint {
+.aa-hint {
     color: #e4e4e4;
 }
 
@@ -119,6 +121,7 @@ html[dir="rtl"] .aa-input-icon {
 .algolia-thumb {
     max-height: 35px;
 }
+
 .algolia-info {
     display: flex;
     flex-direction: column;
@@ -126,4 +129,99 @@ html[dir="rtl"] .aa-input-icon {
 
 .ais-hits--item em {
     background-color: rgba(58, 150, 207, 0.3);
+}
+
+.search-results-container-algolia #search-box .ais-SearchBox-input {
+    border: 1px solid #CDCDCD;
+    box-shadow: inset 0 1px 4px 0 #EFEFF1;
+    caret-color: #535353;
+    color: #535353;
+}
+
+.search-results-container-algolia #search-box .ais-SearchBox-input::placeholder {
+    color: #535353;
+}
+
+.search-results-container-algolia #search-box .ais-SearchBox-form:before {
+    background: transparent url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23535353%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2211%22%20cy%3D%2211%22%20r%3D%228%22%3E%3C%2Fcircle%3E%3Cline%20x1%3D%2221%22%20y1%3D%2221%22%20x2%3D%2216.65%22%20y2%3D%2216.65%22%3E%3C%2Fline%3E%3C%2Fsvg%3E") repeat scroll 0 0;
+}
+
+.search-results-container-algolia #refinement-list .ais-GeoSearch-input,
+.search-results-container-algolia #refinement-list .ais-RefinementList-checkbox {
+    box-shadow: inset 0 1px 4px 0 #EFEFF1;
+    color: #CDCDCD;
+}
+
+.search-results-container-algolia #refinement-list .ais-RefinementList-item--selected .ais-RefinementList-checkbox,
+.search-results-container-algolia #refinement-list .ais-GeoSearch-input:checked {
+    background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23535353%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%2220%206%209%2017%204%2012%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E");
+    color: #535353;
+}
+
+.search-results-container-algolia #refinement-list .ais-RefinementList-item--selected .ais-RefinementList-label .ais-RefinementList-labelText {
+    color: #535353;
+}
+
+.search-results-container-algolia #refinement-list .ais-RefinementList-count {
+    background: none;
+    border: 1px solid #535353;
+    color: #535353;
+}
+
+.search-results-container-algolia #pagination .ais-Pagination-link {
+    background-image: none;
+    border: 1px solid #CDCDCD;
+    box-shadow: none;
+    color: #535353;
+}
+
+.search-results-container-algolia #pagination .ais-Pagination-item--selected .ais-Pagination-link {
+    box-shadow: inset 0 1px 4px 0 #cdcdcd, inset 0 1px 1px 0 #cdcdcd, 0 0.3px 0 0 #53535321;
+}
+
+.search-results-container-algolia #pagination .ais-Pagination-item--disabled .ais-Pagination-link {
+    opacity: .5;
+}
+
+
+html[dir="rtl"] .search-results-container-algolia #search-box .ais-SearchBox-form:before {
+    right: 1rem;
+    left: auto;
+}
+
+html[dir="rtl"] .search-results-container-algolia #search-box .ais-SearchBox-input {
+    padding-right: 2.5rem;
+    padding-left: 0rem;
+}
+
+html[dir="rtl"] .search-results-container-algolia #search-box .ais-SearchBox-loadingIndicator,
+html[dir="rtl"] .search-results-container-algolia #search-box .ais-SearchBox-reset {
+    left: 1rem;
+    right: auto;
+}
+
+html[dir="rtl"] .search-results-container-algolia #refinement-list .ais-GeoSearch-input,
+html[dir="rtl"] .search-results-container-algolia #refinement-list .ais-RefinementList-checkbox {
+
+    margin: 0 0 0 .5rem;
+
+}
+
+html[dir="rtl"] .search-results-container-algolia #refinement-list .ais-RefinementList-count {
+    margin-right: .5rem;
+    margin-left: 0rem;
+}
+
+html[dir="rtl"] .search-results-container-algolia #pagination .ais-Pagination-item:first-child > .ais-Pagination-link {
+    border-radius: 0 3px 3px 0;
+    margin-left: -1px;
+}
+
+html[dir="rtl"] .search-results-container-algolia #pagination .ais-Pagination-item:last-child > .ais-Pagination-link {
+    border-radius: 3px 0 0 3px;
+}
+
+html[dir="rtl"] .search-results-container-algolia #hits .ais-Hits-item .instantsearch-result img {
+    margin-right: 0px;
+    margin-left: 40px;
 }

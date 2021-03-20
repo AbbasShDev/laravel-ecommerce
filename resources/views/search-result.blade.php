@@ -13,9 +13,9 @@
     <div class="breadcrumbs">
         <div class="breadcrumbs-container container">
             <div>
-                <a href="{{ route('landing-page') }}">Home</a>
-                <i class="fa fa-chevron-right breadcrumb-separator"></i>
-                <a href="{{ route('shop.index') }}"><span>search</span></a>
+                <a href="{{ route('landing-page') }}">{{ __('general.home') }}</a>
+                <i class="fa {{ getAppDir() == 'rtl' ? 'fa-chevron-left' : 'fa-chevron-right' }} breadcrumb-separator"></i>
+                <span>{{ __('shop.search') }}</span>
             </div>
             <div class="aa-input-container" id="aa-input-container">
                 <input type="search" id="aa-search-input" class="aa-input-search" dir="{{ getAppDir() }}"
@@ -31,15 +31,16 @@
     <div class="main-container">
         <div class="search-results-container-algolia">
             <div>
-                <h2>Search</h2>
+                <h2>{{ __('shop.search') }}</h2>
                 <div id="search-box">
                     <!-- SearchBox widget will appear here -->
                 </div>
                 <div class="spacer"></div>
                 <div id="stats"></div>
+                <div id="sort-by"></div>
 
                 <div class="spacer"></div>
-                <h2>Categories</h2>
+                <h2>{{ __('shop.categories') }}</h2>
                 <div id="refinement-list">
                     <!-- RefinementList widget will appear here -->
                 </div>

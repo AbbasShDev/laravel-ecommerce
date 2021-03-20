@@ -48,5 +48,6 @@ return [
     "search_for_products"                            => "Search for products..",
     "latest"                                         => "Latest",
     "view_more_products"                             => "View more products",
+    "search"                                         => "Search",
 
 ];

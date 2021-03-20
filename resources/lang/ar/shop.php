@@ -49,5 +49,7 @@ return [
     "search_for_products"                            => "البحث عن منتجات ..",
     "latest"                                         => "المضاف حديثاًِ",
     "view_more_products"                             => "عرض المزيد من المنتجات",
+    "search"                                         => "البحث",
+
 
 ];

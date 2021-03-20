@@ -68,20 +68,23 @@ class Product extends Model {
     {
 
         return [
-            'slug'  => $this->slug,
-            'image' => $this->image,
-            'price' => $this->price,
-            'en'    => [
+            'slug'     => $this->slug,
+            'image'    => $this->image,
+            'price'    => $this->price,
+            'en'       => [
                 'name'        => $this->name,
                 'details'     => $this->details,
                 'description' => $this->description,
             ],
-            'ar'    => [
+            'ar'       => [
                 'name'        => $this->translate('ar')->name,
                 'details'     => $this->translate('ar')->details,
                 'description' => $this->translate('ar')->description,
             ],
-            'category' => $this->category->name
+            'category' => [
+                'en' => $this->category->name,
+                'ar' => $this->category->translate('ar')->name,
+            ],
         ];
     }
 
