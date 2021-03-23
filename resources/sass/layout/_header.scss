@@ -21,9 +21,11 @@ header {
             //width: 40%;
             padding-top: 8px;
             font-weight: 400;
-            gap: 38px;
+            gap: 17px;
 
             a {
+                font-size: 14px;
+                font-weight: 700;
                 color: $white;
 
                 &:hover {
@@ -67,8 +69,9 @@ header {
                     display: inline-block;
                     padding-top: 50%;
                     padding-bottom: 50%;
-                    margin-left: 6px;
-                    margin-right: 6px;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                    vertical-align: text-bottom;
                 }
             }
 
@@ -97,7 +100,7 @@ header {
     .top-nav-left {
         display: flex;
         align-items: center;
-        gap: 58px;
+        gap: 10px;
 
         .logo {
             font-weight: bold;

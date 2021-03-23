@@ -44,6 +44,15 @@ img {
   max-width: 1200px;
 }
 
+.align-icon {
+  vertical-align: text-top;
+}
+
+.m-y-1 {
+  margin-bottom: 1px;
+  margin-top: 1px;
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -554,9 +563,11 @@ header .top-nav ul {
   text-transform: uppercase;
   padding-top: 8px;
   font-weight: 400;
-  gap: 38px;
+  gap: 17px;
 }
 header .top-nav ul a {
+  font-size: 14px;
+  font-weight: 700;
   color: #e9e9e9;
 }
 header .top-nav ul a:hover {
@@ -591,8 +602,9 @@ header .top-nav ul .cart-count span {
   display: inline-block;
   padding-top: 50%;
   padding-bottom: 50%;
-  margin-left: 6px;
-  margin-right: 6px;
+  margin-left: 5px;
+  margin-right: 5px;
+  vertical-align: text-bottom;
 }
 header .top-nav .search-box-landing-page {
   margin: auto;
@@ -612,7 +624,7 @@ header .top-nav-right {
 header .top-nav-left {
   display: flex;
   align-items: center;
-  gap: 58px;
+  gap: 10px;
 }
 header .top-nav-left .logo {
   font-weight: bold;

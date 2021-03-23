@@ -3,9 +3,33 @@
   .container {
     max-width: 960px;
   }
+
+  header .container {
+    max-width: none;
+  }
+
+  header .top-nav-left {
+    gap: 6px;
+  }
+
+  header .top-nav ul {
+    gap: 6px;
+  }
+
+  header .top-nav .search-box-landing-page .aa-input-search {
+    width: 160px;
+  }
 }
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 992px) {
+  header .top-nav ul {
+    gap: 32px;
+  }
+
+  header .top-nav .search-box-landing-page .aa-input-search {
+    width: 300px;
+  }
+
   header.with-background .top-nav, header .top-nav {
     flex-direction: column;
   }
@@ -213,5 +237,16 @@
     color: #000000;
   }
 }
+/* Custom */
+@media only screen and (max-width: 500px) {
+  header .top-nav ul {
+    gap: 10px;
+  }
+}
 /* Extra Small Devices, Phones */
 /* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+  header .top-nav ul {
+    gap: 10px;
+  }
+}
