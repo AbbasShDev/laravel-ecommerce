@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
@@ -13,8 +14,10 @@ class UsersController extends Controller {
      */
     public function edit()
     {
+
         return view('users.edit', [
-            'user' => auth()->user()
+            'user' => auth()->user(),
+            'categories' => Category::latest()->get(),
         ]);
     }
 

@@ -23,7 +23,6 @@
         @yield('extra-css')
     </head>
 
-
 <body class="@yield('body-class', '')">
     @include('partials.nav')
 

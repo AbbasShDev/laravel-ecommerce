@@ -11,16 +11,27 @@
             {{ __('nav.shop') }}
         </a>
     </li>
-    <li><a href="{{ route('shop.index') }}">
-            <i class="fa fa-shopping-bag fa-fw align-icon"></i>
-            {{ __('shop.categories') }}
+    <li><a href="">
+            <div class="dropdown">
+                <a class="dropbtn">
+                    {{ __('shop.categories') }}
+                    <i class="fa fa-caret-down dropdown-icon"></i>
+                </a>
+                <div class="dropdown-content">
+                    @foreach($categories as $category)
+                        <a href="{{ route('shop.index', ['category' => $category->slug]) }}">
+                            {{ $category->getTranslatedAttribute('name') }}
+                        </a>
+                    @endforeach
+                </div>
+            </div>
         </a>
     </li>
     @auth
         <li>
             <a href="{{ route('users.edit') }}">
                 <i class="fas fa-user-alt fa-fw align-icon"></i>
-                {{ __('nav.my_account') }}
+                {{ __('nav.account') }}
             </a>
         </li>
         <li>

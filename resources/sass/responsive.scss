@@ -298,7 +298,16 @@
 @media only screen and (max-width : 500px) {
 
     header .top-nav ul {
-        gap: 10px;
+        gap: 6px;
+    }
+
+    header .top-nav ul a {
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    .dropdown-icon:after {
+        right: 45px;
     }
 
 }

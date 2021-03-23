@@ -24,13 +24,20 @@
   <component name="ChangeListManager">
     <list default="true" id="c7974f52-85f3-409d-8ba1-9706aab0ceb6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LandingPageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LandingPageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/responsive.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/base/_helpers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/base/_helpers.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/ar/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/nav.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/layout/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/layout/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/pages/landing-page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/landing-page.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/responsive.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/responsive.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/menus/main-right.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/menus/main-right.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/partials/menus/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/menus/main.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -291,7 +298,8 @@
       <workItem from="1616114539531" duration="5186000" />
       <workItem from="1616120242944" duration="315000" />
       <workItem from="1616196033365" duration="9863000" />
-      <workItem from="1616476086530" duration="5571000" />
+      <workItem from="1616476086530" duration="5895000" />
+      <workItem from="1616491683385" duration="3880000" />
     </task>
     <servers />
   </component>
@@ -323,10 +331,10 @@
       <screen x="0" y="25" width="1280" height="723" />
     </state>
     <state x="446" y="59" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.25.1280.723@0.25.1280.723" timestamp="1613862735469" />
-    <state x="379" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615927022946">
+    <state x="379" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1616496124603">
       <screen x="0" y="25" width="1280" height="721" />
     </state>
-    <state x="379" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1280.721@0.25.1280.721" timestamp="1615927022946" />
+    <state x="379" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1280.721@0.25.1280.721" timestamp="1616496124603" />
     <state x="379" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1280.723@0.25.1280.723" timestamp="1614855163945" />
     <state x="431" y="312" key="NewPhpFileDialog" timestamp="1615297597913">
       <screen x="0" y="25" width="1280" height="721" />
@@ -346,10 +354,10 @@
       <screen x="0" y="25" width="1280" height="723" />
     </state>
     <state x="355" y="177" key="refactoring.ChangeSignatureDialog/0.25.1280.723@0.25.1280.723" timestamp="1614857537648" />
-    <state x="306" y="72" width="670" height="675" key="search.everywhere.popup" timestamp="1616199606041">
+    <state x="306" y="72" width="670" height="675" key="search.everywhere.popup" timestamp="1616491867893">
       <screen x="0" y="25" width="1280" height="721" />
     </state>
-    <state x="306" y="72" width="670" height="675" key="search.everywhere.popup/0.25.1280.721@0.25.1280.721" timestamp="1616199606041" />
+    <state x="306" y="72" width="670" height="675" key="search.everywhere.popup/0.25.1280.721@0.25.1280.721" timestamp="1616491867893" />
     <state x="306" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1614958461981" />
   </component>
 </project>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\HomeBanner;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -14,8 +15,16 @@ class LandingPageController extends Controller
         $featuredProducts = Product::where('featured', true)->inRandomOrder()->take(8)->get();
         $latestProducts = Product::latest()->take(8)->get();
         $banners = HomeBanner::latest()->get();
+        $categories = Category::latest()->get();
 
-        return view('landing-page', compact('featuredProducts', 'latestProducts', 'banners'));
+        return view('landing-page',
+            compact(
+                'featuredProducts',
+                'latestProducts',
+                'banners',
+                'categories'
+            )
+        );
     }
 
 }

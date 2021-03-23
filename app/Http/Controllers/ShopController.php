@@ -11,7 +11,7 @@ class ShopController extends Controller {
     public function index()
     {
         $pagination = 9;
-        $categories = Category::all();
+        $categories = Category::latest()->get();
 
         if (request()->category) {
             $products = Product::latest()->with('category')->whereHas('category', function ($query) {
@@ -41,7 +41,9 @@ class ShopController extends Controller {
 
         $stockLevel = getStockLevel($product->quantity);
 
-        return view('product', compact('product', 'mightAlsoLike', 'stockLevel'));
+        $categories = Category::latest()->get();
+
+        return view('product', compact('product', 'mightAlsoLike', 'stockLevel', 'categories'));
     }
 
     public function search()

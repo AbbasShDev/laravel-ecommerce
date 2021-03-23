@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -45,7 +46,7 @@ class LoginController extends Controller
     {
         session()->put('previousUrl', url()-> previous());
 
-        return view('auth.login');
+        return view('auth.login', ['categories' => Category::latest()->get(),]);
     }
 
     public function redirectTo(){

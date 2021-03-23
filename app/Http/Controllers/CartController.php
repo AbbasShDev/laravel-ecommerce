@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
@@ -21,6 +22,8 @@ class CartController extends Controller {
             'newSubtotal'   => getCheckoutNumbers()->get('newSubtotal'),
             'newTax'        => getCheckoutNumbers()->get('newTax'),
             'newTotal'      => getCheckoutNumbers()->get('newTotal'),
+            'categories' => Category::latest()->get(),
+
         ]);
     }
 
