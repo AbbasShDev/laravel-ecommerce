@@ -51,8 +51,8 @@
         <div class="sidebar">
 
             <ul>
-                <li><a href="{{ route('users.edit') }}">{{ __('profile.profile') }}</a></li>
-                <li class="active"><a href="{{ route('orders.index') }}">{{ __('profile.orders') }}</a></li>
+                <li><a href="{{ route('users.edit') }}"><i class="fas fa-user-alt fa-fw align-icon"></i>{{ __('profile.profile') }}</a></li>
+                <li class="active"><a href="{{ route('orders.index') }}"><i class="fas fa-clipboard fa-fw"></i>{{ __('profile.orders') }}</a></li>
             </ul>
         </div> <!-- end sidebar -->
         <div class="my-profile">

@@ -22,12 +22,12 @@
 }
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 992px) {
-  header .top-nav ul {
-    gap: 32px;
-  }
-
   header .top-nav .search-box-landing-page .aa-input-search {
     width: 300px;
+  }
+
+  .nav-sidebar-toggler {
+    display: block;
   }
 
   header.with-background .top-nav, header .top-nav {
@@ -41,10 +41,6 @@
   }
   header.with-background .top-nav .search-box-landing-page, header .top-nav .search-box-landing-page {
     margin: 20px auto 0;
-  }
-  header.with-background .top-nav-left, header .top-nav-left {
-    flex-direction: column;
-    gap: 0px;
   }
   header.with-background .hero, header .hero {
     grid-template-columns: 1fr;
@@ -93,6 +89,9 @@
   .breadcrumbs .breadcrumbs-container {
     flex-direction: column;
   }
+  .breadcrumbs .aa-input-search {
+    margin-top: 15px;
+  }
 
   .search-form {
     margin: 14px auto;
@@ -123,6 +122,9 @@
   .cart-section .cart-buttons {
     flex-direction: column;
     text-align: center;
+  }
+  .cart-section .cart-buttons .button-primary {
+    margin-top: 15px;
   }
   .cart-section .cart-table-row .cart-table-row-left {
     width: 30%;
@@ -237,22 +239,23 @@
     color: #000000;
   }
 }
-/* Custom */
-@media only screen and (max-width: 500px) {
-  header .top-nav ul {
-    gap: 6px;
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .cart-section .cart-table-row {
+    justify-content: unset;
+    gap: 10px;
   }
 
-  header .top-nav ul a {
-    font-size: 12px;
-    font-weight: 400;
+  .cart-section .cart-table-row .cart-table-actions {
+    text-align: center;
   }
 
-  .dropdown-icon:after {
-    right: 45px;
+  .cart-section .cart-table-row .cart-options {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
   }
 }
-/* Extra Small Devices, Phones */
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 320px) {
   header .top-nav ul {

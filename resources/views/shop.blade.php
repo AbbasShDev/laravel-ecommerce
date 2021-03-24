@@ -31,7 +31,7 @@
 
     <div class="products-section container main-container">
         <div class="sidebar">
-            <h3>{{ __('shop.categories') }}</h3>
+            <h2 class="prima">{{ __('shop.categories') }}</h2>
             <ul>
                 <li class="{{ !request()->category ? 'active' : '' }}">
                     <a href="{{ route('shop.index') }}">{{ __('shop.featured') }}</a>

@@ -25,7 +25,9 @@ class OrdersController extends Controller
         }
 
         $products = $order->products;
-        return view('orders.show', compact('order', 'products'));
+        $categories = Category::latest()->get();
+
+        return view('orders.show', compact('order', 'products', 'categories'));
     }
 
 }

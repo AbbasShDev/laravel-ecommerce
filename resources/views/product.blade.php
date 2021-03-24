@@ -62,7 +62,7 @@
             @if($product->quantity)
                 <form action="{{ route('cart.store', $product->slug) }}" method="post">
                     @csrf
-                    <button type="submit" class="button button-plain">{{ __('shop.add_to_cart') }}</button>
+                    <button type="submit" class="button button-plain">{{ __('shop.add_to_cart') }}<i class="fas fa-cart-plus fa-fw align-icon"></i></button>
                 </form>
             @endif
 

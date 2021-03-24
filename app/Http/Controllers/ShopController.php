@@ -48,7 +48,9 @@ class ShopController extends Controller {
 
     public function search()
     {
-        return view('search-result');
+        $categories = Category::latest()->get();
+
+        return view('search-result', compact('categories'));
     }
 
 }

@@ -28,6 +28,11 @@ class CheckoutController extends Controller {
 
     public function index()
     {
+        $paymentQuery = request()->query('payment');
+
+        if ($paymentQuery && $paymentQuery != 'credit-debit') {
+            return redirect()->route('checkout.index');
+        }
 
         if (Cart::instance('default')->count() == 0) {
             return redirect()->route('shop.index');
@@ -50,7 +55,7 @@ class CheckoutController extends Controller {
     {
 
         if ($this->productsNotAvailable()) {
-            return redirect()->back()->withErrors( __('checkout.sorry_items_not_available') );
+            return redirect()->back()->withErrors(__('checkout.sorry_items_not_available'));
         }
 
         $contents = Cart::content()->map(function ($item) {
@@ -98,7 +103,8 @@ class CheckoutController extends Controller {
 
         if ($this->productsNotAvailable()) {
             $errorMessage = __('checkout.sorry_items_not_available');
-            return session()->flash('errors', collect([ $errorMessage ]));
+
+            return session()->flash('errors', collect([$errorMessage]));
         }
 
 
@@ -218,7 +224,7 @@ class CheckoutController extends Controller {
                 $order->products()->attach($item->model->id, ['quantity' => $item->qty]);
             }
             Cart::instance('default')->destroy();
-        session()->forget('coupon');
+            session()->forget('coupon');
 
             //Mail::send(new OrderPlaced($order));
 
@@ -260,11 +266,11 @@ class CheckoutController extends Controller {
             'billing_postalcode'    => $request->postalcode,
             'billing_phone'         => $request->phone,
             'billing_name_on_card'  => $request->name_on_card,
-            'shipping_address'       => auth()->user()->shipping_address,
-            'shipping_city'          => auth()->user()->shipping_city,
-            'shipping_province'      => auth()->user()->shipping_province,
-            'shipping_postalcode'    => auth()->user()->shipping_postalcode,
-            'shipping_phone'         => auth()->user()->shipping_phone,
+            'shipping_address'      => auth()->user()->shipping_address,
+            'shipping_city'         => auth()->user()->shipping_city,
+            'shipping_province'     => auth()->user()->shipping_province,
+            'shipping_postalcode'   => auth()->user()->shipping_postalcode,
+            'shipping_phone'        => auth()->user()->shipping_phone,
             'billing_discount'      => getCheckoutNumbers()->get('discount'),
             'billing_discount_code' => getCheckoutNumbers()->get('discountCode'),
             'billing_subtotal'      => getCheckoutNumbers()->get('newSubtotal'),

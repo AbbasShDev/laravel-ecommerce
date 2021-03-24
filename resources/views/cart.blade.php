@@ -69,12 +69,12 @@
                                     <form action="{{ route('cart.destroy', $item->rowId) }}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="cart-options">{{ __('shop.remove') }}</button>
+                                        <button type="submit" class="cart-options"><i class="fas fa-trash-alt fa-fw"></i>{{ __('shop.remove') }}</button>
                                     </form>
 
                                     <form action="{{ route('cart.switchToSaveForLater', $item->rowId) }}" method="post">
                                         @csrf
-                                        <button type="submit" class="cart-options">{{ __('shop.save_for_later') }}</button>
+                                        <button type="submit" class="cart-options"><i class="fas fa-plus-square fa-fw"></i>{{ __('shop.save_for_later') }}</button>
                                     </form>
                                 </div>
                                 <div>
@@ -175,12 +175,12 @@
                                     <form action="{{ route('saveForLater.destroy', $item->rowId) }}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="cart-options">{{ __('shop.remove') }}</button>
+                                        <button type="submit" class="cart-options"><i class="fas fa-trash-alt fa-fw"></i>{{ __('shop.remove') }}</button>
                                     </form>
 
                                     <form action="{{ route('saveForLater.switchToCart', $item->rowId) }}" method="post">
                                         @csrf
-                                        <button type="submit" class="cart-options">{{ __('shop.move_to_cart') }}</button>
+                                        <button type="submit" class="cart-options"><i class="fas fa-minus-square fa-fw"></i>{{ __('shop.move_to_cart') }}</button>
                                     </form>
                                 </div>
                                 <div>{{ $item->model->presentPrice() }}</div>
