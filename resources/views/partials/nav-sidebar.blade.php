@@ -1,3 +1,4 @@
+@if (!  ( request()->is(app()->getLocale().'/checkout')|| request()->is(app()->getLocale().'/guest-checkout')) )
 <div class="nav-sidebar">
     <div class="top-sidebar">
         <div>
@@ -94,3 +95,4 @@
         </ul>
     </div>
 </div>
+@endif
