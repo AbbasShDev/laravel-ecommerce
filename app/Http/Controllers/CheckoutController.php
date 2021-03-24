@@ -257,7 +257,7 @@ class CheckoutController extends Controller {
 
         //insert into orders
         $order = Order::create([
-            'user_id'               => auth()->user() ? auth()->user()->id : null,
+            'user_id'               => auth()->user()->id ?? null,
             'billing_email'         => $request->email,
             'billing_name'          => $request->name,
             'billing_address'       => $request->address,
@@ -266,11 +266,11 @@ class CheckoutController extends Controller {
             'billing_postalcode'    => $request->postalcode,
             'billing_phone'         => $request->phone,
             'billing_name_on_card'  => $request->name_on_card,
-            'shipping_address'      => auth()->user()->shipping_address,
-            'shipping_city'         => auth()->user()->shipping_city,
-            'shipping_province'     => auth()->user()->shipping_province,
-            'shipping_postalcode'   => auth()->user()->shipping_postalcode,
-            'shipping_phone'        => auth()->user()->shipping_phone,
+            'shipping_address'      => auth()->user()->shipping_address ?? null,
+            'shipping_city'         => auth()->user()->shipping_city ?? null,
+            'shipping_province'     => auth()->user()->shipping_province ?? null,
+            'shipping_postalcode'   => auth()->user()->shipping_postalcode ?? null,
+            'shipping_phone'        => auth()->user()->shipping_phone ?? null,
             'billing_discount'      => getCheckoutNumbers()->get('discount'),
             'billing_discount_code' => getCheckoutNumbers()->get('discountCode'),
             'billing_subtotal'      => getCheckoutNumbers()->get('newSubtotal'),

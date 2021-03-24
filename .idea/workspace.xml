@@ -22,7 +22,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7974f52-85f3-409d-8ba1-9706aab0ceb6" name="Default Changelist" comment="" />
+    <list default="true" id="c7974f52-85f3-409d-8ba1-9706aab0ceb6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ConfirmationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ConfirmationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -187,7 +194,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -283,7 +290,7 @@
       <workItem from="1616196033365" duration="9863000" />
       <workItem from="1616476086530" duration="5895000" />
       <workItem from="1616491683385" duration="4385000" />
-      <workItem from="1616553167844" duration="12210000" />
+      <workItem from="1616553167844" duration="13037000" />
     </task>
     <servers />
   </component>
@@ -329,10 +336,10 @@
       <screen x="0" y="25" width="1280" height="723" />
     </state>
     <state x="124" y="75" width="1032" height="672" key="Registry/0.25.1280.723@0.25.1280.723" timestamp="1614070583812" />
-    <state x="112" y="25" width="937" height="723" key="SettingsEditor" timestamp="1615764766526">
+    <state x="112" y="25" width="937" height="721" key="SettingsEditor" timestamp="1616568385040">
       <screen x="0" y="25" width="1280" height="721" />
     </state>
-    <state x="112" y="25" key="SettingsEditor/0.25.1280.721@0.25.1280.721" timestamp="1615764766526" />
+    <state x="112" y="25" width="937" height="721" key="SettingsEditor/0.25.1280.721@0.25.1280.721" timestamp="1616568385040" />
     <state x="112" y="25" width="937" height="723" key="SettingsEditor/0.25.1280.723@0.25.1280.723" timestamp="1614143431954" />
     <state x="290" y="106" width="700" height="530" key="recent.locations.popup" timestamp="1616553522875">
       <screen x="0" y="25" width="1280" height="721" />
@@ -342,10 +349,10 @@
       <screen x="0" y="25" width="1280" height="723" />
     </state>
     <state x="355" y="177" key="refactoring.ChangeSignatureDialog/0.25.1280.723@0.25.1280.723" timestamp="1614857537648" />
-    <state x="306" y="72" width="670" height="675" key="search.everywhere.popup" timestamp="1616556594595">
+    <state x="306" y="72" width="670" height="675" key="search.everywhere.popup" timestamp="1616568644985">
       <screen x="0" y="25" width="1280" height="721" />
     </state>
-    <state x="306" y="72" width="670" height="675" key="search.everywhere.popup/0.25.1280.721@0.25.1280.721" timestamp="1616556594595" />
+    <state x="306" y="72" width="670" height="675" key="search.everywhere.popup/0.25.1280.721@0.25.1280.721" timestamp="1616568644985" />
     <state x="306" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1614958461981" />
   </component>
 </project>
