@@ -19,7 +19,7 @@
             <div class="swiper-wrapper">
                 @foreach($banners as $banner)
                     <div class="swiper-slide">
-                        <img src="{{ asset('storage/'.$banner->image) }}" alt="">
+                        <img src="{{ presentImage($banner->image) }}" alt="">
                         <div class="banner-product-name" style="color: {{ $banner->text_color }}">{{ $banner->getTranslatedAttribute('product_name') }}</div>
                         <div class="banner-product-price-desc" style="color: {{ $banner->text_color }}">{{ $banner->getTranslatedAttribute('product_price_description') }}</div>
                         <div class="banner-product-stock-status" style="color: {{ $banner->text_color }}">{{ $banner->getTranslatedAttribute('product_stock_status') }}</div>

@@ -19,6 +19,7 @@
         "laravel/scout": "^8.6",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2",
+        "league/flysystem-aws-s3-v3": "~1.0",
         "orangehill/iseed": "^3.0",
         "paypal/rest-api-sdk-php": "^1.14",
         "spatie/laravel-sluggable": "^2.6",
