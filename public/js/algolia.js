@@ -22,7 +22,7 @@
 
                     return `
                             <div class="algolia-result">
-                            <img src="${window.location.origin}/${suggestion.image}" alt="" class="algolia-thumb">
+                            <img src="https://laravel-laramerce.s3.eu-west-3.amazonaws.com/${suggestion.image}" alt="" class="algolia-thumb">
                             <div class="algolia-info">
                                 <span>
                                     ${locale === 'ar' ? suggestion._highlightResult.ar.name.value : suggestion._highlightResult.en.name.value}
