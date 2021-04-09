@@ -1,5 +1,5 @@
 (function () {
-    const client = algoliasearch('O28RQ1I31E', '44bc64e609062f72d24fcc242a14a1e1');
+    const client = algoliasearch('NN4LX8BBKT', 'b8423c983e0b50a1df0fceabfd060ce3');
     const products = client.initIndex('products');
     var locale = document.getElementsByTagName("html")[0].getAttribute("lang");
     let enterKeyClicked = false;

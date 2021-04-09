@@ -3,7 +3,7 @@
 
     const search = instantsearch({
         indexName: 'products',
-        searchClient: algoliasearch('O28RQ1I31E', '44bc64e609062f72d24fcc242a14a1e1'),
+        searchClient: algoliasearch('NN4LX8BBKT', 'b8423c983e0b50a1df0fceabfd060ce3'),
         routing: true,
     });
 
