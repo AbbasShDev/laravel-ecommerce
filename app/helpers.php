@@ -10,7 +10,11 @@ function presentPrice($price)
 
 function presentImage($path)
 {
-    return $path ? Storage::disk('s3')->url($path) : asset('img/not-found-product.png');
+    return $path
+        ? config('filesystems.disks.s3.custom_url')
+            ?  config('filesystems.disks.s3.custom_url').$path
+            : Storage::disk('s3')->url($path)
+        : asset('img/not-found-product.png');
 }
 
 function getCheckoutNumbers()

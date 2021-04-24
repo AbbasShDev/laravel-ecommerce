@@ -51,6 +51,7 @@ return [
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
             'visibility' => 'public',
+            'custom_url' => env('AWS_CUSTOM_URL'),
         ],
 
     ],
