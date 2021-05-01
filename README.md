@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laramerce.me" target="_blank"><img src="https://laramerce.me/img/logo-white.png" width="400"></a></p>
+<p align="center"><a href="https://laramerce.me" target="_blank"><img src="https://laramerce.me/img/logo.png" width="400"></a></p>
 
 Laramerce is a laravel E-commerce includes multiple products, categories, a shopping cart, coupons and a checkout system with Stripe and Paypal integration.
 
