@@ -2,366 +2,1102 @@
 
 namespace Database\Seeders;
 
-use App\Models\Product;
 use Illuminate\Database\Seeder;
 
-class ProductsTableSeeder extends Seeder {
+class ProductsTableSeeder extends Seeder
+{
 
     /**
-     * Run the database seeds.
+     * Auto generated seed file
      *
      * @return void
      */
     public function run()
     {
+        
 
-        //Laptops
-        for ($i = 1; $i <= 9; $i++) {
-            Product::create([
-                'name'        => 'MacBook Pro ' . $i,
-                'details'     => '15 inch, 1TB SSD, 32GB RAM' . $i,
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!' . $i,
-                'price'       => rand(99999, 399999),
+        \DB::table('products')->delete();
+        
+        \DB::table('products')->insert(array (
+            0 => 
+            array (
                 'category_id' => 1,
-                'image'       => 'products/February2021/macbook-pro-'.$i.'.jpg'
-            ]);
-        }
-
-        //Desktops
-        for ($i = 1; $i <= 9; $i++) {
-            Product::create([
-                'name'        => 'HP 22 - AIO ' . $i,
-                'details'     => 'AMD Ryzen 3, 21.5 inch, 4GB, 1TB, Jet Black ' . $i,
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!' . $i,
-                'price'       => rand(99999, 699999),
+                'created_at' => '2021-03-12 16:33:58',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!1',
+                'details' => '15 inch, 1TB SSD, 32GB RAM1',
+                'featured' => 1,
+                'id' => 1,
+                'image' => 'products/February2021/macbook-pro-1.jpg',
+                'images' => NULL,
+                'name' => 'MacBook Pro 1',
+                'price' => 275292,
+                'quantity' => 7,
+                'slug' => 'macbook-pro-1',
+                'updated_at' => '2021-03-26 10:00:12',
+            ),
+            1 => 
+            array (
+                'category_id' => 1,
+                'created_at' => '2021-03-12 16:33:58',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!2',
+                'details' => '15 inch, 1TB SSD, 32GB RAM2',
+                'featured' => 1,
+                'id' => 2,
+                'image' => 'products/February2021/macbook-pro-2.jpg',
+                'images' => NULL,
+                'name' => 'MacBook Pro 2',
+                'price' => 380426,
+                'quantity' => 7,
+                'slug' => 'macbook-pro-2',
+                'updated_at' => '2021-03-24 06:50:10',
+            ),
+            2 => 
+            array (
+                'category_id' => 1,
+                'created_at' => '2021-03-12 16:33:59',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!3',
+                'details' => '15 inch, 1TB SSD, 32GB RAM3',
+                'featured' => 0,
+                'id' => 3,
+                'image' => 'products/February2021/macbook-pro-3.jpg',
+                'images' => NULL,
+                'name' => 'MacBook Pro 3',
+                'price' => 145408,
+                'quantity' => 7,
+                'slug' => 'macbook-pro-3',
+                'updated_at' => '2021-04-09 14:56:50',
+            ),
+            3 => 
+            array (
+                'category_id' => 1,
+                'created_at' => '2021-03-12 16:33:59',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!4',
+                'details' => '15 inch, 1TB SSD, 32GB RAM4',
+                'featured' => 0,
+                'id' => 4,
+                'image' => 'products/February2021/macbook-pro-4.jpg',
+                'images' => NULL,
+                'name' => 'MacBook Pro 4',
+                'price' => 163340,
+                'quantity' => 10,
+                'slug' => 'macbook-pro-4',
+                'updated_at' => '2021-03-12 16:33:59',
+            ),
+            4 => 
+            array (
+                'category_id' => 1,
+                'created_at' => '2021-03-12 16:33:59',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!5',
+                'details' => '15 inch, 1TB SSD, 32GB RAM5',
+                'featured' => 0,
+                'id' => 5,
+                'image' => 'products/February2021/macbook-pro-5.jpg',
+                'images' => NULL,
+                'name' => 'MacBook Pro 5',
+                'price' => 215091,
+                'quantity' => 10,
+                'slug' => 'macbook-pro-5',
+                'updated_at' => '2021-03-12 16:33:59',
+            ),
+            5 => 
+            array (
+                'category_id' => 1,
+                'created_at' => '2021-03-12 16:33:59',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!6',
+                'details' => '15 inch, 1TB SSD, 32GB RAM6',
+                'featured' => 0,
+                'id' => 6,
+                'image' => 'products/February2021/macbook-pro-6.jpg',
+                'images' => NULL,
+                'name' => 'MacBook Pro 6',
+                'price' => 216434,
+                'quantity' => 10,
+                'slug' => 'macbook-pro-6',
+                'updated_at' => '2021-03-12 16:33:59',
+            ),
+            6 => 
+            array (
+                'category_id' => 1,
+                'created_at' => '2021-03-12 16:33:59',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!7',
+                'details' => '15 inch, 1TB SSD, 32GB RAM7',
+                'featured' => 1,
+                'id' => 7,
+                'image' => 'products/February2021/macbook-pro-7.jpg',
+                'images' => NULL,
+                'name' => 'MacBook Pro 7',
+                'price' => 106983,
+                'quantity' => 9,
+                'slug' => 'macbook-pro-7',
+                'updated_at' => '2021-03-26 10:01:36',
+            ),
+            7 => 
+            array (
+                'category_id' => 1,
+                'created_at' => '2021-03-12 16:33:59',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!8',
+                'details' => '15 inch, 1TB SSD, 32GB RAM8',
+                'featured' => 0,
+                'id' => 8,
+                'image' => 'products/February2021/macbook-pro-8.jpg',
+                'images' => NULL,
+                'name' => 'MacBook Pro 8',
+                'price' => 308695,
+                'quantity' => 10,
+                'slug' => 'macbook-pro-8',
+                'updated_at' => '2021-03-12 16:33:59',
+            ),
+            8 => 
+            array (
+                'category_id' => 1,
+                'created_at' => '2021-03-12 16:34:00',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!9',
+                'details' => '15 inch, 1TB SSD, 32GB RAM9',
+                'featured' => 0,
+                'id' => 9,
+                'image' => 'products/February2021/macbook-pro-9.jpg',
+                'images' => NULL,
+                'name' => 'MacBook Pro 9',
+                'price' => 339118,
+                'quantity' => 10,
+                'slug' => 'macbook-pro-9',
+                'updated_at' => '2021-03-12 16:34:00',
+            ),
+            9 => 
+            array (
                 'category_id' => 2,
-                'image'       => 'products/February2021/hp-22-aio-'.$i.'.jpg'
-            ]);
-        }
-
-        //Phones
-        for ($i = 1; $i <= 9; $i++) {
-            Product::create([
-                'name'        => 'Apple iPhone 12 Pro Max ' . $i,
-                'details'     => '5G, 512GB, Silver ' . $i,
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!' . $i,
-                'price'       => rand(199999, 599999),
+                'created_at' => '2021-03-12 16:34:00',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!1',
+                'details' => 'AMD Ryzen 3, 21.5 inch, 4GB, 1TB, Jet Black 1',
+                'featured' => 0,
+                'id' => 10,
+                'image' => 'products/February2021/hp-22-aio-1.jpg',
+                'images' => NULL,
+                'name' => 'HP 22 - AIO 1',
+                'price' => 535901,
+                'quantity' => 10,
+                'slug' => 'hp-22-aio-1',
+                'updated_at' => '2021-03-12 16:34:00',
+            ),
+            10 => 
+            array (
+                'category_id' => 2,
+                'created_at' => '2021-03-12 16:34:00',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!2',
+                'details' => 'AMD Ryzen 3, 21.5 inch, 4GB, 1TB, Jet Black 2',
+                'featured' => 0,
+                'id' => 11,
+                'image' => 'products/February2021/hp-22-aio-2.jpg',
+                'images' => NULL,
+                'name' => 'HP 22 - AIO 2',
+                'price' => 241738,
+                'quantity' => 10,
+                'slug' => 'hp-22-aio-2',
+                'updated_at' => '2021-03-12 16:34:00',
+            ),
+            11 => 
+            array (
+                'category_id' => 2,
+                'created_at' => '2021-03-12 16:34:00',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!3',
+                'details' => 'AMD Ryzen 3, 21.5 inch, 4GB, 1TB, Jet Black 3',
+                'featured' => 0,
+                'id' => 12,
+                'image' => 'products/February2021/hp-22-aio-3.jpg',
+                'images' => NULL,
+                'name' => 'HP 22 - AIO 3',
+                'price' => 529945,
+                'quantity' => 10,
+                'slug' => 'hp-22-aio-3',
+                'updated_at' => '2021-03-12 16:34:00',
+            ),
+            12 => 
+            array (
+                'category_id' => 2,
+                'created_at' => '2021-03-12 16:34:00',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!4',
+                'details' => 'AMD Ryzen 3, 21.5 inch, 4GB, 1TB, Jet Black 4',
+                'featured' => 0,
+                'id' => 13,
+                'image' => 'products/February2021/hp-22-aio-4.jpg',
+                'images' => NULL,
+                'name' => 'HP 22 - AIO 4',
+                'price' => 192798,
+                'quantity' => 10,
+                'slug' => 'hp-22-aio-4',
+                'updated_at' => '2021-03-12 16:34:00',
+            ),
+            13 => 
+            array (
+                'category_id' => 2,
+                'created_at' => '2021-03-12 16:34:00',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!5',
+                'details' => 'AMD Ryzen 3, 21.5 inch, 4GB, 1TB, Jet Black 5',
+                'featured' => 1,
+                'id' => 14,
+                'image' => 'products/February2021/hp-22-aio-5.jpg',
+                'images' => NULL,
+                'name' => 'HP 22 - AIO 5',
+                'price' => 427668,
+                'quantity' => 8,
+                'slug' => 'hp-22-aio-5',
+                'updated_at' => '2021-03-26 11:25:58',
+            ),
+            14 => 
+            array (
+                'category_id' => 2,
+                'created_at' => '2021-03-12 16:34:01',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!6',
+                'details' => 'AMD Ryzen 3, 21.5 inch, 4GB, 1TB, Jet Black 6',
+                'featured' => 1,
+                'id' => 15,
+                'image' => 'products/February2021/hp-22-aio-6.jpg',
+                'images' => NULL,
+                'name' => 'HP 22 - AIO 6',
+                'price' => 301167,
+                'quantity' => 7,
+                'slug' => 'hp-22-aio-6',
+                'updated_at' => '2021-03-26 09:55:08',
+            ),
+            15 => 
+            array (
+                'category_id' => 2,
+                'created_at' => '2021-03-12 16:34:01',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!7',
+                'details' => 'AMD Ryzen 3, 21.5 inch, 4GB, 1TB, Jet Black 7',
+                'featured' => 0,
+                'id' => 16,
+                'image' => 'products/February2021/hp-22-aio-7.jpg',
+                'images' => NULL,
+                'name' => 'HP 22 - AIO 7',
+                'price' => 672355,
+                'quantity' => 10,
+                'slug' => 'hp-22-aio-7',
+                'updated_at' => '2021-03-12 16:34:01',
+            ),
+            16 => 
+            array (
+                'category_id' => 2,
+                'created_at' => '2021-03-12 16:34:01',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!8',
+                'details' => 'AMD Ryzen 3, 21.5 inch, 4GB, 1TB, Jet Black 8',
+                'featured' => 0,
+                'id' => 17,
+                'image' => 'products/February2021/hp-22-aio-8.jpg',
+                'images' => NULL,
+                'name' => 'HP 22 - AIO 8',
+                'price' => 502999,
+                'quantity' => 10,
+                'slug' => 'hp-22-aio-8',
+                'updated_at' => '2021-03-12 16:34:01',
+            ),
+            17 => 
+            array (
+                'category_id' => 2,
+                'created_at' => '2021-03-12 16:34:01',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!9',
+                'details' => 'AMD Ryzen 3, 21.5 inch, 4GB, 1TB, Jet Black 9',
+                'featured' => 0,
+                'id' => 18,
+                'image' => 'products/February2021/hp-22-aio-9.jpg',
+                'images' => NULL,
+                'name' => 'HP 22 - AIO 9',
+                'price' => 391282,
+                'quantity' => 10,
+                'slug' => 'hp-22-aio-9',
+                'updated_at' => '2021-03-12 16:34:01',
+            ),
+            18 => 
+            array (
                 'category_id' => 3,
-                'image'       => 'products/February2021/apple-iphone-12-pro-max-'.$i.'.jpg'
-            ]);
-        }
-
-        //Tablets
-        for ($i = 1; $i <= 9; $i++) {
-            Product::create([
-                'name'        => 'Apple iPad Pro 2020 ' . $i,
-                'details'     => '11 inch, WiFi + Cellular, 1TB, Space Grey ' . $i,
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!' . $i,
-                'price'       => rand(99999, 69999),
+                'created_at' => '2021-03-12 16:34:01',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!1',
+                'details' => '5G, 512GB, Silver 1',
+                'featured' => 0,
+                'id' => 19,
+                'image' => 'products/February2021/apple-iphone-12-pro-max-1.jpg',
+                'images' => NULL,
+                'name' => 'Apple iPhone 12 Pro Max 1',
+                'price' => 243887,
+                'quantity' => 10,
+                'slug' => 'apple-iphone-12-pro-max-1',
+                'updated_at' => '2021-03-12 16:34:01',
+            ),
+            19 => 
+            array (
+                'category_id' => 3,
+                'created_at' => '2021-03-12 16:34:01',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!2',
+                'details' => '5G, 512GB, Silver 2',
+                'featured' => 0,
+                'id' => 20,
+                'image' => 'products/February2021/apple-iphone-12-pro-max-2.jpg',
+                'images' => NULL,
+                'name' => 'Apple iPhone 12 Pro Max 2',
+                'price' => 553970,
+                'quantity' => 10,
+                'slug' => 'apple-iphone-12-pro-max-2',
+                'updated_at' => '2021-03-12 16:34:01',
+            ),
+            20 => 
+            array (
+                'category_id' => 3,
+                'created_at' => '2021-03-12 16:34:02',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!3',
+                'details' => '5G, 512GB, Silver 3',
+                'featured' => 0,
+                'id' => 21,
+                'image' => 'products/February2021/apple-iphone-12-pro-max-3.jpg',
+                'images' => NULL,
+                'name' => 'Apple iPhone 12 Pro Max 3',
+                'price' => 315361,
+                'quantity' => 8,
+                'slug' => 'apple-iphone-12-pro-max-3',
+                'updated_at' => '2021-04-09 14:56:51',
+            ),
+            21 => 
+            array (
+                'category_id' => 3,
+                'created_at' => '2021-03-12 16:34:02',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!4',
+                'details' => '5G, 512GB, Silver 4',
+                'featured' => 0,
+                'id' => 22,
+                'image' => 'products/February2021/apple-iphone-12-pro-max-4.jpg',
+                'images' => NULL,
+                'name' => 'Apple iPhone 12 Pro Max 4',
+                'price' => 451373,
+                'quantity' => 10,
+                'slug' => 'apple-iphone-12-pro-max-4',
+                'updated_at' => '2021-03-12 16:34:02',
+            ),
+            22 => 
+            array (
+                'category_id' => 3,
+                'created_at' => '2021-03-12 16:34:02',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!5',
+                'details' => '5G, 512GB, Silver 5',
+                'featured' => 0,
+                'id' => 23,
+                'image' => 'products/February2021/apple-iphone-12-pro-max-5.jpg',
+                'images' => NULL,
+                'name' => 'Apple iPhone 12 Pro Max 5',
+                'price' => 231951,
+                'quantity' => 10,
+                'slug' => 'apple-iphone-12-pro-max-5',
+                'updated_at' => '2021-03-12 16:34:02',
+            ),
+            23 => 
+            array (
+                'category_id' => 3,
+                'created_at' => '2021-03-12 16:34:02',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!6',
+                'details' => '5G, 512GB, Silver 6',
+                'featured' => 1,
+                'id' => 24,
+                'image' => 'products/February2021/apple-iphone-12-pro-max-6.jpg',
+                'images' => NULL,
+                'name' => 'Apple iPhone 12 Pro Max 6',
+                'price' => 427791,
+                'quantity' => 9,
+                'slug' => 'apple-iphone-12-pro-max-6',
+                'updated_at' => '2021-03-26 10:06:59',
+            ),
+            24 => 
+            array (
+                'category_id' => 3,
+                'created_at' => '2021-03-12 16:34:02',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!7',
+                'details' => '5G, 512GB, Silver 7',
+                'featured' => 0,
+                'id' => 25,
+                'image' => 'products/February2021/apple-iphone-12-pro-max-7.jpg',
+                'images' => NULL,
+                'name' => 'Apple iPhone 12 Pro Max 7',
+                'price' => 296901,
+                'quantity' => 10,
+                'slug' => 'apple-iphone-12-pro-max-7',
+                'updated_at' => '2021-03-12 16:34:02',
+            ),
+            25 => 
+            array (
+                'category_id' => 3,
+                'created_at' => '2021-03-12 16:34:03',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!8',
+                'details' => '5G, 512GB, Silver 8',
+                'featured' => 0,
+                'id' => 26,
+                'image' => 'products/February2021/apple-iphone-12-pro-max-8.jpg',
+                'images' => NULL,
+                'name' => 'Apple iPhone 12 Pro Max 8',
+                'price' => 564246,
+                'quantity' => 9,
+                'slug' => 'apple-iphone-12-pro-max-8',
+                'updated_at' => '2021-03-24 03:39:27',
+            ),
+            26 => 
+            array (
+                'category_id' => 3,
+                'created_at' => '2021-03-12 16:34:03',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!9',
+                'details' => '5G, 512GB, Silver 9',
+                'featured' => 0,
+                'id' => 27,
+                'image' => 'products/February2021/apple-iphone-12-pro-max-9.jpg',
+                'images' => NULL,
+                'name' => 'Apple iPhone 12 Pro Max 9',
+                'price' => 295628,
+                'quantity' => 9,
+                'slug' => 'apple-iphone-12-pro-max-9',
+                'updated_at' => '2021-03-25 16:51:27',
+            ),
+            27 => 
+            array (
                 'category_id' => 4,
-                'image'       => 'products/February2021/apple-ipad-pro-2020-'.$i.'.jpg'
-            ]);
-        }
-
-        //TVs
-        for ($i = 1; $i <= 9; $i++) {
-            Product::create([
-                'name'        => 'LG TV ' . $i,
-                'details'     => '65 Inch, 4K HDR Smart, NanoCell TV ' . $i,
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!' . $i,
-                'price'       => rand(399999, 89999),
+                'created_at' => '2021-03-12 16:34:03',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!1',
+                'details' => '11 inch, WiFi + Cellular, 1TB, Space Grey 1',
+                'featured' => 0,
+                'id' => 28,
+                'image' => 'products/February2021/apple-ipad-pro-2020-1.jpg',
+                'images' => NULL,
+                'name' => 'Apple iPad Pro 2020 1',
+                'price' => 77149,
+                'quantity' => 10,
+                'slug' => 'apple-ipad-pro-2020-1',
+                'updated_at' => '2021-03-12 16:34:03',
+            ),
+            28 => 
+            array (
+                'category_id' => 4,
+                'created_at' => '2021-03-12 16:34:03',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!2',
+                'details' => '11 inch, WiFi + Cellular, 1TB, Space Grey 2',
+                'featured' => 0,
+                'id' => 29,
+                'image' => 'products/February2021/apple-ipad-pro-2020-2.jpg',
+                'images' => NULL,
+                'name' => 'Apple iPad Pro 2020 2',
+                'price' => 95362,
+                'quantity' => 10,
+                'slug' => 'apple-ipad-pro-2020-2',
+                'updated_at' => '2021-03-12 16:34:03',
+            ),
+            29 => 
+            array (
+                'category_id' => 4,
+                'created_at' => '2021-03-12 16:34:03',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!3',
+                'details' => '11 inch, WiFi + Cellular, 1TB, Space Grey 3',
+                'featured' => 0,
+                'id' => 30,
+                'image' => 'products/February2021/apple-ipad-pro-2020-3.jpg',
+                'images' => NULL,
+                'name' => 'Apple iPad Pro 2020 3',
+                'price' => 89153,
+                'quantity' => 10,
+                'slug' => 'apple-ipad-pro-2020-3',
+                'updated_at' => '2021-03-12 16:34:03',
+            ),
+            30 => 
+            array (
+                'category_id' => 4,
+                'created_at' => '2021-03-12 16:34:04',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!4',
+                'details' => '11 inch, WiFi + Cellular, 1TB, Space Grey 4',
+                'featured' => 0,
+                'id' => 31,
+                'image' => 'products/February2021/apple-ipad-pro-2020-4.jpg',
+                'images' => NULL,
+                'name' => 'Apple iPad Pro 2020 4',
+                'price' => 95596,
+                'quantity' => 10,
+                'slug' => 'apple-ipad-pro-2020-4',
+                'updated_at' => '2021-03-12 16:34:04',
+            ),
+            31 => 
+            array (
+                'category_id' => 4,
+                'created_at' => '2021-03-12 16:34:04',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!5',
+                'details' => '11 inch, WiFi + Cellular, 1TB, Space Grey 5',
+                'featured' => 0,
+                'id' => 32,
+                'image' => 'products/February2021/apple-ipad-pro-2020-5.jpg',
+                'images' => NULL,
+                'name' => 'Apple iPad Pro 2020 5',
+                'price' => 81184,
+                'quantity' => 8,
+                'slug' => 'apple-ipad-pro-2020-5',
+                'updated_at' => '2021-03-13 00:10:47',
+            ),
+            32 => 
+            array (
+                'category_id' => 4,
+                'created_at' => '2021-03-12 16:34:04',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!6',
+                'details' => '11 inch, WiFi + Cellular, 1TB, Space Grey 6',
+                'featured' => 0,
+                'id' => 33,
+                'image' => 'products/February2021/apple-ipad-pro-2020-6.jpg',
+                'images' => NULL,
+                'name' => 'Apple iPad Pro 2020 6',
+                'price' => 83986,
+                'quantity' => 10,
+                'slug' => 'apple-ipad-pro-2020-6',
+                'updated_at' => '2021-03-12 16:34:04',
+            ),
+            33 => 
+            array (
+                'category_id' => 4,
+                'created_at' => '2021-03-12 16:34:04',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!7',
+                'details' => '11 inch, WiFi + Cellular, 1TB, Space Grey 7',
+                'featured' => 1,
+                'id' => 34,
+                'image' => 'products/February2021/apple-ipad-pro-2020-7.jpg',
+                'images' => NULL,
+                'name' => 'Apple iPad Pro 2020 7',
+                'price' => 80605,
+                'quantity' => 10,
+                'slug' => 'apple-ipad-pro-2020-7',
+                'updated_at' => '2021-03-12 16:34:04',
+            ),
+            34 => 
+            array (
+                'category_id' => 4,
+                'created_at' => '2021-03-12 16:34:04',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!8',
+                'details' => '11 inch, WiFi + Cellular, 1TB, Space Grey 8',
+                'featured' => 1,
+                'id' => 35,
+                'image' => 'products/February2021/apple-ipad-pro-2020-8.jpg',
+                'images' => NULL,
+                'name' => 'Apple iPad Pro 2020 8',
+                'price' => 95728,
+                'quantity' => 10,
+                'slug' => 'apple-ipad-pro-2020-8',
+                'updated_at' => '2021-03-12 16:34:04',
+            ),
+            35 => 
+            array (
+                'category_id' => 4,
+                'created_at' => '2021-03-12 16:34:04',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!9',
+                'details' => '11 inch, WiFi + Cellular, 1TB, Space Grey 9',
+                'featured' => 1,
+                'id' => 36,
+                'image' => 'products/February2021/apple-ipad-pro-2020-9.jpg',
+                'images' => NULL,
+                'name' => 'Apple iPad Pro 2020 9',
+                'price' => 81295,
+                'quantity' => 10,
+                'slug' => 'apple-ipad-pro-2020-9',
+                'updated_at' => '2021-03-12 16:34:04',
+            ),
+            36 => 
+            array (
                 'category_id' => 5,
-                'image'       => 'products/February2021/lg-tv-'.$i.'.jpg'
-            ]);
-        }
-
-        //Cameras
-        for ($i = 1; $i <= 9; $i++) {
-            Product::create([
-                'name'        => 'CANON EOS 800D ' . $i,
-                'details'     => '24 Mega Pixels, 1/4000 Shutter Speed, WiFi, NFC, Full HD VIDEO, Black ' . $i,
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!' . $i,
-                'price'       => rand(299999, 69999),
+                'created_at' => '2021-03-12 16:34:05',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!1',
+                'details' => '65 Inch, 4K HDR Smart, NanoCell TV 1',
+                'featured' => 0,
+                'id' => 37,
+                'image' => 'products/February2021/lg-tv-1.jpg',
+                'images' => NULL,
+                'name' => 'LG TV 1',
+                'price' => 194628,
+                'quantity' => 10,
+                'slug' => 'lg-tv-1',
+                'updated_at' => '2021-03-12 16:34:05',
+            ),
+            37 => 
+            array (
+                'category_id' => 5,
+                'created_at' => '2021-03-12 16:34:05',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!2',
+                'details' => '65 Inch, 4K HDR Smart, NanoCell TV 2',
+                'featured' => 0,
+                'id' => 38,
+                'image' => 'products/February2021/lg-tv-2.jpg',
+                'images' => NULL,
+                'name' => 'LG TV 2',
+                'price' => 146422,
+                'quantity' => 10,
+                'slug' => 'lg-tv-2',
+                'updated_at' => '2021-03-12 16:34:05',
+            ),
+            38 => 
+            array (
+                'category_id' => 5,
+                'created_at' => '2021-03-12 16:34:06',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!3',
+                'details' => '65 Inch, 4K HDR Smart, NanoCell TV 3',
+                'featured' => 0,
+                'id' => 39,
+                'image' => 'products/February2021/lg-tv-3.jpg',
+                'images' => NULL,
+                'name' => 'LG TV 3',
+                'price' => 398235,
+                'quantity' => 10,
+                'slug' => 'lg-tv-3',
+                'updated_at' => '2021-03-12 16:34:06',
+            ),
+            39 => 
+            array (
+                'category_id' => 5,
+                'created_at' => '2021-03-12 16:34:06',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!4',
+                'details' => '65 Inch, 4K HDR Smart, NanoCell TV 4',
+                'featured' => 0,
+                'id' => 40,
+                'image' => 'products/February2021/lg-tv-4.jpg',
+                'images' => NULL,
+                'name' => 'LG TV 4',
+                'price' => 393981,
+                'quantity' => 10,
+                'slug' => 'lg-tv-4',
+                'updated_at' => '2021-03-12 16:34:06',
+            ),
+            40 => 
+            array (
+                'category_id' => 5,
+                'created_at' => '2021-03-12 16:34:06',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!5',
+                'details' => '65 Inch, 4K HDR Smart, NanoCell TV 5',
+                'featured' => 0,
+                'id' => 41,
+                'image' => 'products/February2021/lg-tv-5.jpg',
+                'images' => NULL,
+                'name' => 'LG TV 5',
+                'price' => 201532,
+                'quantity' => 10,
+                'slug' => 'lg-tv-5',
+                'updated_at' => '2021-03-12 16:34:06',
+            ),
+            41 => 
+            array (
+                'category_id' => 5,
+                'created_at' => '2021-03-12 16:34:06',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!6',
+                'details' => '65 Inch, 4K HDR Smart, NanoCell TV 6',
+                'featured' => 0,
+                'id' => 42,
+                'image' => 'products/February2021/lg-tv-6.jpg',
+                'images' => NULL,
+                'name' => 'LG TV 6',
+                'price' => 172991,
+                'quantity' => 10,
+                'slug' => 'lg-tv-6',
+                'updated_at' => '2021-03-12 16:34:06',
+            ),
+            42 => 
+            array (
+                'category_id' => 5,
+                'created_at' => '2021-03-12 16:34:06',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!7',
+                'details' => '65 Inch, 4K HDR Smart, NanoCell TV 7',
+                'featured' => 0,
+                'id' => 43,
+                'image' => 'products/February2021/lg-tv-7.jpg',
+                'images' => NULL,
+                'name' => 'LG TV 7',
+                'price' => 314805,
+                'quantity' => 10,
+                'slug' => 'lg-tv-7',
+                'updated_at' => '2021-03-12 16:34:06',
+            ),
+            43 => 
+            array (
+                'category_id' => 5,
+                'created_at' => '2021-03-12 16:34:06',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!8',
+                'details' => '65 Inch, 4K HDR Smart, NanoCell TV 8',
+                'featured' => 0,
+                'id' => 44,
+                'image' => 'products/February2021/lg-tv-8.jpg',
+                'images' => NULL,
+                'name' => 'LG TV 8',
+                'price' => 299326,
+                'quantity' => 10,
+                'slug' => 'lg-tv-8',
+                'updated_at' => '2021-03-12 16:34:06',
+            ),
+            44 => 
+            array (
+                'category_id' => 5,
+                'created_at' => '2021-03-12 16:34:07',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!9',
+                'details' => '65 Inch, 4K HDR Smart, NanoCell TV 9',
+                'featured' => 1,
+                'id' => 45,
+                'image' => 'products/February2021/lg-tv-9.jpg',
+                'images' => NULL,
+                'name' => 'LG TV 9',
+                'price' => 334190,
+                'quantity' => 10,
+                'slug' => 'lg-tv-9',
+                'updated_at' => '2021-03-12 16:34:07',
+            ),
+            45 => 
+            array (
                 'category_id' => 6,
-                'image'       => 'products/February2021/canon-eos-800d-'.$i.'.jpg'
-            ]);
-        }
-
-        //Appliances
-        for ($i = 1; $i <= 9; $i++) {
-            Product::create([
-                'name'        => 'Toshiba Inverter Refrigerator ' . $i,
-                'details'     => '12.7 Cu.Ft, Silver Color ' . $i,
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!' . $i,
-                'price'       => rand(699999, 1009999),
+                'created_at' => '2021-03-12 16:34:07',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!1',
+                'details' => '24 Mega Pixels, 1/4000 Shutter Speed, WiFi, NFC, Full HD VIDEO, Black 1',
+                'featured' => 1,
+                'id' => 46,
+                'image' => 'products/February2021/canon-eos-800d-1.jpg',
+                'images' => NULL,
+                'name' => 'CANON EOS 800D 1',
+                'price' => 254806,
+                'quantity' => 10,
+                'slug' => 'canon-eos-800d-1',
+                'updated_at' => '2021-03-12 16:34:07',
+            ),
+            46 => 
+            array (
+                'category_id' => 6,
+                'created_at' => '2021-03-12 16:34:07',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!2',
+                'details' => '24 Mega Pixels, 1/4000 Shutter Speed, WiFi, NFC, Full HD VIDEO, Black 2',
+                'featured' => 0,
+                'id' => 47,
+                'image' => 'products/February2021/canon-eos-800d-2.jpg',
+                'images' => NULL,
+                'name' => 'CANON EOS 800D 2',
+                'price' => 173819,
+                'quantity' => 10,
+                'slug' => 'canon-eos-800d-2',
+                'updated_at' => '2021-03-12 16:34:07',
+            ),
+            47 => 
+            array (
+                'category_id' => 6,
+                'created_at' => '2021-03-12 16:34:07',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!3',
+                'details' => '24 Mega Pixels, 1/4000 Shutter Speed, WiFi, NFC, Full HD VIDEO, Black 3',
+                'featured' => 0,
+                'id' => 48,
+                'image' => 'products/February2021/canon-eos-800d-3.jpg',
+                'images' => NULL,
+                'name' => 'CANON EOS 800D 3',
+                'price' => 237955,
+                'quantity' => 10,
+                'slug' => 'canon-eos-800d-3',
+                'updated_at' => '2021-03-12 16:34:07',
+            ),
+            48 => 
+            array (
+                'category_id' => 6,
+                'created_at' => '2021-03-12 16:34:07',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!4',
+                'details' => '24 Mega Pixels, 1/4000 Shutter Speed, WiFi, NFC, Full HD VIDEO, Black 4',
+                'featured' => 0,
+                'id' => 49,
+                'image' => 'products/February2021/canon-eos-800d-4.jpg',
+                'images' => NULL,
+                'name' => 'CANON EOS 800D 4',
+                'price' => 85505,
+                'quantity' => 10,
+                'slug' => 'canon-eos-800d-4',
+                'updated_at' => '2021-03-12 16:34:07',
+            ),
+            49 => 
+            array (
+                'category_id' => 6,
+                'created_at' => '2021-03-12 16:34:07',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!5',
+                'details' => '24 Mega Pixels, 1/4000 Shutter Speed, WiFi, NFC, Full HD VIDEO, Black 5',
+                'featured' => 0,
+                'id' => 50,
+                'image' => 'products/February2021/canon-eos-800d-5.jpg',
+                'images' => NULL,
+                'name' => 'CANON EOS 800D 5',
+                'price' => 150674,
+                'quantity' => 10,
+                'slug' => 'canon-eos-800d-5',
+                'updated_at' => '2021-03-12 16:34:07',
+            ),
+            50 => 
+            array (
+                'category_id' => 6,
+                'created_at' => '2021-03-12 16:34:08',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!6',
+                'details' => '24 Mega Pixels, 1/4000 Shutter Speed, WiFi, NFC, Full HD VIDEO, Black 6',
+                'featured' => 0,
+                'id' => 51,
+                'image' => 'products/February2021/canon-eos-800d-6.jpg',
+                'images' => NULL,
+                'name' => 'CANON EOS 800D 6',
+                'price' => 191381,
+                'quantity' => 10,
+                'slug' => 'canon-eos-800d-6',
+                'updated_at' => '2021-03-12 16:34:08',
+            ),
+            51 => 
+            array (
+                'category_id' => 6,
+                'created_at' => '2021-03-12 16:34:08',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!7',
+                'details' => '24 Mega Pixels, 1/4000 Shutter Speed, WiFi, NFC, Full HD VIDEO, Black 7',
+                'featured' => 1,
+                'id' => 52,
+                'image' => 'products/February2021/canon-eos-800d-7.jpg',
+                'images' => NULL,
+                'name' => 'CANON EOS 800D 7',
+                'price' => 75788,
+                'quantity' => 10,
+                'slug' => 'canon-eos-800d-7',
+                'updated_at' => '2021-03-12 16:34:08',
+            ),
+            52 => 
+            array (
+                'category_id' => 6,
+                'created_at' => '2021-03-12 16:34:08',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!8',
+                'details' => '24 Mega Pixels, 1/4000 Shutter Speed, WiFi, NFC, Full HD VIDEO, Black 8',
+                'featured' => 1,
+                'id' => 53,
+                'image' => 'products/February2021/canon-eos-800d-8.jpg',
+                'images' => NULL,
+                'name' => 'CANON EOS 800D 8',
+                'price' => 215740,
+                'quantity' => 10,
+                'slug' => 'canon-eos-800d-8',
+                'updated_at' => '2021-03-12 16:34:08',
+            ),
+            53 => 
+            array (
+                'category_id' => 6,
+                'created_at' => '2021-03-12 16:34:08',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!9',
+                'details' => '24 Mega Pixels, 1/4000 Shutter Speed, WiFi, NFC, Full HD VIDEO, Black 9',
+                'featured' => 0,
+                'id' => 54,
+                'image' => 'products/February2021/canon-eos-800d-9.jpg',
+                'images' => NULL,
+                'name' => 'CANON EOS 800D 9',
+                'price' => 104303,
+                'quantity' => 10,
+                'slug' => 'canon-eos-800d-9',
+                'updated_at' => '2021-03-12 16:34:08',
+            ),
+            54 => 
+            array (
                 'category_id' => 7,
-                'image'       => 'products/February2021/toshiba-inverter-refrigerator-'.$i.'.jpg'
-            ]);
-        }
-//        //Laptops
-//        for ($i = 1; $i <= 9; $i++) {
-//            Product::create([
-//                'name'        => [
-//                    'en' => 'MacBook Pro ' . $i,
-//                    'ar' => $i . 'ماك بوك برو '
-//                ],
-//                'details'     => [
-//                    'en' => '15 inch, 1TB SSD, 32GB RAM' . $i,
-//                    'ar' => $i . 'ماك بوك برو15 بوصة ، 1 تيرا بايت SSD ، 32 جيجا رام'
-//                ],
-//                'description' => [
-//                    'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!' . $i,
-//                    'ar' => $i . 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض'
-//                ],
-//                'price'       => rand(99999, 399999),
-//                'category_id' => 1
-//            ]);
-//        }
-//
-////Desktops
-//        for ($i = 1; $i <= 9; $i++) {
-//            Product::create([
-//                'name'        => [
-//                    'en' => 'HP 22 - AIO ' . $i,
-//                    'ar' => $i . 'أتش بي22 '
-//                ],
-//                'details'     => [
-//                    'en' => 'AMD Ryzen 3, 21.5 inch, 4GB, 1TB, Jet Black ' . $i,
-//                    'ar' => $i . 'الكل في واحد، رايزن3، 21.5 بوصة، 4 جيجا، 1 تيرا، أسود '
-//                ],
-//                'description' => [
-//                    'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore! ' . $i,
-//                    'ar' => $i . 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض '
-//                ],
-//                'price'       => rand(99999, 699999),
-//                'category_id' => 2
-//            ]);
-//        }
-//
-////Phones
-//        for ($i = 1; $i <= 9; $i++) {
-//            Product::create([
-//                'name'        => [
-//                    'en' => 'Apple iPhone 12 Pro Max ' . $i,
-//                    'ar' => $i . 'آبل أيفون 12 برو ماكس '
-//                ],
-//                'details'     => [
-//                    'en' => '5G, 512GB, Silver ' . $i,
-//                    'ar' => $i . ' 5 جي ، 512 جيجا ، فضي '
-//                ],
-//                'description' => [
-//                    'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore! ' . $i,
-//                    'ar' => $i . 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض '
-//                ],
-//                'price'       => rand(199999, 599999),
-//                'category_id' => 3
-//            ]);
-//        }
-//
-////Tablets
-//        for ($i = 1; $i <= 9; $i++) {
-//            Product::create([
-//                'name'        => [
-//                    'en' => 'Apple iPad Pro 2020 ' . $i,
-//                    'ar' => $i . 'أبل أيباد برو 2020 '
-//                ],
-//                'details'     => [
-//                    'en' => '11 inch, WiFi + Cellular, 1TB, Space Grey ' . $i,
-//                    'ar' => $i . '11 بوصة، واي فاي 4 جي، 1 تيرا، رمادي '
-//                ],
-//                'description' => [
-//                    'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore! ' . $i,
-//                    'ar' => $i . 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض '
-//                ],
-//                'price'       => rand(99999, 69999),
-//                'category_id' => 4
-//            ]);
-//        }
-//
-////TVs
-//        for ($i = 1; $i <= 9; $i++) {
-//            Product::create([
-//                'name'        => [
-//                    'en' => 'LG TV ' . $i,
-//                    'ar' => $i . 'ال جي، تلفزيون '
-//                ],
-//                'details'     => [
-//                    'en' => '65 Inch, 4K HDR Smart, NanoCell TV ' . $i,
-//                    'ar' => $i . '1165 بوصة، ذكي، فائق الوضوح '
-//                ],
-//                'description' => [
-//                    'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore! ' . $i,
-//                    'ar' => $i . 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض '
-//                ],
-//                'price'       => rand(399999, 89999),
-//                'category_id' => 5
-//            ]);
-//        }
-//
-////Cameras
-//        for ($i = 1; $i <= 9; $i++) {
-//            Product::create([
-//                'name'        => [
-//                    'en' => 'CANON EOS 800D ' . $i,
-//                    'ar' => $i . 'كانون كاميرا 800دي '
-//                ],
-//                'details'     => [
-//                    'en' => '24 Mega Pixels, 1/4000 Shutter Speed, WiFi, NFC, Full HD VIDEO, Black ' . $i,
-//                    'ar' => $i . '24 ميجابيكسل, بعدسه 18-55, تصوير فيديو عالى الدقه. شاشة 3 بوصة لمس, لون أسود '
-//                ],
-//                'description' => [
-//                    'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore! ' . $i,
-//                    'ar' => $i . 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض '
-//                ],
-//                'price'       => rand(299999, 69999),
-//                'category_id' => 6
-//            ]);
-//        }
-//
-////Appliances
-//        for ($i = 1; $i <= 9; $i++) {
-//            Product::create([
-//                'name'        => [
-//                    'en' => 'Toshiba Inverter Refrigerator ' . $i,
-//                    'ar' => $i . 'توشيبا ثلاجة '
-//                ],
-//                'details'     => [
-//                    'en' => '12.7 Cu.Ft, Silver Color ' . $i,
-//                    'ar' => $i . '12.7 قدم،إنفيرتر، فضي '
-//                ],
-//                'description' => [
-//                    'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore! ' . $i,
-//                    'ar' => $i . 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض '
-//                ],
-//                'price'       => rand(699999, 1009999),
-//                'category_id' => 7
-//            ]);
-//        }
+                'created_at' => '2021-03-12 16:34:08',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!1',
+                'details' => '12.7 Cu.Ft, Silver Color 1',
+                'featured' => 0,
+                'id' => 55,
+                'image' => 'products/February2021/toshiba-inverter-refrigerator-1.jpg',
+                'images' => NULL,
+                'name' => 'Toshiba Inverter Refrigerator 1',
+                'price' => 804597,
+                'quantity' => 10,
+                'slug' => 'toshiba-inverter-refrigerator-1',
+                'updated_at' => '2021-03-12 16:34:08',
+            ),
+            55 => 
+            array (
+                'category_id' => 7,
+                'created_at' => '2021-03-12 16:34:09',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!2',
+                'details' => '12.7 Cu.Ft, Silver Color 2',
+                'featured' => 0,
+                'id' => 56,
+                'image' => 'products/February2021/toshiba-inverter-refrigerator-2.jpg',
+                'images' => NULL,
+                'name' => 'Toshiba Inverter Refrigerator 2',
+                'price' => 769453,
+                'quantity' => 10,
+                'slug' => 'toshiba-inverter-refrigerator-2',
+                'updated_at' => '2021-03-12 16:34:09',
+            ),
+            56 => 
+            array (
+                'category_id' => 7,
+                'created_at' => '2021-03-12 16:34:09',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!3',
+                'details' => '12.7 Cu.Ft, Silver Color 3',
+                'featured' => 0,
+                'id' => 57,
+                'image' => 'products/February2021/toshiba-inverter-refrigerator-3.jpg',
+                'images' => NULL,
+                'name' => 'Toshiba Inverter Refrigerator 3',
+                'price' => 710493,
+                'quantity' => 10,
+                'slug' => 'toshiba-inverter-refrigerator-3',
+                'updated_at' => '2021-03-12 16:34:09',
+            ),
+            57 => 
+            array (
+                'category_id' => 7,
+                'created_at' => '2021-03-12 16:34:09',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!4',
+                'details' => '12.7 Cu.Ft, Silver Color 4',
+                'featured' => 0,
+                'id' => 58,
+                'image' => 'products/February2021/toshiba-inverter-refrigerator-4.jpg',
+                'images' => NULL,
+                'name' => 'Toshiba Inverter Refrigerator 4',
+                'price' => 896948,
+                'quantity' => 10,
+                'slug' => 'toshiba-inverter-refrigerator-4',
+                'updated_at' => '2021-03-12 16:34:09',
+            ),
+            58 => 
+            array (
+                'category_id' => 7,
+                'created_at' => '2021-03-12 16:34:09',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!5',
+                'details' => '12.7 Cu.Ft, Silver Color 5',
+                'featured' => 0,
+                'id' => 59,
+                'image' => 'products/February2021/toshiba-inverter-refrigerator-5.jpg',
+                'images' => NULL,
+                'name' => 'Toshiba Inverter Refrigerator 5',
+                'price' => 764182,
+                'quantity' => 10,
+                'slug' => 'toshiba-inverter-refrigerator-5',
+                'updated_at' => '2021-03-12 16:34:09',
+            ),
+            59 => 
+            array (
+                'category_id' => 7,
+                'created_at' => '2021-03-12 16:34:09',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!6',
+                'details' => '12.7 Cu.Ft, Silver Color 6',
+                'featured' => 0,
+                'id' => 60,
+                'image' => 'products/February2021/toshiba-inverter-refrigerator-6.jpg',
+                'images' => NULL,
+                'name' => 'Toshiba Inverter Refrigerator 6',
+                'price' => 790852,
+                'quantity' => 10,
+                'slug' => 'toshiba-inverter-refrigerator-6',
+                'updated_at' => '2021-03-12 16:34:09',
+            ),
+            60 => 
+            array (
+                'category_id' => 7,
+                'created_at' => '2021-03-12 16:34:09',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!7',
+                'details' => '12.7 Cu.Ft, Silver Color 7',
+                'featured' => 0,
+                'id' => 61,
+                'image' => 'products/February2021/toshiba-inverter-refrigerator-7.jpg',
+                'images' => NULL,
+                'name' => 'Toshiba Inverter Refrigerator 7',
+                'price' => 884357,
+                'quantity' => 10,
+                'slug' => 'toshiba-inverter-refrigerator-7',
+                'updated_at' => '2021-03-12 16:34:09',
+            ),
+            61 => 
+            array (
+                'category_id' => 7,
+                'created_at' => '2021-03-12 16:34:10',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!8',
+                'details' => '12.7 Cu.Ft, Silver Color 8',
+                'featured' => 0,
+                'id' => 62,
+                'image' => 'products/February2021/toshiba-inverter-refrigerator-8.jpg',
+                'images' => NULL,
+                'name' => 'Toshiba Inverter Refrigerator 8',
+                'price' => 851052,
+                'quantity' => 10,
+                'slug' => 'toshiba-inverter-refrigerator-8',
+                'updated_at' => '2021-03-12 16:34:10',
+            ),
+            62 => 
+            array (
+                'category_id' => 7,
+                'created_at' => '2021-03-12 16:34:10',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!9',
+                'details' => '12.7 Cu.Ft, Silver Color 9',
+                'featured' => 1,
+                'id' => 63,
+                'image' => 'products/February2021/toshiba-inverter-refrigerator-9.jpg',
+                'images' => NULL,
+                'name' => 'Toshiba Inverter Refrigerator 9',
+                'price' => 932497,
+                'quantity' => 10,
+                'slug' => 'toshiba-inverter-refrigerator-9',
+                'updated_at' => '2021-03-12 16:34:10',
+            ),
+            63 => 
+            array (
+                'category_id' => 9,
+                'created_at' => '2021-03-16 21:24:36',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!9
 
-//        /**
-//         * Auto generated seed file.
-//         *
-//         * @return void
-//         */
-//        public function run()
-//    {
-//        $this->categoriesTranslations();
-//        $this->productsTranslations();
-//    }
-//
-//        /**
-//         * Auto generate Categories Translations.
-//         *
-//         * @return void
-//         */
-//        private function categoriesTranslations()
-//    {
-//        // Adding translations for 'categories'
-//        //
-//        $cat = Category::where('slug', 'laptops')->firstOrFail();
-//        if ($cat->exists) {
-//            $this->trans('ar', $this->arr(['categories', 'name'], $cat->id), 'لابتوبات');
-//        }
-//
-//        $cat = Category::where('slug', 'desktops')->firstOrFail();
-//        if ($cat->exists) {
-//            $this->trans('ar', $this->arr(['categories', 'name'], $cat->id), 'كمبيوترات مكتبية');
-//        }
-//
-//        $cat = Category::where('slug', 'phones')->firstOrFail();
-//        if ($cat->exists) {
-//            $this->trans('ar', $this->arr(['categories', 'name'], $cat->id), 'جوالات');
-//        }
-//
-//        $cat = Category::where('slug', 'tablets')->firstOrFail();
-//        if ($cat->exists) {
-//            $this->trans('ar', $this->arr(['categories', 'name'], $cat->id), 'تابلت');
-//        }
-//
-//        $cat = Category::where('slug', 'tvs')->firstOrFail();
-//        if ($cat->exists) {
-//            $this->trans('ar', $this->arr(['categories', 'name'], $cat->id), 'تلفزيونات');
-//        }
-//
-//        $cat = Category::where('slug', 'digital-cameras')->firstOrFail();
-//        if ($cat->exists) {
-//            $this->trans('ar', $this->arr(['categories', 'name'], $cat->id), 'كاميرات');
-//        }
-//
-//        $cat = Category::where('slug', 'appliances')->firstOrFail();
-//        if ($cat->exists) {
-//            $this->trans('ar', $this->arr(['categories', 'name'], $cat->id), 'الاجهزة المنزلية');
-//        }
-//
-//
-//    }
-//
-//        /**
-//         * Auto generate Products Translations.
-//         *
-//         * @return void
-//         */
-//        private function productsTranslations()
-//    {
-//        // Adding translations for 'products'
-//        //
-//        $cat = Category::where('slug', 'laptops')->firstOrFail();
-//        if ($cat->exists) {
-//            $this->trans('ar', $this->arr(['categories', 'name'], $cat->id), 'لابتوبات');
-//        }
-//
-//        //Laptops
-//        for ($i = 1; $i <= 9; $i++) {
-//            $product = Product::where('slug', 'macBook-pro-' . $i)->firstOrFail();
-//            if ($product->exists) {
-//                $this->trans('ar', $this->arr(['products', 'name'], $product->id), $i . 'ماك بوك برو ');
-//                $this->trans('ar', $this->arr(['products', 'details'], $product->id), $i . 'ماك بوك برو15 بوصة ، 1 تيرا بايت SSD ، 32 جيجا رام');
-//                $this->trans('ar', $this->arr(['products', 'description'], $product->id), $i . 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض');
-//            }
-//        }
-//
-//        //Phones
-//        for ($i = 1; $i <= 9; $i++) {
-//            $product = Product::where('slug', 'apple-iphone-12-pro-max-' . $i)->firstOrFail();
-//            if ($product->exists) {
-//                $this->trans('ar', $this->arr(['products', 'name'], $product->id), $i . 'آبل أيفون 12 برو ماكس');
-//                $this->trans('ar', $this->arr(['products', 'details'], $product->id), $i . ' 5 جي ، 512 جيجا ، فضي ');
-//                $this->trans('ar', $this->arr(['products', 'description'], $product->id), $i . 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض');
-//            }
-//        }
-//
-//        //Tablets
-//        for ($i = 1; $i <= 9; $i++) {
-//            $product = Product::where('slug', 'apple-ipad-pro-2020-' . $i)->firstOrFail();
-//            if ($product->exists) {
-//                $this->trans('ar', $this->arr(['products', 'name'], $product->id), $i . 'أبل أيباد برو 2020 ');
-//                $this->trans('ar', $this->arr(['products', 'details'], $product->id), $i . '11 بوصة، واي فاي 4 جي، 1 تيرا، رمادي ');
-//                $this->trans('ar', $this->arr(['products', 'description'], $product->id), $i . 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض');
-//            }
-//        }
-//
-//        //TVs
-//        for ($i = 1; $i <= 9; $i++) {
-//            $product = Product::where('slug', 'lg-tv-' . $i)->firstOrFail();
-//            if ($product->exists) {
-//                $this->trans('ar', $this->arr(['products', 'name'], $product->id), $i . 'ال جي، تلفزيون ');
-//                $this->trans('ar', $this->arr(['products', 'details'], $product->id), $i . '1165 بوصة، ذكي، فائق الوضوح ');
-//                $this->trans('ar', $this->arr(['products', 'description'], $product->id), $i . 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض');
-//            }
-//        }
-//
-//        //Appliances
-//        for ($i = 1; $i <= 9; $i++) {
-//            $product = Product::where('slug', 'toshiba-inverter-refrigerator-' . $i)->firstOrFail();
-//            if ($product->exists) {
-//                $this->trans('ar', $this->arr(['products', 'name'], $product->id), $i . 'توشيبا ثلاجة ');
-//                $this->trans('ar', $this->arr(['products', 'details'], $product->id), $i . '12.7 قدم،إنفيرتر، فضي ');
-//                $this->trans('ar', $this->arr(['products', 'description'], $product->id), $i . 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إض');
-//            }
-//        }
-//
-//    }
+',
+            'details' => '6 GPS, 40mm PRODUCT(RED) Aluminium Case with PRODUCT(RED) Sport Band',
+                'featured' => 1,
+                'id' => 64,
+                'image' => 'products/March2021/GgjWKjXNKO3w9MfIQDV1.jpeg',
+                'images' => '["products\\/March2021\\/pqpaa9uFy16cHvTrlehh.jpeg","products\\/March2021\\/l5Yi9SJs9VOhg7FXKZG3.jpeg"]',
+                'name' => 'Apple Watch Series 6',
+                'price' => 89999,
+                'quantity' => 19,
+                'slug' => 'apple-watch-series-6',
+                'updated_at' => '2021-03-25 16:51:27',
+            ),
+            64 => 
+            array (
+                'category_id' => 8,
+                'created_at' => '2021-03-16 21:27:52',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!9',
+                'details' => 'Headphone White
+',
+                'featured' => 1,
+                'id' => 65,
+                'image' => 'products/March2021/ERZOdbjYqPiLDbvWObZQ.jpeg',
+                'images' => '["products\\/March2021\\/XnTEMv1xjK2QRs8eJCaC.jpeg","products\\/March2021\\/diKtqnXHNEdTOqLvXlq0.jpeg","products\\/March2021\\/UF65K08amK26pEKQ0PVg.jpeg"]',
+                'name' => 'Sony Headband',
+                'price' => 5000,
+                'quantity' => 27,
+                'slug' => 'sony-headband',
+                'updated_at' => '2021-03-25 16:51:27',
+            ),
+            65 => 
+            array (
+                'category_id' => 10,
+                'created_at' => '2021-03-16 21:30:40',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!9
 
-
+',
+                'details' => 'Silver',
+                'featured' => 1,
+                'id' => 66,
+                'image' => 'products/March2021/BgsI3eVTjM2tukAxMVy5.jpeg',
+                'images' => '["products\\/March2021\\/QRI0qNPZnWcFO2LRTZOF.jpeg"]',
+                'name' => 'XONDA Wireless Bluetooth Speaker',
+                'price' => 2000,
+                'quantity' => 20,
+                'slug' => 'xonda-wireless-bluetooth-speaker',
+                'updated_at' => '2021-03-16 21:40:15',
+            ),
+            66 => 
+            array (
+                'category_id' => 9,
+                'created_at' => '2021-03-25 15:59:28',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!9',
+                'details' => 'Amoled touch screen, 41.6MM, Graphite Black',
+                'featured' => 1,
+                'id' => 67,
+                'image' => 'products/March2021/Lk6pHc9l8CCXWnFW3f0r.jpeg',
+                'images' => '["products\\/March2021\\/h49QFzemDZJ3Sq3I9oSp.jpeg","products\\/March2021\\/X2kt8ruTArVFzrdRG6do.jpeg"]',
+                'name' => 'Huawei Watch Fit',
+                'price' => 4001600,
+                'quantity' => 20,
+                'slug' => 'huawei-watch-fit',
+                'updated_at' => '2021-03-25 15:59:28',
+            ),
+        ));
+        
+        
     }
 }
