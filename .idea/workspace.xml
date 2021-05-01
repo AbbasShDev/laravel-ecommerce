@@ -23,32 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7974f52-85f3-409d-8ba1-9706aab0ceb6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/database/seeders/CategoriesTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/CouponTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DataRowsTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DataTypesTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/MenuItemsTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/MenusTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/PermissionRoleTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/PermissionsTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/ProductsTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/RolesTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/SettingsTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/TranslationsTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/UserRolesTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/UsersTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DataRowsTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DataTypesTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/MenuItemsTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/MenusTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/PermissionRoleTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/PermissionsTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/RolesTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/SettingsTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/TranslationsTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/VoyagerDatabaseSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/VoyagerDummyDatabaseSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
