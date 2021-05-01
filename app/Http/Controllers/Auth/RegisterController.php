@@ -35,7 +35,13 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
+        session()->put('previousUrl', url()-> previous());
+
         return view('auth.register', ['categories' => Category::latest()->get(),]);
+    }
+
+    public function redirectTo(){
+        return str_replace(url('/'), '', session()->get('previousUrl', '/'.app()->getLocale()));
     }
 
     /**
